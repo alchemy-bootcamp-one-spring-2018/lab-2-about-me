@@ -66,33 +66,28 @@ function yesOrNo() {
 }
 
 var number = Math.floor(Math.random() * 100);
-var guessCounter = 5;
-var guesses = document.getElementById('number-guesses');
-
 function guessNumber() {
-    console.log(number);
+    var guessCounter = 5;
 
     for (var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
         console.log('user guessed', userGuess);
 
         if (userGuess < number) {
-            alert('Mmm, that\'s not quite the right number. Try guessing higher!');
-            console.log('too low');
             guessCounter--;
-            guesses.textContent = 'Number of guesses left: ' + guessCounter;
+            alert('Incorrect. Try guessing higher! Guesses left: ' + guessCounter);
+            console.log('that was too low');
         }
         else if (userGuess > number) {
-            alert('That\'s a bit too high. Try guessing lower!');
-            console.log('too high');
             guessCounter--;
-            guesses.textContent = 'Number of guesses left: ' + guessCounter;
+            alert('Incorrect. Try guessing lower! Guesses left: ' + guessCounter);
+            console.log('that was too high');
         }
         else {
-            alert('That\'s right! Way to go!');
-            console.log('just right');
             guessCounter--;
-            guesses.textContent = 'Number of guesses left: ' + guessCounter;
+            alert('That\'s right! Way to go! Guesses left: ' + guessCounter);
+            console.log('that was just right');
+            i = 5;
         }
     }
 }
