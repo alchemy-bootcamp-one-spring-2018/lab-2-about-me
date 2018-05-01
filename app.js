@@ -2,16 +2,24 @@
 
 //eslint-disable-next-line
 function guessMyName() {
-    var answer = prompt('Guess my name?');
-    console.log('user guessed', answer);
+    var i = 1;
+    while(i < 4) {
+        var answer = prompt('Guess my name?');
+        console.log('User guessed:', answer);
+        console.log('Counter at:', i);
 
-    var p = document.getElementById('my-name-response');
-
-    if(answer.trim().toLowerCase() === 'marty') {
-        p.textContent = 'You\'re right! My name is Marty';
-    }
-    else {
-        p.textContent = 'Sorry, not my name. Try again.';
+        var p = document.getElementById('my-name-response');
+    
+        if(answer.trim().toLowerCase() === 'kevin') {
+            p.textContent = 'You\'re right! My name is Kevin!';
+            break;
+        }
+        else {
+            if(i === 1) {
+                p.textContent = 'Sorry, not my name. Try again. Starts with a \"K\"!';
+            }
+            i++;
+        }
     }
 }
 
