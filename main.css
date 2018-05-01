@@ -1,16 +1,16 @@
 h1 {
     font-family: "Playfair Display", serif;
-font-size: 64px;
-text-align: center;
-font-style: normal;
-font-weight: 900;
-letter-spacing: 2px;
-color: rgb(219, 22, 22);
+    font-size: 64px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: rgb(219, 22, 22);
 }
 
 body {
     font-family: "Work Sans", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     text-align: center;
     font-weight: normal;
@@ -28,5 +28,18 @@ p span {
 #main {
     margin-left: 15%;
     margin-right: 15%;
+}
 
+#game-one {
+    float: left;
+    width: 50%;
+    background-color: blue;
+    margin-bottom: 12px;
+}
+
+#game-two {
+    float: right;
+    width: 50%;
+    background-color: green;
+    margin-bottom: 12px;
 }
