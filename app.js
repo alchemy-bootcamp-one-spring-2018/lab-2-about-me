@@ -1,6 +1,8 @@
 'use strict';
 
 //game 1: Yes/No
+var score = 0;
+
 function yesNoGame() {
     /*Question 1*/
     var answer = prompt('Do I like to go to Disneyland?');
@@ -10,9 +12,11 @@ function yesNoGame() {
 
     if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
+        score ++;
     }
     else {
         p.textContent = 'Sorry, that is incorrect.';
+        score += 0;
     }
 
     /*Question 2*/
@@ -23,9 +27,11 @@ function yesNoGame() {
 
     if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
+        score ++;
     }
     else {
         p.textContent = 'Sorry, that is incorrect.';
+        score += 0;
     }
 
     /*Question 3*/
@@ -36,9 +42,11 @@ function yesNoGame() {
 
     if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
+        score ++;
     }
     else {
         p.textContent = 'Sorry, that is incorrect.';
+        score += 0;
     }
 
     /*Question 4*/
@@ -49,9 +57,11 @@ function yesNoGame() {
 
     if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
+        score ++;
     }
     else {
         p.textContent = 'Sorry, that is incorrect.';
+        score += 0;
     }
 
     /*Question 5*/
@@ -62,30 +72,48 @@ function yesNoGame() {
 
     if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
+        score ++;
     }
     else {
         p.textContent = 'Sorry, that is incorrect.';
+        score += 0;
     }
 
-    //ADD SCORE KEEPER!!!!
+    //SCORE KEEPER
+    var finalScore = document.getElementById('final-score');
+    finalScore.textContent = 'Your final score was ' + score + '/5.';
+   
 }
 
-//game 2: Guess an Answer
+//game 2: Guess an Answer 
+//function control flow then call function????
+
+
 function guessMyName() {
     var answer = prompt('Guess my name?');
     console.log('user guessed', answer);
 
     var p = document.getElementById('my-name-response');
 
-    if(answer.trim().toLowerCase() ){
-
+    for() {
+        if(answer.trim().toLowerCase() === mariah || answer.trim().toUpperCase() === Mariah){
+        alert('');
+        }
+        else {
+        alert('');
+        }
     }
-    else {
 
-    }
+//gather info from the user via prompt
+        var username = prompt(‘what is your name?’);
+        //log out for us the dev to check
+	    console.log(‘user\’s name is ’, username);
+        //notice console.log take multiple arguments
+
+	    //parot back to user what they said:
+        alert(‘Hi’ +  username + ‘welcome to my webpage’);
+    
 }
 
 //game 3: Stretch 1
-function somethingHere() {
-    
-}
+
