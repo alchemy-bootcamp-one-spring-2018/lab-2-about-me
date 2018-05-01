@@ -38,6 +38,7 @@ var remainingGuesses = totalGuesses - actualGuesses;
 var userGuess; // this will be for the value the user enters to the prompt
 var answer = false; //this triggers the break when true.
 var message; //this stores the HTML that is inserted into the empty div on index.html
+var gameTwoResults;
 
 function gameTwo(){
     console.log('beginning of Game Two');
@@ -47,7 +48,8 @@ function gameTwo(){
         if(userGuess.toLowerCase() === 'new jersey' || userGuess.toLowerCase() === 'nj'){
             
             alert('Great job! You guessed Right! And it only took ' + actualGuesses + ' tries!');
-            message = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
+
+            gameTwoResults = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
             
             answer = true;
             break;
@@ -57,10 +59,18 @@ function gameTwo(){
         }
     }
     //console log results from Game Two
-    if(answer === true && actualGuesses < 3) {
-        console.log('Mark was born in New Jersey. User Correctly guessed this in  ' + actualGuesses + ' tries.'); 
+    if(answer === true) {
+        console.log('Mark was born in New Jersey. User Correctly guessed this in ' + actualGuesses + ' tries.'); 
     } else {
         console.log('Mark was born in New Jersey. User took 5 guesses, but did not guess this correctly.');
     }
 }
 
+//print function for Game Two Results
+function print() {
+    var outputDiv = document.getElementById('game-two-results');
+    outputDiv.innerHTML = gameTwoResults;
+}
+
+//call the function
+print(gameTwoResults);
