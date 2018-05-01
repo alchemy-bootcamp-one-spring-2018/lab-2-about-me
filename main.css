@@ -1,3 +1,20 @@
 h1 {
-    color: red;
+    font-family: "Playfair Display", serif;
+font-size: 64px;
+font-style: normal;
+font-weight: 900;
+letter-spacing: 2px;
+line-height: 76.8px;
+color: rgb(219, 22, 22);
 }
+
+p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 25.6px;
+    text-transform: none;
+    color: #BFBFBF;
+    }
