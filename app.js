@@ -4,62 +4,52 @@ function yesOrNo() {
     var score = 0;
     var firstAnswer = prompt('Q1: Was I born in the US?');
     console.log('user guessed', firstAnswer);
-    var p = document.getElementById('first-answer');
-
     if(firstAnswer.toLowerCase() === 'no' || firstAnswer.toLowerCase() === 'n') {
-        p.textContent = 'Correct! I was NOT born in the US.'
+        alert('Correct! I was NOT born in the US.')
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s incorrect. I wasn\'t born in the US.';
+        alert('Sorry, that\'s incorrect. I wasn\'t born in the US.');
     }
 
     var secondAnswer = prompt('Q2: Do I have a middle name?');
     console.log('user guessed', secondAnswer);
-    var p = document.getElementById('second-answer');
-
     if(secondAnswer.toLowerCase() === 'no' || secondAnswer.toLowerCase() === 'n') {
-        p.textContent = 'Correct! I do NOT have a middle name.'
+        alert('Correct! I do NOT have a middle name.');
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s not right. I wasn\'t born in the US.';
+        alert('Sorry, that\'s not right. I don\'t have a middle name.');
     }
 
     var thirdAnswer = prompt('Q3: Do I like cats?');
     console.log('user guessed', thirdAnswer);
-    var p = document.getElementById('third-answer');
-
     if(thirdAnswer.toLowerCase() === 'yes' || thirdAnswer.toLowerCase() === 'y') {
-        p.textContent = 'Yup. I love cats.'
+        alert('Yup. I love cats.');
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s incorrect. I\'m a big fan of cats.';
+        alert('Sorry, that\'s incorrect. I\'m a big fan of cats.');
     }
 
     var fourthAnswer = prompt('Q4: Do I like rainy weather?');
     console.log('user guessed', fourthAnswer);
-    var p = document.getElementById('fourth-answer');
-
     if(fourthAnswer.toLowerCase() === 'yes' || fourthAnswer.toLowerCase() === 'y') {
-        p.textContent = 'Correct! Why do you think I love Portland so much?'
+        alert('Correct! Why do you think I live here?');
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s incorrect. I probably wouldn\'t be living in the PNW if that were true.';
+        alert('Sorry, that\'s incorrect. I probably wouldn\'t be living in the PNW if that were true.');
     }
 
     var fifthAnswer = prompt('Q5: Am I currently obsessed with the video game God of War?');
     console.log('user guessed', fifthAnswer);
-    var p = document.getElementById('fifth-answer');
-
     if(fifthAnswer.toLowerCase() === 'yes' || fifthAnswer.toLowerCase() === 'y') {
-        p.textContent = 'You bet I\'m obsessed with it.'
+        alert('You bet I am.');
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s not correct - I\'m definitely obsessed with God of War. At least, for right now.';
+        alert('Sorry, that\'s not correct - I\'m definitely obsessed with God of War. At least, for right now.');
     }
     var final = document.getElementById('final-score');
     final.textContent = 'Final score: ' + score + '/5';
@@ -68,7 +58,6 @@ function yesOrNo() {
 function guessNumber() {
     var number = Math.floor(Math.random() * 100);
     var guessCounter = 5;
-    console.log(number);
 
     for (var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
