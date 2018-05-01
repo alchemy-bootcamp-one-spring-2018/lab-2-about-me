@@ -151,4 +151,5 @@ function guessYesNo() {
             console.log('Correct answers:', i, 'out of 5');
         }
     }
+    p.textContent = ('Overall, you scored: ' + i + '/5' + ' (' + Math.floor((i/5) * 100) + '\%)');
 }
