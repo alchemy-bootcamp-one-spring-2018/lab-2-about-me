@@ -1,0 +1,51 @@
+@keyframes shine {
+    0 {
+        color: white;
+    } 12.5% {
+        color: red;
+    } 25% {
+        color: orange;
+    } 37.5% {
+        color: yellow;
+    } 50% {
+        color: green;
+    } 62.5 {
+        color: blue;
+    } 75% {
+        color: purple;
+    } 87.5% {
+        color: black;
+    } 100% {
+        color: white;
+    }
+}
+body {
+    background: linear-gradient(black 69%, steelblue);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    color: steelblue;
+}
+
+.container-main {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 33px;
+}
+
+.container-button {
+    text-align: center;
+}
+
+#message h1 {
+    text-align: center;
+    color: white;
+}
+.shine {
+    font-size: 5rem;
+    animation: shine 1s forwards infinite;
+}
