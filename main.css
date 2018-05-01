@@ -20,12 +20,17 @@ h2,h3 {
 }
 #my-name-response {
     color: rgb(155, 11, 11);
-    padding: 10px;
-    width: fit-content;
-    font-family: -a
+    padding: 5px;
 }
 
-.guessingGame {
+#yes-no-response {
+    color: rgb(155, 11, 11);
+    padding: 5px;
+}
+
+.games {
     background-color: rgb(168, 147, 218);
-    width: fit-content;
+    width: 300px;
+    height: 125px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }

@@ -42,7 +42,22 @@ function guessMyName() {
 }
 
 //eslint-disable-next-line
-function catLover() {
-    var p = document.getElementById('cat-lover-response');
-    p.textContent = 'Of course, everyone likes cats!';
+function guessYesNo() {
+    //counter value started at 0
+    var i = 0;
+    var question1 = prompt('Am I 33 years old?');
+    console.log('User guessed:', question1);
+
+    var p = document.getElementById('yes-no-response');
+    if(question1 === 'y' || question1 === 'yes' || question1 === 'Y' || question1 === 'YES') {
+        p.textContent = 'No, I\'m not 33 years old.';
+        console.log('Correct answers:', i, 'out of 5');
+    }
+    else {
+        if(question1 === 'n' || question1 === 'no' || question1 === 'N' || question1 === 'NO') {
+            p.textContent = 'Correct! I\'m not 33 years old.';
+            i++;
+            console.log('Correct answers:', i, 'out of 5');
+        }
+    }
 }
