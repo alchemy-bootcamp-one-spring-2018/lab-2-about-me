@@ -8,7 +8,7 @@ function yesNoGame() {
 
     var p = document.getElementById('disneyland-response');
 
-    if(answer.trim().toLowerCase() === y || answer.trim().toLowerCase() ===yes || answer.trim().toUpperCase() === Y || answer.trim().toUpperCase() === YES){
+    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
     }
     else {
@@ -21,7 +21,7 @@ function yesNoGame() {
 
     var p = document.getElementById('french-toast-response');
 
-    if(answer.trim().toLowerCase() === y || answer.trim().toLowerCase() ===yes || answer.trim().toUpperCase() === Y || answer.trim().toUpperCase() === YES){
+    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
     }
     else {
@@ -34,7 +34,7 @@ function yesNoGame() {
 
     var p = document.getElementById('germany-response');
 
-    if(answer.trim().toLowerCase() === y || answer.trim().toLowerCase() ===yes || answer.trim().toUpperCase() === Y || answer.trim().toUpperCase() === YES){
+    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
     }
     else {
@@ -47,7 +47,7 @@ function yesNoGame() {
 
     var p = document.getElementById('swimmer-response');
 
-    if(answer.trim().toLowerCase() === n || answer.trim().toLowerCase() ===no || answer.trim().toUpperCase() === N || answer.trim().toUpperCase() === NO){
+    if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
     }
     else {
@@ -60,7 +60,7 @@ function yesNoGame() {
 
     var p = document.getElementById('my-vegetables-response');
 
-    if(answer.trim().toLowerCase() ){
+    if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
     }
     else {
