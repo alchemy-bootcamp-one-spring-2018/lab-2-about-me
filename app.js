@@ -59,21 +59,26 @@ function yesOrNo() {
         score++;
     }
     else {
-        p.textContent = 'Sorry, that\'s not correct - at least, not currently.';
+        p.textContent = 'Sorry, that\'s not correct - I\'m definitely obsessed with God of War. At least, for right now.';
     }
     var final = document.getElementById('final-score');
     final.textContent = 'Final score: ' + score + '/5';
 }
 
-var number = Math.floor(Math.random() * 100);
 function guessNumber() {
+    var number = Math.floor(Math.random() * 100);
     var guessCounter = 5;
+    console.log(number);
 
     for (var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
         console.log('user guessed', userGuess);
 
-        if (userGuess < number) {
+        if (isNaN(userGuess)) {
+            alert('Please enter a number. Guesses left: ' + guessCounter);
+            i--;
+        }
+        else if (userGuess < number) {
             guessCounter--;
             alert('Incorrect. Try guessing higher! Guesses left: ' + guessCounter);
             console.log('that was too low');
