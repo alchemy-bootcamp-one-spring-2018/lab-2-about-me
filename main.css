@@ -1,0 +1,14 @@
+#animal-answer, #quiz-score {
+    font-family: monospace;
+    size: 3em;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+h1 {
+    color: grey
+}
+
+h2 {
+    color: orangered
+}
