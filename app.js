@@ -45,18 +45,84 @@ function guessMyName() {
 function guessYesNo() {
     //counter value started at 0
     var i = 0;
-    var question1 = prompt('Am I 33 years old?');
-    console.log('User guessed:', question1);
 
+    //Question #1
+    var question1 = prompt('Am I 33 years old?').trim().toLowerCase();
+    console.log('User guessed:', question1);
+    //eslint-disable-next-line
     var p = document.getElementById('yes-no-response');
-    if(question1 === 'y' || question1 === 'yes' || question1 === 'Y' || question1 === 'YES') {
-        p.textContent = 'No, I\'m not 33 years old.';
+    if(question1 === 'y' || question1 === 'yes') {
+        alert('No! I\'m not 33 years old.');
         console.log('Correct answers:', i, 'out of 5');
     }
     else {
-        if(question1 === 'n' || question1 === 'no' || question1 === 'N' || question1 === 'NO') {
-            p.textContent = 'Correct! I\'m not 33 years old.';
+        if(question1 === 'n' || question1 === 'no') {
+            alert('Correct!');
             i++;
+            console.log('Correct answers:', i, 'out of 5');
+        }
+        else {
+            alert('Wrong! You didn\'t choose "Yes" or "No"!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+    }
+    //Question #2
+    var question2 = prompt('Is one of my favorite cities Tokyo?').trim().toLowerCase();
+    console.log('User guessed:', question2);
+    //eslint-disable-next-line
+    var p = document.getElementById('yes-no-response');
+    if(question2 === 'y' || question2 === 'yes') {
+        alert('Correct! Tokyo is a favorite for sure!');
+        i++;
+        console.log('Correct answers:', i, 'out of 5');
+    }
+    else {
+        if(question2 === 'n' || question2 === 'no') {
+            alert('Incorrect! Tokyo is awesome!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+        else {
+            alert('Wrong! You didn\'t choose "Yes" or "No"!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+    }
+    //Question #3
+    var question3 = prompt('Do you think I like motorcycles?').trim().toLowerCase();
+    console.log('User guessed:', question3);
+    //eslint-disable-next-line
+    var p = document.getElementById('yes-no-response');
+    if(question3 === 'y' || question3 === 'yes') {
+        alert('Right on! I do love motorcycles!');
+        i++;
+        console.log('Correct answers:', i, 'out of 5');
+    }
+    else {
+        if(question3 === 'n' || question3 === 'no') {
+            alert('That\'s incorrect!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+        else {
+            alert('Wrong! You didn\'t choose "Yes" or "No"!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+    }
+    //Question #4
+    var question4 = prompt('Have I ever worked in tech before?').trim().toLowerCase();
+    console.log('User guessed:', question4);
+    //eslint-disable-next-line
+    var p = document.getElementById('yes-no-response');
+    if(question4 === 'y' || question4 === 'yes') {
+        alert('Incorrect. I have not worked in tech.');
+        console.log('Correct answers:', i, 'out of 5');
+    }
+    else {
+        if(question4 === 'n' || question4 === 'no') {
+            alert('You chose correctly!');
+            i++;
+            console.log('Correct answers:', i, 'out of 5');
+        }
+        else {
+            alert('Wrong! You didn\'t choose "Yes" or "No"!');
             console.log('Correct answers:', i, 'out of 5');
         }
     }
