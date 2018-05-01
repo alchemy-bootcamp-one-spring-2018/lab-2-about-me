@@ -47,6 +47,7 @@ function guessYesNo() {
     var i = 0;
 
     //Question #1
+    //Correct answer is NO and increments the counter by 1
     var question1 = prompt('Am I 33 years old?').trim().toLowerCase();
     console.log('User guessed:', question1);
     //eslint-disable-next-line
@@ -67,6 +68,7 @@ function guessYesNo() {
         }
     }
     //Question #2
+    //Correct answer is YES and increments the counter by 1
     var question2 = prompt('Is one of my favorite cities Tokyo?').trim().toLowerCase();
     console.log('User guessed:', question2);
     //eslint-disable-next-line
@@ -87,6 +89,7 @@ function guessYesNo() {
         }
     }
     //Question #3
+    //Correct answer is YES and increments the counter by 1
     var question3 = prompt('Do you think I like motorcycles?').trim().toLowerCase();
     console.log('User guessed:', question3);
     //eslint-disable-next-line
@@ -107,6 +110,7 @@ function guessYesNo() {
         }
     }
     //Question #4
+    //Correct answer is NO and increments the counter by 1
     var question4 = prompt('Have I ever worked in tech before?').trim().toLowerCase();
     console.log('User guessed:', question4);
     //eslint-disable-next-line
@@ -117,7 +121,28 @@ function guessYesNo() {
     }
     else {
         if(question4 === 'n' || question4 === 'no') {
-            alert('You chose correctly!');
+            alert('That\'s correct!');
+            i++;
+            console.log('Correct answers:', i, 'out of 5');
+        }
+        else {
+            alert('Wrong! You didn\'t choose "Yes" or "No"!');
+            console.log('Correct answers:', i, 'out of 5');
+        }
+    }
+    //Question #5
+    //Correct answer is NO and increments the counter by 1
+    var question5 = prompt('Am I from Portland?').trim().toLowerCase();
+    console.log('User guessed:', question5);
+    //eslint-disable-next-line
+    var p = document.getElementById('yes-no-response');
+    if(question5 === 'y' || question5 === 'yes') {
+        alert('Incorrect. I am not a Portland native.');
+        console.log('Correct answers:', i, 'out of 5');
+    }
+    else {
+        if(question5 === 'n' || question5 === 'no') {
+            alert('That\'s correct! I\'m primarily from Southern California.');
             i++;
             console.log('Correct answers:', i, 'out of 5');
         }
