@@ -1,10 +1,10 @@
 h1 {
     font-family: "Playfair Display", serif;
 font-size: 64px;
+text-align: center;
 font-style: normal;
 font-weight: 900;
 letter-spacing: 2px;
-line-height: 76.8px;
 color: rgb(219, 22, 22);
 }
 
@@ -12,9 +12,21 @@ body {
     font-family: "Work Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
+    text-align: center;
     font-weight: normal;
     letter-spacing: normal;
     line-height: 25.6px;
     text-transform: none;
     color: #000;
     }
+
+p span {
+    font-weight: 700;
+    color: rgb(247, 3, 3)
+    }
+
+#main {
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
