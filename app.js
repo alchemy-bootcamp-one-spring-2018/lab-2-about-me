@@ -87,16 +87,18 @@ function yesNoGame() {
 
 //game 2: Guess an Answer 
 //function control flow then call function????
+var totalGuesses = 0;
+var actualGuess = 0;
+var remainingGuesses = 0;
 
-
-function guessMyName() {
-    var answer = prompt('Guess my name?');
+function guessMyHomeState() {
+    var answer = prompt('Where am I from?');
     console.log('user guessed', answer);
 
-    var p = document.getElementById('my-name-response');
+    var p = document.getElementById('my-home-state-response');
 
     for() {
-        if(answer.trim().toLowerCase() === mariah || answer.trim().toUpperCase() === Mariah){
+        if(answer.trim().toLowerCase() === michigan || answer.trim().toUpperCase() === Michigan){
         alert('');
         }
         else {
