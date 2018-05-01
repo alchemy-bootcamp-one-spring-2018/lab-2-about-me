@@ -1,9 +1,19 @@
+html {
+    background: navajowhite;
+}
 h1 {
     color: rgb(255,0,0);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    border: dotted;
+    border-color: rgb(178, 161, 34);
+    font-family: monospace;
+    align-content: center;
 }
 
 h2,h3 {
     font-size: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.aboutme {
+    color: rgb(226, 72, 37);
 }
