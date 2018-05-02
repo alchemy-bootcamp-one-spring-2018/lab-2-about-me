@@ -21,6 +21,8 @@ function gameOne(){
     //First, call the function to ask for username
     getUserName();
 
+    var answers1 = ''; //Empty string to hold the on-screen HTML message
+
     //Does Mark like Dogs better than Cats.  
     var q1 = confirm('Does Mark like Dogs better than Cats?');
     if(q1) {
@@ -32,6 +34,8 @@ function gameOne(){
     }
 
     console.log('Mark likes Cats Better than Dogs. You got this one ' + a1 + '.');
+    
+    answers1 += '<h3>Mark likes Cats Better than Dogs. You got this one ' + a1 + '.<br />';
 
     //Does Mark like Star Wars?
     var q2 = confirm('Does Mark like Star Wars?');
@@ -44,6 +48,8 @@ function gameOne(){
     }
 
     console.log('Mark likes Star Wars. He was there in \'77! You got this one ' + a2 + '.');
+
+    answers1 += 'Mark likes Star Wars. He was there in \'77! You got this one ' + a2 + '.<br />';
 
     //Has Mark ever worked at McDonald's
     var q3 = confirm('Has Mark ever worked at McDonald\'s?');
@@ -86,9 +92,14 @@ function gameOne(){
     //creates message to display on HTML page
     message1 = userName + ' got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%';
 
+
     //sends composed final message and score to the HTML page
     var p = document.getElementById('game-one-result');
     p.textContent = message1;
+
+    //displays questions and answers on the HTML page
+    var a = document.getElementById('game-one-answers');
+    a.innerHTML = answers1;
 }
 
 // **** BEGIN Game Two - Five Guesses ****
