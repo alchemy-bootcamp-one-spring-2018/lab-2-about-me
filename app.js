@@ -1,8 +1,9 @@
+/* exported quizOne, quizTwo */
 'use strict';
-const answersOne = [true, true, true, true, true];
+//  Global variables
 const answersTwo = [['fargo', 'fargo, nd'], 'system of a down', 'tom waits', 'diphthong', ['the ocean', 'ocean']];
 const questionsTwo = ['What is my birth city?', 'What is my favorite band?', 'Who is my fvorite artist?', 'What is my favorite word?', 'What is my favorite smell?'];
-const questionsOne = ['Does my name end with a "k"?', 'Was I born in North Dakota?', 'Is my obsession music?', 'Do I have 2 middle names?', 'Is Erik running Linux on his laptop?'];
+const questionsOne = ['My name ends with a "k".', 'I was born in North Dakota.', 'My obsession is music.', 'I have 2 middle names.', 'I\'m running Linux on my laptop.'];
 var name = "";
 var userAnswersOne = [];
 var userAnswersTwo = [];
@@ -15,9 +16,11 @@ if (name === "") {
 }
 console.log('Their name is ' + name);
 
-
 //  Quiz 1
 var quizOne = function() {
+    //  Notify of instructions
+    alert('Please type "y" or "yes" for true, and "n" or "no" for false.');
+
     //  Reset results message if there is one
     var message = document.getElementById('message');
     message.innerHTML = '';
@@ -47,7 +50,7 @@ var quizOne = function() {
 
         //  Tally up them results!
         tallyResults(results);
-    }, 10);
+    }, 100);
 }
 
 //  Quiz 2
@@ -83,17 +86,18 @@ var quizTwo = function() {
 
         //  Tally up them results!
         tallyResults(results);
-    }, 10);
+    }, 100);
 }
 
 //  Ask questions for quiz 1
 var askQuestionsOne = function(index) {
-    userAnswersOne[index] = confirm(questionsOne[index]);
+    userAnswersOne[index] = prompt(questionsOne[index]);
+    userAnswersOne[index] = userAnswersOne[index].trim().toLocaleLowerCase();
 }
 
 //  Check results for quiz 1
 var checkResultsOne = function(index) {
-    if (userAnswersOne[index] === answersOne[index]) {
+    if (userAnswersOne[index] === 'y' || userAnswersOne[index] === 'yes') {
         return true;
     } else {
         return false;
@@ -107,7 +111,7 @@ var askQuestionsTwo = function(index) {
         userAnswersTwo[index] = userAnswersTwo[index].trim().toLocaleLowerCase();
         
         //  Check if answer is correct, if it is, break out of this for loop
-        if (answersTwo[index].length > 1) {
+        if (index === 0 || index === 4) {
             if (userAnswersTwo[index] === answersTwo[index][0] || userAnswersTwo[index] === answersTwo[index][1]) {
                 alert('Correct!');
                 break;
@@ -133,6 +137,7 @@ var checkResultsTwo = function(index) {
     if (userAnswersTwo === null) {
         return false;
     }
+
     if (index === 0 || index === 4) {
         if (userAnswersTwo[index] === answersTwo[index][0] || userAnswersTwo[index] === answersTwo[index][1]) {
             return true;
@@ -150,7 +155,7 @@ var tallyResults = function(res) {
     //  Show the results
     if (res === 5) {
         var message = document.getElementById('message');
-        message.innerHTML = '<h1>Congratulations ' + name + '! You scored <span class="shine">100%!!!</span></h1>'        
+        message.innerHTML = '<h1>Congratulations <span class="title">' + name + '</span>!<br>You scored <span class="shine">100%!!!</span></h1>'        
     } else {
         alert('You scored ' + res + ' out of 5. I think you can do better than that ' + name + '...');
     }
