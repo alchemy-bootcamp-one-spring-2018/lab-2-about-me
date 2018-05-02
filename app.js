@@ -1,3 +1,4 @@
+/* exported reportReplicant, factionLocation, factionLocation2, factionLocation3, factionLocation4 */
 'use strict';
 
 var quiz = [
@@ -18,7 +19,6 @@ function connect() {
     }
 }
 connect();
-// eslint-disable-next-line
 function reportReplicant() {
     var answer = prompt('Knowledge of Replicant: Verification Required. What model is the subject?');
     console.log('user guessed', answer);
@@ -69,22 +69,22 @@ function reportReplicant() {
         p.textContent = ('INCORRECT INPUT: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');   
     }
 }
-// eslint-disable-next-line
+
 function factionLocation() {
     var p = document.getElementById('location-response');
     p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Titan. User tagged for inspection.';
 }
-// eslint-disable-next-line
+
 function factionLocation2() {
     var p = document.getElementById('location-response');
     p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Sirius. User tagged for inspection.';
 }
-// eslint-disable-next-line
+
 function factionLocation3() {
     var p = document.getElementById('location-response');
     p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Europa. User tagged for inspection.';
 }
-// eslint-disable-next-line
+
 function factionLocation4() {
     var p = document.getElementById('location-response');
     p.textContent = 'POSSIBLE LOCATION RECORDED';
