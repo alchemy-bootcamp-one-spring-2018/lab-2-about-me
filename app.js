@@ -1,4 +1,4 @@
-/* exported guessMyName, guessYesNo*/
+/* exported guessMyName, guessYesNo, numberOfLetters */
 
 'use strict';
 // A function to play "Guess My Name!" in 3 guesses or less
@@ -102,4 +102,16 @@ function guessYesNo() {
     console.log('Correct answers:', correctAnswers, 'out of 5');
 
     p.textContent = ('Overall, you scored: ' + correctAnswers + '/5' + ' (' + Math.floor((correctAnswers / 5) * 100) + '%)');
+}
+
+//eslint-disable-next-line
+function numberOfLetters() {
+    //eslint-disable-next-line
+    var p = document.getElementById('number-of-letters');
+    var word = document.getElementById('word').value;
+    console.log(word);
+
+    //setup
+    //User inputs a string in a text box (letters only?)
+    //Function evaluates number of letters in string
 }
