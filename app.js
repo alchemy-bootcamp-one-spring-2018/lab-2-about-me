@@ -1,4 +1,4 @@
-/* exported yesOrNo, guessNumber */
+/* exported yesOrNo, guessNumber, guessColor */
 'use strict';
 
 function yesOrNo() {
@@ -89,4 +89,26 @@ function guessNumber() {
     }
     var result = document.getElementById('final-result');
     result.textContent = gameResult;
+}
+
+var colorGuesses = 3;
+function guessColor() {
+    var userInput = document.getElementById('user-color');
+    var userColor = userInput.value;
+    var response = document.getElementById('color-response');
+    colorGuesses--;
+
+    if(userColor === 'lightgreen' && colorGuesses !== 0) {
+        response.textContent = 'That\'s correct! My favorite color is light green. (Guesses left: ' + colorGuesses + ')';
+    }
+    else if(userColor === 'green' && colorGuesses !== 0) {
+        response.textContent = 'Almost! What shade of green? (Guesses left: ' + colorGuesses + ')';
+    }
+    else if(colorGuesses === 0) {
+        response.textContent = 'Sorry, but you ran out of guesses! Refresh to try again.';
+        document.getElementById('guess-btn').disabled = true;
+    }
+    else {
+        response.textContent = 'Sorry, but ' + userColor + ' isn\'t right. (Guesses left: ' + colorGuesses + ')';
+    }
 }
