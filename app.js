@@ -89,12 +89,11 @@ function yesNoGame() {
 }
 
 /*Game 2: Guess the Answer*/ 
-//var totalGuesses = 3;
+var remainingGuesses = 3;
 
 //function asks user a question and allows 3 guesses to get it correct
 function guessMyHomeState() {
-    var remainingGuesses = 3;
-
+    
     var p = document.getElementById('my-home-state-response');
 
     for(var i = 1; i < 4; i++) {
@@ -110,7 +109,13 @@ function guessMyHomeState() {
         }
         else {
             remainingGuesses--;
-            alert('I\'m sorry that is not correct. You have ' + remainingGuesses + ' guesses remaining.');
+            if (remainingGuesses < 2) {
+                var guess = ' guess';
+            }
+            else {
+                guess = ' guesses'
+            }
+            alert('I\'m sorry that is not correct. You have ' + remainingGuesses + guess + ' remaining.');
             p.textContent = 'You did not complete the game. Try again (Hint: What do you wear on your hands to stay warm in winter?';
         }
     }
@@ -118,4 +123,6 @@ function guessMyHomeState() {
     
 }
 
+
+/*Game 3: Input*/
 
