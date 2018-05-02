@@ -1,5 +1,14 @@
 'use strict';
-/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt*/
+/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt nameSubmit*/
+
+//name letter counter
+function nameSubmit(){
+    var nameInput = document.getElementById('name-input').value;
+    console.log('user name: ', nameInput);
+    var nResponse = document.getElementById('name-response');
+    nResponse.textContent = 'Hey ' + nameInput + ' did you know you name has ' + nameInput.length + ' letters in it?';
+
+}
 //start button
 function startMe(){
     alert('GAME TIME!!!');
