@@ -23,7 +23,9 @@ function guessMyAnimal() {
             p.textContent = ('You are correct!  I llove llamas.');
             break; // if they get it right, no need to continue
         } else {
-            if(guessCount < MAX_GUESSES) {
+            if(MAX_GUESSES - guessCount === 1) {
+                alert('No, sorry.  You get one last chance!');
+            } else if(guessCount < MAX_GUESSES) {
                 alert('No, sorry.  You have ' + (MAX_GUESSES - guessCount) + ' more chances.');
             } else {
                 p.textContent = ('Nice try, but I\'ll just tell you.  I llove llamas.');
