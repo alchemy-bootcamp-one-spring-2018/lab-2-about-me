@@ -84,7 +84,7 @@ function guessNumber() {
             alert('That\'s right! Way to go! Guesses left: ' + guessCounter);
             console.log('that was just right');
             i = 5;
-            gameResult = 'You win!';
+            gameResult = 'You win! The number was ' + number + '.';
         }
     }
     var result = document.getElementById('final-result');
