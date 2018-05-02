@@ -1,3 +1,5 @@
+/* exported myQuestions, generateQuiz, showQuestions, show results */
+
 'use strict';
 
 var myQuestions = [
@@ -48,7 +50,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
 
                 answers.push(
                     '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        + '<input type="radio" name="question' + i+'" value="'+letter+'">'
                 + letter + ': '
                 + questions[i].answers[letter]
                 + '</label>'
@@ -72,7 +74,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
         
         for(var i = 0; i < questions.length; i++){
 
-            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+            userAnswer = (answerContainers[i].querySelector('input[name=question' + i +']:checked')||{}).value;
         
             // if correct
             if(userAnswer === questions[i].correctAnswer){
@@ -97,6 +99,10 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     submitButton.onclick = function(){
         showResults(questions, quizContainer, resultsContainer);
     };
+
+    
+
+    
 }
 
 
