@@ -1,7 +1,14 @@
-/* exported myQuestions, generateQuiz, showQuestions, show results */
+/* exported catLover, myQuestions, generateQuiz, showQuestions, show results */
 
 'use strict';
 
+function catLover() {
+    var p = document.getElementById('cat-lover-response');
+    p.textContent = 'yep';
+    console.log('user guessed', p);
+}
+
+function 
 var myQuestions = [
     {
         question: "Would I rather ",
