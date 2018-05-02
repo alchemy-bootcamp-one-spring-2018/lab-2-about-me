@@ -11,13 +11,13 @@
             <li>I was born in South Korea, and moved shortly afterwards to Eugene, OR. We moved again a few years later and I grew up mostly on the east coast.</li>
             <li>After graduating from college with a BA in Film, I moved to Portland. It's real nice to be back on the west coast.</li>
             <li>I then worked for a couple years at a non-profit film organization here in downtown Portland.</li>
-            <li>I love talking about movies, video games, and media studies in general.</li>
+            <li>I love books, movies, video games, and media studies in general.</li>
             <li>I've always been interested in tech, and I'd love to eventually get a job as a web dev/software dev here in Portland.</li>
         </ul>
     </section>
 
     <section>
-        <h2>A Couple Games</h2>
+        <h2>Some Games</h2>
         <h3>Yes or No</h3>
         <p>Five questions about myself.</p>
         <button onclick="yesOrNo()">PLAY</button>
@@ -34,6 +34,12 @@
         <button id="guess-btn" onclick="guessColor()">Guess!</button>
         <p id="color-response"></p>
         <p id="refresh"></p>
+
+        <h3>Palindrome</h3>
+        <p>Is a certain word a palindrome? Type it in below to check and see! (Doesn't support multiple words/sentences at this time - sorry.)</p>
+        <input id="user-word">
+        <button id="palindrome-btn" onclick="checkPalindrome()">Check</button>
+        <p id="palindrome-response"></p>
     </section>
 
     <script src="app.js"></script>

@@ -1,4 +1,4 @@
-/* exported yesOrNo, guessNumber, guessColor */
+/* exported yesOrNo, guessNumber, guessColor, checkPalindrome */
 'use strict';
 
 function yesOrNo() {
@@ -115,5 +115,22 @@ function guessColor() {
     else {
         response.textContent = 'Sorry, but ' + userColor + ' isn\'t right. (Guesses left: ' + colorGuesses + ')';
         colorGuesses--;
+    }
+}
+
+function checkPalindrome() {
+    var userInput = document.getElementById('user-word');
+    var userString = userInput.value;
+    var response = document.getElementById('palindrome-response');
+
+    var userArray = userString.split('');
+    var reverseArray = userArray.reverse();
+    var reverseString = reverseArray.join('');
+
+    if(reverseString === userString) {
+        response.textContent = 'Hey, looks like that word is a palindrome!';
+    }
+    else {
+        response.textContent = 'Sorry, but it doesn\'t look like that word is a palindrome.';
     }
 }
