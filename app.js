@@ -1,5 +1,5 @@
 'use strict';
-
+//A function to play a guessing game where the user gets 3 chances to guess someone's name
 //eslint-disable-next-line
 function guessMyName() {
     //counter value started at 1
@@ -22,13 +22,13 @@ function guessMyName() {
         //else returns message/hint #1; increments counter value
         else {
             if(i === 1){
-                alert('Sorry, not my name. Try again. Starts with a "K"!');
+                alert('Sorry, not my name. Try again. Starts with a "K"! 2 guesses left!');
                 i++;
             }
             //else returns message/hint #2; increments counter value
             else {
                 if(i === 2) {
-                    alert('Not quite! Starts with a "K", ends with an "N", and my name is 5 letters long...');
+                    alert('Not quite! Starts with a "K", ends with an "N", and my name is 5 letters long...1 guess left!');
                     i++;
                 }
                 //maximum attempts (3) reached; displays losing message; breaks
@@ -40,7 +40,7 @@ function guessMyName() {
         }
     }
 }
-
+//A function to play a five-question Yes or No game
 //eslint-disable-next-line
 function guessYesNo() {
     //counter value started at 0
@@ -151,5 +151,5 @@ function guessYesNo() {
             console.log('Correct answers:', i, 'out of 5');
         }
     }
-    p.textContent = ('Overall, you scored: ' + i + '/5' + ' (' + Math.floor((i/5) * 100) + '\%)');
+    p.textContent = ('Overall, you scored: ' + i + '/5' + ' (' + Math.floor((i / 5) * 100) + '%)');
 }
