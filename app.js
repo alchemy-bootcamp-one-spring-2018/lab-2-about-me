@@ -14,7 +14,7 @@ function guessYesNo(){
     console.log('user guessed', broccoliAnswer);
     if(broccoliAnswer === 'yes' || broccoliAnswer === 'y'){
         alert('Right again! I love broccoli!');
-        i++
+        i++;
     } else {
         alert('Nope, broccoli definitely is my favorite vegetable!');
     }
@@ -42,7 +42,7 @@ function guessYesNo(){
     if(codeAnswer === 'yes' || codeAnswer === 'y'){
         alert('I sure hope so!');
         i++;
-    } else{
+    } else {
         alert('How do you think I made this?!');
     }
 
@@ -53,14 +53,19 @@ var p = document.getElementById('yes-no-response');
 
 
 function lastName(){
-
-    var lastNameQ = prompt('What is my last name?');
-    console.log('user guessed', lastNameQ);
-    if(lastNameQ === 'Thompson'){
-        alert('You are a stalker');
-    } else {
-        alert('Nope! Keep trying');
+    for(var i=5; i >= 0; i--){
+        var lastNameQ = prompt('What is my last name?');
+        console.log('user guessed', lastNameQ);
+        if(lastNameQ === 'Thompson'){
+            alert('You are a stalker');
+            var p = document.getElementById('last-name-response');
+            p.textContent = 'Seriously. Huge stalker.';
+            {break;}
+        } else {
+            alert('Nope! Keep trying! You have ' + i + ' chances left!');
+            var p = document.getElementById('last-name-response');
+            p.textContent = 'Better luck next time!'
+        }
     }
-    var p = document.getElementById('last-name-response');
-    p.textContent = 'Seriously. Huge stalker.';
+    
 }

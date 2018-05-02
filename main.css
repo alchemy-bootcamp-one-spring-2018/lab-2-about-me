@@ -20,9 +20,10 @@ h3 {
     display: table;
     background-color:rgb(212, 212, 212);
     color:rgb(73, 73, 73);
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-right: 150px;
-    margin-left: 150px;
+    padding-left: 90px;
+    padding-right: 90px;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 1%;
 
 }
