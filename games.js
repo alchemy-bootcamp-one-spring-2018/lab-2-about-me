@@ -89,15 +89,55 @@ function quiz() {
 
 }
 
-// getRandomInt copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-// used by guessMyNumber
+/* ---------------------------
+getRandomInt copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+(but I promise that I understand it)
+used by guessMyNumber function */
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-  }
+}
+// --------------------------
 
-var targetNumber = getRandomInt(100);
+var numberTarget = getRandomInt(100);
 const MAX_GUESSES = 5;
-function guessMyNumber () {
+var numberGuessCount = 0;
+var numberSuccess = false;
+function guessMyNumber() {
+
+    // if user has already used up all their guesses, just ignore.
+    if(numberGuessCount === MAX_GUESSES) {
+        return;
+    }
+    
+    // get user's input
+    var guess = document.getElementById('number-guess').value;
+    console.log ('user\'s guess:', guess);
+    guess = guess.trim();
+    numberGuessCount ++;
+
+    // check the user's answer and compose a message
+    var message;
+    if(isNaN(guess)) {
+        message = 'Please enter a number between 1 and 100 inclusive.';
+    } else if(guess < 0 || guess > 100) {
+        message = 'Please enter a number between 1 and 100 inclusive.';
+    } else if(guess === numberTarget) {
+        message = 'You got it!';
+        numberSuccess = true;
+    } else if(guess < numberTarget) {
+        message = 'I\'m thinking of a number bigger than that.';
+    } else {
+        message = 'I\'m thinking of a number smaller than that.';
+    }
+
+    // respond to user
     var p = document.getElementById('number-answer');
-    p.textContent = 'My number is ' + targetNumber
+    if(numberSuccess) {
+        p.textContent = message;
+    } else if (MAX_GUESSES - numberGuessCount > 0 {
+        p.textContent = message + "  (You have " + MAX_GUESSES - numberGuessCount + " remaining.)"
+    } else {
+        p.textContent = 'I was thinking of number ' + numberTarget + ".  Refresh to try again."
+    }
+
 }
