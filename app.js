@@ -53,7 +53,7 @@ var scoreCount = 0;
 
 function hobbyPrompt(){
 
-    var hobbyGuess = prompt('I\'m afraid of heights, but rock climbing my favorite hobby!!' + 'Am I lying?').trim().toLowerCase();
+    var hobbyGuess = prompt('I\'m afraid of heights, but rock climbing my favorite hobby!!' + 'Am I telling the truth?').trim().toLowerCase();
     var hobbyAnswer = 'yes';
     console.log('guessed: ', hobbyGuess);
 
@@ -61,9 +61,13 @@ function hobbyPrompt(){
 
     if(hobbyGuess === hobbyAnswer || hobbyGuess === 'y'){
         hobbyP.textContent = 'THAT\'S RIGHT!! Although it terrifies me, I love it!';
-        scoreCount++;
-        document.getElementById('score').innerHTML = scoreCount + '/5';
-
+        if(scoreCount === 5){
+            document.getElementById('score').innerHTML = '5/5';
+        }
+        else {
+            scoreCount++;
+            document.getElementById('score').innerHTML = scoreCount + '/5';
+        }
     }
     else {
         hobbyP.textContent = 'Sorry, try again.....';
@@ -73,16 +77,20 @@ function hobbyPrompt(){
 //Question2..
 function progPrompt(){
 
-    var progGuess = prompt('Although I\'m in this beginning bootcamp, I\'m an experienced programmer.' + 'Am I lying?').trim().toLowerCase();
+    var progGuess = prompt('Although I\'m in this beginning boot camp, I\'m an experienced programmer.' + 'Am I lying?').trim().toLowerCase();
     var progAnswer = 'yes';
+
     console.log('guessed: ', progGuess);
-
     var progP = document.getElementById('prog-response');
-
     if(progGuess === progAnswer || progGuess === 'y'){
         progP.textContent = 'That\'s right, I LIED!!! MWUAHAHAH. Good job catching me.';
-        scoreCount++;
-        document.getElementById('score').innerHTML = scoreCount + '/5';
+        if(scoreCount === 5){
+            document.getElementById('score').innerHTML = '5/5';
+        }
+        else {
+            scoreCount++;
+            document.getElementById('score').innerHTML = scoreCount + '/5';
+        }
 
     }
     else {
@@ -101,10 +109,16 @@ function gamePrompt(){
 
     if(gameGuess === gameAnswer || gameGuess === 'n'){
         gameP.textContent = 'Yes, it\'s true! I would play cribbage ANY time!';
-        scoreCount++;
-        document.getElementById('score').innerHTML = scoreCount + '/5';
+        if(scoreCount === 5){
+            document.getElementById('score').innerHTML = '5/5';
+        }
+        else {
+            scoreCount++;
+            document.getElementById('score').innerHTML = scoreCount + '/5';
+        }
 
     }
+
     else {
         gameP.textContent = 'Sorry, try again.....';
     }
@@ -121,8 +135,13 @@ function broPrompt(){
 
     if(broGuess === broAnswer || broGuess === 'n'){
         broP.textContent = 'It\'s true! I have a twin brother who is two minutes younger than me!';
-        scoreCount++;
-        document.getElementById('score').innerHTML = scoreCount + '/5';
+        if(scoreCount === 5){
+            document.getElementById('score').innerHTML = '5/5';
+        }
+        else {
+            scoreCount++;
+            document.getElementById('score').innerHTML = scoreCount + '/5';
+        }
 
     }
     else {
@@ -141,8 +160,13 @@ function opalPrompt(){
 
     if(opalGuess === opalAnswer || opalGuess === 'n'){
         opalP.textContent = 'I\'m not lying! I lived in Opal Creek Ancient Forest, cooking for visitors for two years!';
-        scoreCount ++;
-        document.getElementById('score').innerHTML = scoreCount + '/5';
+        if(scoreCount === 5){
+            document.getElementById('score').innerHTML = '5/5';
+        }
+        else {
+            scoreCount++;
+            document.getElementById('score').innerHTML = scoreCount + '/5';
+        }
     }
     else {
         opalP.textContent = 'Sorry, try again....';
