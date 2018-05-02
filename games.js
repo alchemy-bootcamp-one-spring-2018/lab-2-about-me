@@ -1,6 +1,6 @@
+/* exported guessMyAnimal quiz guessMyNumber */
 'use strict';
 
-// eslint-disable-next-line
 function guessMyAnimal() {
 
     // this is where we will write a response to the user; reset it to blank
@@ -13,7 +13,7 @@ function guessMyAnimal() {
 
         // get the user's guess
         var guess = prompt ('What is my favorite kind of animal?\nHint: They are llarge and llovely.', 'hedgehog');
-
+        
         // let the user know if they are correct
         if(guess === null || guess.trim() === '')
         {
@@ -36,7 +36,6 @@ function guessMyAnimal() {
 
 }
 
-// eslint-disable-next-line
 function quiz() {
     
     var questions = [
@@ -88,4 +87,17 @@ function quiz() {
     p = document.getElementById('quiz-score');
     p.textContent = ('You got ' + qtyCorrect + ' out of 5!');
 
+}
+
+// getRandomInt copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// used by guessMyNumber
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+var targetNumber = getRandomInt(100);
+const MAX_GUESSES = 5;
+function guessMyNumber () {
+    var p = document.getElementById('number-answer');
+    p.textContent = 'My number is ' + targetNumber
 }
