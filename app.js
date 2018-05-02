@@ -1,30 +1,80 @@
 'use strict';
 
-var questionNum = 0;
-var quizScore =0;
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
 
-// eslint-disable-next-line
-function wouldIratherQ1() {
-    var answer = prompt('Would I Rather');
-    console.log('user guessed', answer);
+
+function generateQuiz(questions, quizContainer) {
+    
+    function showQuestions(questions, quizContainer) {
+    
+        }
+
+    var output = [];
+    var answers;
+ 
+
+    for(var i=0; i<questions.length; i++) {
+        answers = [];
+
+        for(letter in questions[i].answers){
+
+            answers.push(
+            '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + questions[i].answers[letter]
+            + '</label>'
+        );
+    }
+    output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+    );
+}
+    quizContainer.innerHTML = output.join('');
 }
 
-function wouldIratherQ2() {
-    var answer = prompt('Would I Rather');
-    console.log('user guessed', answer);
+
+var myQuestions = [
+    {
+        question: "Would I rather ",
+        answers: { 
+            a: 'Pet one dirty, stray cat',
+            b: 'OR cuddle 10 freshly washed puppies'
+        },
+        correctAnswer: 'a'
+    },
+
+    {
+        question: "Would I rather",
+        answers: { 
+            a: 'Wear a Tump MAGA hat',
+            b: 'OR eat my hat'
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "Would I rather ",
+        answers: { 
+            a: 'Eat spaghetti in the bathtup',
+            b: 'OR eat hone baked ham on the Hoover Dam'
+        },
+        correctAnswer: 'a'
+    }
+];
+
+
+function showQuestions(questions, quizContainer) {
+    var output = []
+    var answers;
+
+    for(var i=0; i<questions.length; i++) {
+        answers = [];
+    }
 }
 
-function wouldIratherQ3() {
-    var answer = prompt('Would I Rather');
-    console.log('user guessed', answer);
-}
+   
 
-function wouldIratherQ4() {
-    var answer = prompt('Would I Rather');
-    console.log('user guessed', answer);
-}
 
-function wouldIratherQ5() {
-    var answer = prompt('Would I Rather');
-    console.log('user guessed', answer);
-}
