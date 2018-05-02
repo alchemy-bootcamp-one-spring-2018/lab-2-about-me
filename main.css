@@ -1,35 +1,34 @@
 @keyframes shine {
     0 {
-        color: white;
-    } 12.5% {
-        color: red;
-    } 25% {
-        color: orange;
-    } 37.5% {
-        color: yellow;
-    } 50% {
         color: green;
-    } 62.5 {
-        color: blue;
-    } 75% {
-        color: purple;
-    } 87.5% {
-        color: black;
-    } 100% {
+    } 33% {
         color: white;
+    } 66% {
+        color: red;
+    } 100% {
+        color: blue;
     }
 }
 
 @keyframes title-glow {
     from {
-        color: #000;
+        text-shadow: 0 0 0 #000;
     } to {
-        color: #09F;
+        text-shadow: 0 0 33px#09F;
     }
 }
 
+@keyframes fail {
+    from {
+        color: red;
+    } to {
+        color: white;
+    }
+}
 
 body {
+    padding: 0 0 33px 0;
+    margin: 0;
     background: linear-gradient(black 69%, steelblue);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -40,8 +39,12 @@ h1 {
     font-size: 4rem;
 }
 
+.fail {
+    animation: fail 50ms alternate infinite;
+}
+
 .title {
-    animation: title-glow 5s ease-out alternate infinite;
+    animation: title-glow 1s ease-out alternate infinite;
 }
 
 .container-main {
@@ -59,5 +62,5 @@ h1 {
 }
 .shine {
     font-size: 5rem;
-    animation: shine 3s forwards infinite;
+    animation: shine 100ms alternate infinite;
 }

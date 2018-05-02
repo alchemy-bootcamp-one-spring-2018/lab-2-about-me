@@ -152,15 +152,45 @@ var checkResultsTwo = function(index) {
 
 //  Tally the result and display message
 var tallyResults = function(res) {
+    var message = document.getElementById('message');
+
     //  Show the results
     if (res === 5) {
-        var message = document.getElementById('message');
         message.innerHTML = '<h1>Congratulations <span class="title">' + name + '</span>!<br>You scored <span class="shine">100%!!!</span></h1>'        
     } else {
         alert('You scored ' + res + ' out of 5. I think you can do better than that ' + name + '...');
+        message.innerHTML = '<h1 class="fail">FAILURE!!!</h1>';
     }
 
     // Show the bio again
     var bio = document.getElementById('main');
     bio.style.visibility = "visible";
+}
+
+//  Guess my favorite color
+var attempts = 0;
+var quizColor = function() {
+    //  Grab an element
+    var output = document.getElementById('output');
+
+    //  Check if they can take this quiz
+    if (attempts === (-1)) {
+        output.innerHTML = '<p class="fail">YOU ALREADY GOT IT CORRECT!!! MOVE ON!</p> ';
+    }
+
+    //  Grab some mmore elements
+    var colorBox = document.getElementById('color-box');
+    var color = colorBox.value.trim().toLocaleLowerCase();
+
+    //  Check their guess
+    console.log(color);
+    if (color === 'green') {
+        output.innerHTML = '<h2>Green yes, but which kind?</h2>';
+    } else if (color === 'forestgreen') {
+        output.innerHTML = '<h1 id="color-answer">CORRECT!!!</h1>';
+        attempts = -1;
+    } else {
+
+    }
+    attempts++;
 }
