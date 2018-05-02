@@ -1,37 +1,50 @@
 /* exported guessMyAnimal quiz guessMyNumber */
 'use strict';
 
+// this applies to all the guessing games
+const MAX_GUESSES = 5;
+
+var animalGuessCount = 0;
+var animalSuccess = false;
 function guessMyAnimal() {
 
-    // this is where we will write a response to the user; reset it to blank
+    // if user has already used up all their guesses, just ignore.
+    if(animalGuessCount === MAX_GUESSES) {
+        return;
+    }
+
+    // get user's input
+    var guess = document.getElementById('animal-guess').value;
+    console.log ('user\'s guess:', guess);
+    guess = guess.trim().toString().toLowerCase();
+    console.log ('standardized guess:', guess);
+    animalGuessCount ++;
+
+    // check the user's answer and compose a message
+    var message;
+    if(guess === 'llama' || guess === 'llamas') {
+        message = 'You are correct!  I llove llamas.';
+        animalSuccess = true;
+    } else {
+        message = 'No, that animal is not my favorite.';
+    }
+
+    // respond to user
     var p = document.getElementById('animal-answer');
-    p.textContent = '-'; // this has no effect for some reason
-
-    // let user guess multiple times
-    const MAX_GUESSES = 3;
-    for(var guessCount = 1; guessCount <= MAX_GUESSES; guessCount ++) {
-
-        // get the user's guess
-        var guess = prompt ('What is my favorite kind of animal?\nHint: They are llarge and llovely.', 'hedgehog');
-
-        // let the user know if they are correct
-        if(guess === null || guess.trim() === '')
-        {
-            p.textContent = ('Ok, you don\'t have to play.');
-            break; // if they cancel, no need to continue
-        } else if(guess.toLowerCase() === 'llama' || guess.toLowerCase() === 'llamas') {
-            p.textContent = ('You are correct!  I llove llamas.');
-            break; // if they get it right, no need to continue
-        } else {
-            if(MAX_GUESSES - guessCount === 1) {
-                alert('No, sorry.  You get one last chance!');
-            } else if(guessCount < MAX_GUESSES) {
-                alert('No, sorry.  You have ' + (MAX_GUESSES - guessCount) + ' more chances.');
-            } else {
-                p.textContent = ('Nice try, but I\'ll just tell you.  I llove llamas.');
-            }
+    if(animalSuccess) {
+        p.textContent = message;
+    } else {
+        // switch based on remaining guesses
+        switch(MAX_GUESSES - animalGuessCount) {
+            case 0:
+                p.textContent = 'No luck.  My favorite animal is a llama.';
+                break;
+            case 1:
+                p.textContent = message + ' You have one more guess!  Hint: think llarge and llovely!';
+                break;
+            default:
+                p.textContent = message + ' (You have ' + (MAX_GUESSES - animalGuessCount) + ' remaining.)';
         }
-
     }
 
 }
@@ -99,7 +112,6 @@ function getRandomInt(max) {
 // --------------------------
 
 var numberTarget = getRandomInt(100);
-const MAX_GUESSES = 5;
 var numberGuessCount = 0;
 var numberSuccess = false;
 function guessMyNumber() {
@@ -136,7 +148,7 @@ function guessMyNumber() {
         p.textContent = message;
     } else {
         // switch based on remaining guesses
-        switch(MAX_GUESSES - numberGuessCount) { 
+        switch(MAX_GUESSES - numberGuessCount) {
             case 0:
                 p.textContent = 'No luck.  I was thinking of number ' + numberTarget + '.  Refresh to try again.';
                 break;

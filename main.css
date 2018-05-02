@@ -1,4 +1,4 @@
-#animal-answer, #quiz-score {
+#animal-answer, #quiz-score, #number-answer {
     font-family: monospace;
     size: 3em;
     color: blueviolet;
@@ -6,9 +6,11 @@
 }
 
 h1 {
-    color: grey
+    color: grey;
 }
 
 h2 {
-    color: orangered
+    color: white;
+    background-color: rgb(48, 52, 248)
+    
 }
