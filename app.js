@@ -65,6 +65,41 @@ function questionnaire() {
 
         confirm('Wrong! Are you new to reading?');
     }
+}
 
+function correctResult() {
+    var p = document.getElementById('correct');
+    p.textContent = 'Nice work! You got it!';
+}
+
+function incorrectResult() {
+    var p = document.getElementById('correct');
+    p.textContent = 'You\'ll get it next time!';
+}
+
+function game() {
+    
+    var tries = 5;
+    while(tries > 0) {
+        var guess1 = prompt('Guess my age! You\'ll start with 5 tries! Hint: I was born in the late 1980\'s').trim().toLowerCase();
+        if(guess1 === '31' || guess1 === 'thirty one') {
+    
+            confirm('Correct! Well done!!');
+            correctResult();
+            break;
+        }
+        else {
+            
+            tries--;
+            confirm('Guess again! You\'ve got '+ tries + ' tries left!');
+            incorrectResult();
+        }
+
+    }
 
 }
+
+
+
+
+
