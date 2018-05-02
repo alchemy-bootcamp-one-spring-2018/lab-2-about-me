@@ -3,32 +3,72 @@
 
 // Game One - Yes or No answers
 // eslint-disable-next-line
+
+var totalScore = 5 / score * 100;
+var score = 0;
+
 function gameOne(){
-    console.log('beginning of Game One');
-}
 
- /* Confirm - question #3
- var seasonToGo = confirm("My favorite time to visit " + placeToGo + " is the Fall. Do you like to visit " + placeToGo + ' in the Fall?');
- if(seasonToGo) {
- alert('Oh! Cool, ' + userName + ' Fall is my favorite time to visit ' + placeToGo + ' too!');
-     console.log(userName +' prefers to visit in the Fall');
- }
- else {
-     alert('Well ' + userName + ', you should try to visit in the Fall. ' + placeToGo + ' is gorgeous in the Fall');
-     console.log(userName +' prefers to NOT to visit in the Fall.');
- }
- */
+//Does Mark like Dogs better than Cats.   
+    var q1 = confirm('Does Mark like Dogs better than Cats?');
+    if(q1) {
+        var a1 = 'correct';
+        score ++;
+    }
+    else {
+        a1 = 'wrong';
+    }
 
-//Does Mark like Dogs better than Cats.
+    console.log('Mark likes Cats Better than Dogs. You got this one ' + a1 + '.');
 
 //Does Mark like Star Wars?
+    var q2 = confirm('Does Mark like Star Wars?');
+    if(q2) {
+        var a2 = 'correct';
+        score ++;
+    }
+    else {
+        a2 = 'wrong';
+    }
+
+    console.log('Mark likes Star Wars. I was there in \'77! You got this one ' + a2 + '.');
 
 //Has Mark ever worked at McDonald's
+    var q3 = confirm('Has Mark ever worked at McDonald\'s?');
+    if(q3) {
+        var a3 = 'correct';
+        score ++;
+    }
+    else {
+        a3 = 'wrong';
+    }
+    console.log('Mark\'s first job was at McDonald\'s. You got this one ' + a3 + '.');
 
 //Does Mark drink a crapload of Coffee?
+    var q4 = confirm('Does Mark drink a crapload of Coffee?');
+    if(q4) {
+        var a4 = 'correct';
+        score ++;
+    }
+    else {
+        a4 = 'wrong';
+    }
+    console.log('Mark drinks coffee. Oh yes he does. You got this one ' + a4 + '.');
 
 //Would Mark like Sushi for lunch?
+    var q5 = confirm('Would Mark like Sushi for lunch?');
+    if(!q5) {
+        var a5 = 'correct';
+        score ++;
+    }
+    else {
+        a5 = 'wrong';
+    }
+    console.log('Mark prefers his fish cooked. You got this one ' + a5 + '.');
 
+//logs score to the console
+    console.log('You got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%');
+}
 
 
 // Game Two - Five Guesses
@@ -41,7 +81,6 @@ var message; //this stores the HTML that is inserted into the empty div on index
 var gameTwoResults;
 
 function gameTwo(){
-    console.log('beginning of Game Two');
     userGuess = prompt('In which East Coast state was Mark born?');
     
     for(actualGuesses = 1; actualGuesses < 5; actualGuesses ++){
@@ -66,11 +105,11 @@ function gameTwo(){
     }
 }
 
-//print function for Game Two Results
-function print() {
-    var outputDiv = document.getElementById('game-two-results');
-    outputDiv.innerHTML = gameTwoResults;
-}
+// //print function for Game Two Results - ***THIS CODE IS NOT WORKING****
+// function print() {
+//     var outputDiv = document.getElementById('game-two-results');
+//     outputDiv.innerHTML = gameTwoResults;
+// }
 
-//call the function
-print(gameTwoResults);
+// //call the function
+// print(gameTwoResults);
