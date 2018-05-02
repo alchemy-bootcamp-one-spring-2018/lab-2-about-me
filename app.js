@@ -4,9 +4,10 @@
 // Game One - Yes or No answers
 // eslint-disable-next-line
 
-var totalScore = 5 / score * 100;
+var totalScore = parseInt(5 / score) * 100;
 var score = 0;
 
+// eslint-disable-next-line
 function gameOne(){
 
 //Does Mark like Dogs better than Cats.   
@@ -21,7 +22,7 @@ function gameOne(){
 
     console.log('Mark likes Cats Better than Dogs. You got this one ' + a1 + '.');
 
-//Does Mark like Star Wars?
+    //Does Mark like Star Wars?
     var q2 = confirm('Does Mark like Star Wars?');
     if(q2) {
         var a2 = 'correct';
@@ -33,7 +34,7 @@ function gameOne(){
 
     console.log('Mark likes Star Wars. I was there in \'77! You got this one ' + a2 + '.');
 
-//Has Mark ever worked at McDonald's
+    //Has Mark ever worked at McDonald's
     var q3 = confirm('Has Mark ever worked at McDonald\'s?');
     if(q3) {
         var a3 = 'correct';
@@ -44,7 +45,7 @@ function gameOne(){
     }
     console.log('Mark\'s first job was at McDonald\'s. You got this one ' + a3 + '.');
 
-//Does Mark drink a crapload of Coffee?
+    //Does Mark drink a crapload of Coffee?
     var q4 = confirm('Does Mark drink a crapload of Coffee?');
     if(q4) {
         var a4 = 'correct';
@@ -55,7 +56,7 @@ function gameOne(){
     }
     console.log('Mark drinks coffee. Oh yes he does. You got this one ' + a4 + '.');
 
-//Would Mark like Sushi for lunch?
+    //Would Mark like Sushi for lunch?
     var q5 = confirm('Would Mark like Sushi for lunch?');
     if(!q5) {
         var a5 = 'correct';
@@ -66,7 +67,7 @@ function gameOne(){
     }
     console.log('Mark prefers his fish cooked. You got this one ' + a5 + '.');
 
-//logs score to the console
+    //logs score to the console
     console.log('You got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%');
 }
 
@@ -80,6 +81,7 @@ var answer = false; //this triggers the break when true.
 var message; //this stores the HTML that is inserted into the empty div on index.html
 var gameTwoResults;
 
+//eslint-disable-next-line
 function gameTwo(){
     userGuess = prompt('In which East Coast state was Mark born?');
     
