@@ -54,11 +54,13 @@ function guessMyName(){
         p.textContent = 'Sorry,not my name.Try again';
         guessesLeft--
 
-        
+
     }
 
 
 }
+
+    function glitterLover (){
 
 
     
