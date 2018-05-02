@@ -58,23 +58,25 @@ function yesOrNo() {
 function guessNumber() {
     var number = Math.floor(Math.random() * 100);
     var guessCounter = 5;
+    var gameResult = 'Sorry, but you lost. Better luck next time!';
+    console.log(number);
 
     for (var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
         console.log('user guessed', userGuess);
 
-        if (isNaN(userGuess)) {
+        if(isNaN(userGuess)) {
             alert('Please enter a number. Guesses left: ' + guessCounter);
             i--;
         }
-        else if (userGuess < number) {
+        else if(userGuess < number) {
             guessCounter--;
-            alert('Incorrect. Try guessing higher! Guesses left: ' + guessCounter);
+            alert('Try guessing higher! Guesses left: ' + guessCounter);
             console.log('that was too low');
         }
-        else if (userGuess > number) {
+        else if(userGuess > number) {
             guessCounter--;
-            alert('Incorrect. Try guessing lower! Guesses left: ' + guessCounter);
+            alert('Try guessing lower! Guesses left: ' + guessCounter);
             console.log('that was too high');
         }
         else {
@@ -82,6 +84,9 @@ function guessNumber() {
             alert('That\'s right! Way to go! Guesses left: ' + guessCounter);
             console.log('that was just right');
             i = 5;
+            gameResult = 'You win!'
         }
     }
+    var result = document.getElementById('final-result');
+    result.textContent = gameResult;
 }

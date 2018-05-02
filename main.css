@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
-    background-color: lightblue
+    background-color: aliceblue
 }
 
 section {
@@ -11,5 +11,4 @@ section {
 button {
     font-size: 16px;
     border-radius: 5px;
-    background-color: peachpuff
 }
