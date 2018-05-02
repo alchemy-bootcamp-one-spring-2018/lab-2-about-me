@@ -4,56 +4,46 @@
 function startMe(){
     alert('GAME TIME!!!');
     console.log('User is ready to play!');
-}
-//question1
-function namePrompt(){
+    var tries = 5;
+    while(tries > 0){
+        var qOne = prompt('Can you guess my name? I\'ll give you a hint: I share it with a famous explorer').trim().toLowerCase();
+        var name = 'chris'
+        if(qOne === name || qOne === 'christopher'){
 
-    var nameGuess = prompt('Can you guess my name?').trim().toLocaleLowerCase();
-    var nameAnswer = 'chris';
-    console.log('guessed name: ', nameGuess);
-
-    var nameP = document.getElementById('name-response');
-
-    if(nameGuess === nameAnswer || nameGuess === 'Christopher'){
-        nameP.textContent = 'Way to go!!! While I haven\'t travelled the seven seas, I DO love to travel';
-
+            confirm('You guessed it! Onto the next one!');
+            break;
+        }
+        else {
+            tries--;
+            confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...');
+        }   
     }
-    else {
-        nameP.textContent = 'BEEEEP!!! Try again!';
+    while(tries > 0){
+        var qTwo = prompt('Guess Which city I live in! Hint: It\'s the city of Roses!').trim().toLowerCase();
+        var city = 'portland';
+        if(qTwo === city || qTwo === 'pdx'){
+
+            confirm('YUP!!! While I now live in portland, I grew up in the desert of Tucson, AZ.. Onto the next one!');
+            break;
+        }
+        else {
+            tries--;
+            confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...');
+        }   
     }
-}
-//question2
-function cityPrompt(){
+    while(tries > 0){
+        var qThree = prompt('Let\'s see if you can guess my beer of choice. Hint: It\'s one of the most HOPPY').trim().toLowerCase();
+        var beer = 'india pale ale';
+        if(qThree === beer || qThree === 'ipa'){
 
-    var cityGuess = prompt('Which city do I live in?').trim().toLowerCase();
-    var cityAnswer = 'portland';
-    console.log('guessed city: ', cityGuess);
-
-    var cityP = document.getElementById('city-response');
-
-
-    if(cityGuess === cityAnswer || cityGuess === 'pdx'){
-        cityP.textContent = 'That\'s right!!! I live in Great city of portland! I moved here from the desert of Tucson, Arizona';
-    }
-    else {
-        cityP.textContent = 'BEEEEP!!! Try again!';
-    
-    }
-}
-//question3
-function beerPrompt(){
-
-    var beerGuess = prompt('Which beer do i like?').trim().toLowerCase();
-    var beerAnswer = 'ipa';
-    console.log('guessed beer: ', beerGuess);
-
-    var beerP = document.getElementById('beer-response');
-
-    if(beerGuess === beerAnswer || beerGuess === 'india pale ale'){
-        beerP.textContent = 'Nailed it!! I love a good IPA any time of year!';
-    }
-    else {
-        beerP.textContent = 'BEEEEP!!! Try again!';
+            confirm('That\'s RIGHT! I love me a good IPA, any day!');
+            alert('You got them all right! Good job!');
+            break;
+        }
+        else {
+            tries--;
+            confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...')
+        }   
     }
 }
 
