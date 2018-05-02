@@ -63,6 +63,7 @@ p span {
     float: left;
     width: 50%;
     background-color: blue;
+    min-height: 165px;
     margin-bottom: 12px;
     padding-top: 12px;
 }
@@ -71,6 +72,7 @@ p span {
     float: right;
     width: 50%;
     background-color: green;
+    min-height: 165px;
     margin-bottom: 12px;
     padding-top: 12px;
 

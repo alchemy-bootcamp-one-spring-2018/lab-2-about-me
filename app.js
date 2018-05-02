@@ -3,6 +3,7 @@
 
 // Game One - Yes or No answers
 // eslint-disable-next-line
+var userName = 'Placeholder';
 var score = 0;
 var totalScore = '';
 var message1 = '';
