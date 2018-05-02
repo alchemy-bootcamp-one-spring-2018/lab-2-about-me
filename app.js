@@ -109,6 +109,7 @@ function numberOfLetters() {
     //eslint-disable-next-line
     var p = document.getElementById('number-of-letters');
     var word = document.getElementById('word').value;
-
-    alert(word + ' has ' + word.length + ' letters!');
+    var noSpace = word.replace(/ /g, '');
+    var length = noSpace.length;
+    p.textContent = ('Your entry, "' + word + '", has ' + length + ' letters!');
 }
