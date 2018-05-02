@@ -13,7 +13,7 @@ function guessMyAnimal() {
 
         // get the user's guess
         var guess = prompt ('What is my favorite kind of animal?\nHint: They are llarge and llovely.', 'hedgehog');
-        
+
         // let the user know if they are correct
         if(guess === null || guess.trim() === '')
         {
@@ -37,7 +37,7 @@ function guessMyAnimal() {
 }
 
 function quiz() {
-    
+
     var questions = [
         'Do I practice Scientology?',
         'Have I eaten a scorpion?',
@@ -108,7 +108,7 @@ function guessMyNumber() {
     if(numberGuessCount === MAX_GUESSES) {
         return;
     }
-    
+
     // get user's input
     var guess = document.getElementById('number-guess').value;
     console.log ('user\'s guess:', guess);
@@ -134,10 +134,18 @@ function guessMyNumber() {
     var p = document.getElementById('number-answer');
     if(numberSuccess) {
         p.textContent = message;
-    } else if (MAX_GUESSES - numberGuessCount > 0 {
-        p.textContent = message + "  (You have " + MAX_GUESSES - numberGuessCount + " remaining.)"
     } else {
-        p.textContent = 'I was thinking of number ' + numberTarget + ".  Refresh to try again."
+        // switch based on remaining guesses
+        switch(MAX_GUESSES - numberGuessCount) { 
+            case 0:
+                p.textContent = 'No luck.  I was thinking of number ' + numberTarget + '.  Refresh to try again.';
+                break;
+            case 1:
+                p.textContent = message + ' You have one more guess!  Choose wisely!';
+                break;
+            default:
+                p.textContent = message + ' (You have ' + (MAX_GUESSES - numberGuessCount) + ' remaining.)';
+        }
     }
 
 }
