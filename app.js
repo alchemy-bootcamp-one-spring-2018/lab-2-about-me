@@ -3,17 +3,14 @@
 
 // Game One - Yes or No answers
 // eslint-disable-next-line
-
-var totalScore = (5 / score) * 100;
 var score = 0;
+var totalScore = (5 / score) * 100;
 var message1 = '';
-
-
 
 // eslint-disable-next-line
 function gameOne(){
 
-//Does Mark like Dogs better than Cats.   
+//Does Mark like Dogs better than Cats.  
     var q1 = confirm('Does Mark like Dogs better than Cats?');
     if(q1) {
         var a1 = 'correct';
@@ -81,9 +78,6 @@ function gameOne(){
     p.textContent = message1;
 }
 
-
-
-
 // **** BEGIN Game Two - Five Guesses ****
 var totalGuesses = 5;
 var actualGuesses = 0;
@@ -91,7 +85,6 @@ var remainingGuesses = totalGuesses - actualGuesses;
 var userGuess; // this will be for the value the user enters to the prompt
 var answer = false; //this triggers the break when true.
 var message2; //this stores the HTML that is inserted into the empty div on index.html
-var gameTwoResults;
 
 //eslint-disable-next-line
 function gameTwo(){
@@ -117,6 +110,13 @@ function gameTwo(){
         console.log('Mark was born in New Jersey. User Correctly guessed this in ' + actualGuesses + ' tries.'); 
     } else {
         console.log('Mark was born in New Jersey. User took 5 guesses, but did not guess this correctly.');
+    }
+
+    //HTML message from Game Two
+    if(answer === true) {
+        message2 = 'Mark was born in New Jersey. User Correctly guessed this in ' + actualGuesses + ' tries.'; 
+    } else {
+        message2 = 'Mark was born in New Jersey. User took 5 guesses, but did not guess this correctly.';
     }
     var p = document.getElementById('game-two-result');
     p.textContent = message2;
