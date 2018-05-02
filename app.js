@@ -118,10 +118,6 @@ function gameTwo(){
     } else {
         console.log('Mark was born in New Jersey. User took 5 guesses, but did not guess this correctly.');
     }
-}
-
-//print function for Game Two Results
-function gameTwoResults() {
     var p = document.getElementById('game-two-result');
     p.textContent = message2;
 }
