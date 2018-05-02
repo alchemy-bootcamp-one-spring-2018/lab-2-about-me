@@ -152,12 +152,14 @@ var checkResultsTwo = function(index) {
 
 //  Tally the result and display message
 var tallyResults = function(res) {
+    var message = document.getElementById('message');
+
     //  Show the results
     if (res === 5) {
-        var message = document.getElementById('message');
         message.innerHTML = '<h1>Congratulations <span class="title">' + name + '</span>!<br>You scored <span class="shine">100%!!!</span></h1>'        
     } else {
         alert('You scored ' + res + ' out of 5. I think you can do better than that ' + name + '...');
+        message.innerHTML = '<h1 class="fail">FAILURE!!!</h1>';
     }
 
     // Show the bio again

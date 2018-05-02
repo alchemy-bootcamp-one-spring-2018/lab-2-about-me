@@ -1,4 +1,4 @@
-@keyframes shine {
+@keyframes shines {
     0 {
         color: white;
     } 12.5% {
@@ -20,14 +20,33 @@
     }
 }
 
-@keyframes title-glow {
-    from {
-        color: #000;
-    } to {
-        color: #09F;
+@keyframes shine {
+    0 {
+        color: red;
+    } 33% {
+        color: green;
+    } 66% {
+        color: blue;
+    } 100% {
+        color: white;
     }
 }
 
+@keyframes title-glow {
+    from {
+        text-shadow: 0 0 0 #000;
+    } to {
+        text-shadow: 0 0 33px #09F;
+    }
+}
+
+@keyframes fail {
+    from {
+        color: red;
+    } to {
+        color: white;
+    }
+}
 
 body {
     background: linear-gradient(black 69%, steelblue);
@@ -40,8 +59,12 @@ h1 {
     font-size: 4rem;
 }
 
+.fail {
+    animation: fail 50ms alternate infinite;
+}
+
 .title {
-    animation: title-glow 5s ease-out alternate infinite;
+    animation: title-glow 3s ease-out alternate infinite;
 }
 
 .container-main {
@@ -59,5 +82,5 @@ h1 {
 }
 .shine {
     font-size: 5rem;
-    animation: shine 3s forwards infinite;
+    animation: shine 50ms forwards infinite;
 }
