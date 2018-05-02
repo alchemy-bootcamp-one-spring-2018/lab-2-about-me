@@ -1,3 +1,16 @@
+
+#intro {
+    width: 75%;
+    background-color: teal;
+    color: whitesmoke;
+    margin: auto;
+    padding: 10px;
+}
+
 .y-or-n-buttons {
-   color: rgb(149, 0, 255);
+    color: rgb(149, 0, 255);
+ }
+
+.guess-buttons {
+    color: rgb(16, 147, 46)
 }
