@@ -7,7 +7,7 @@ alert('Pleased to meet you, ' + userName + '! Please take a moment to read about
 
 function questionnaire() {
     var question1 = prompt('Have you read the text?').trim().toLowerCase();
-    
+
     if(question1 === 'yes' || question1 === 'y') {
 
         confirm('Great! On to some questions!');
@@ -34,7 +34,7 @@ function questionnaire() {
 
     if(question3 === 'yes' || question3 === 'y') {
 
-        confirm('Correct! Next question!')
+        confirm('Correct! Next question!');
 
     }
     else {
