@@ -4,8 +4,11 @@
 // Game One - Yes or No answers
 // eslint-disable-next-line
 
-var totalScore = parseInt(5 / score) * 100;
+var totalScore = (5 / score) * 100;
 var score = 0;
+var message1 = '';
+
+
 
 // eslint-disable-next-line
 function gameOne(){
@@ -69,16 +72,25 @@ function gameOne(){
 
     //logs score to the console
     console.log('You got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%');
+
+    //creates message to display on HTML page
+    message1 = 'You got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%';
+
+    //sends composed final message and score to the HTML page
+    var p = document.getElementById('game-one-result');
+    p.textContent = message1;
 }
 
 
-// Game Two - Five Guesses
+
+
+// **** BEGIN Game Two - Five Guesses ****
 var totalGuesses = 5;
 var actualGuesses = 0;
 var remainingGuesses = totalGuesses - actualGuesses;
 var userGuess; // this will be for the value the user enters to the prompt
 var answer = false; //this triggers the break when true.
-var message; //this stores the HTML that is inserted into the empty div on index.html
+var message2; //this stores the HTML that is inserted into the empty div on index.html
 var gameTwoResults;
 
 //eslint-disable-next-line
@@ -90,7 +102,7 @@ function gameTwo(){
             
             alert('Great job! You guessed Right! And it only took ' + actualGuesses + ' tries!');
 
-            message = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
+            message2 = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
             
             answer = true;
             break;
@@ -108,8 +120,8 @@ function gameTwo(){
     }
 }
 
-//print function for Game Two Results - ***THIS CODE IS NOT WORKING****
+//print function for Game Two Results
 function gameTwoResults() {
     var p = document.getElementById('game-two-result');
-    p.textContent = message1;
+    p.textContent = message2;
 }

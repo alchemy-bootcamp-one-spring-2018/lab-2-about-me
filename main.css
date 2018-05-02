@@ -20,6 +20,11 @@ body {
     color: #000;
     }
 
+hr  {
+    clear: both;
+    display: block;
+    }
+
 p span {
     font-weight: 700;
     color: rgb(247, 3, 3)
@@ -35,6 +40,7 @@ p span {
     width: 50%;
     background-color: blue;
     margin-bottom: 12px;
+    padding-top: 12px;
 }
 
 #game-two {
@@ -42,4 +48,11 @@ p span {
     width: 50%;
     background-color: green;
     margin-bottom: 12px;
+    padding-top: 12px;
+
+}
+.results {
+    padding: 20px;
+    font-size: 24px;
+    color: #fff;
 }
