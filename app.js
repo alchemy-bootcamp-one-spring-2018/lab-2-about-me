@@ -1,5 +1,5 @@
 'use strict';
-
+/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt*/
 //start button
 function startMe(){
     alert('GAME TIME!!!');
@@ -7,7 +7,7 @@ function startMe(){
     var tries = 5;
     while(tries > 0){
         var qOne = prompt('Can you guess my name? I\'ll give you a hint: I share it with a famous explorer').trim().toLowerCase();
-        var name = 'chris'
+        var name = 'chris';
         if(qOne === name || qOne === 'christopher'){
 
             confirm('You guessed it! Onto the next one!');
@@ -16,7 +16,7 @@ function startMe(){
         else {
             tries--;
             confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...');
-        }   
+        }
     }
     while(tries > 0){
         var qTwo = prompt('Guess Which city I live in! Hint: It\'s the city of Roses!').trim().toLowerCase();
@@ -29,7 +29,7 @@ function startMe(){
         else {
             tries--;
             confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...');
-        }   
+        }
     }
     while(tries > 0){
         var qThree = prompt('Let\'s see if you can guess my beer of choice. Hint: It\'s one of the most HOPPY').trim().toLowerCase();
@@ -42,8 +42,8 @@ function startMe(){
         }
         else {
             tries--;
-            confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...')
-        }   
+            confirm('BEEEP!!!! WRONG!!! you have ' + tries + ' attempts left...');
+        }
     }
 }
 
@@ -52,13 +52,13 @@ function startMe(){
 var scoreCount = 0;
 
 function hobbyPrompt(){
-    
+
     var hobbyGuess = prompt('I\'m afraid of heights, but rock climbing my favorite hobby!!' + 'Am I lying?').trim().toLowerCase();
     var hobbyAnswer = 'yes';
     console.log('guessed: ', hobbyGuess);
-    
+
     var hobbyP = document.getElementById('hobby-response');
-    
+
     if(hobbyGuess === hobbyAnswer || hobbyGuess === 'y'){
         hobbyP.textContent = 'THAT\'S RIGHT!! Although it terrifies me, I love it!';
         scoreCount++;
