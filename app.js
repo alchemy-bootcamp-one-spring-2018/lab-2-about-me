@@ -2,9 +2,10 @@
 
 var userName = prompt('Hi there and welcome! What\'s your name?');
 console.log('user\'s name is', userName);
+// Greeting
 alert('Pleased to meet you, ' + userName + '! Please take a moment to read about me on the page below and play some fun games!');
 
-
+// Yes/No Questionnaire
 function game1() {
     var score = 0;
     var question1 = prompt('Have you read the text?').trim().toLowerCase();
@@ -67,11 +68,12 @@ function game1() {
         confirm('Wrong! Are you new to reading?');
     }
 
+//Score total message
     var scoreTotal = document.getElementById('score');
     scoreTotal.textContent = 'Congratulations! You got ' + score + ' out of 5 correct!';
 
 }
-
+// Functions for declaration of results
 function correctResult() {
     var p = document.getElementById('correct');
     p.textContent = 'Nice work! You got it!';
@@ -82,6 +84,7 @@ function incorrectResult() {
     p.textContent = 'You\'ll get it next time!';
 }
 
+// First guessing game
 function game2() {
     
     var tries = 5;
@@ -104,19 +107,20 @@ function game2() {
 
 }
 
+// Second guessing game
 function game3() {
-    
+
     var tries = 3;
     while(tries > 0) {
         var guess2 = prompt('Guess the year I was born! You already know too much, so! You\'ll start with 3 tries!').trim().toLowerCase();
         if(guess2 === '1987' || guess2 === 'nineteen eighty seven' || guess2 === '87') {
-    
+
             confirm('You got it! Well done!!');
             correctResult();
             break;
         }
         else {
-            
+
             tries--;
             confirm('Guess again! You\'ve got '+ tries + ' tries left!');
             incorrectResult();
