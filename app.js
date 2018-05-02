@@ -66,6 +66,7 @@ function hobbyPrompt(){
         }
         else {
             scoreCount++;
+            console.log('score is now: ', scoreCount);
             document.getElementById('score').innerHTML = scoreCount + '/5';
         }
     }
@@ -89,6 +90,7 @@ function progPrompt(){
         }
         else {
             scoreCount++;
+            console.log('score is now: ', scoreCount);
             document.getElementById('score').innerHTML = scoreCount + '/5';
         }
 
@@ -114,6 +116,7 @@ function gamePrompt(){
         }
         else {
             scoreCount++;
+            console.log('score is now: ', scoreCount);
             document.getElementById('score').innerHTML = scoreCount + '/5';
         }
 
@@ -140,6 +143,7 @@ function broPrompt(){
         }
         else {
             scoreCount++;
+            console.log('score is now: ', scoreCount);
             document.getElementById('score').innerHTML = scoreCount + '/5';
         }
 
@@ -165,6 +169,7 @@ function opalPrompt(){
         }
         else {
             scoreCount++;
+            console.log('score is now: ', scoreCount);
             document.getElementById('score').innerHTML = scoreCount + '/5';
         }
     }
