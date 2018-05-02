@@ -5,13 +5,14 @@ console.log('user\'s name is', userName);
 alert('Pleased to meet you, ' + userName + '! Please take a moment to read about me on the page below and play some fun games!');
 
 
-function questionnaire() {
+function game1() {
+    var score = 0;
     var question1 = prompt('Have you read the text?').trim().toLowerCase();
 
     if(question1 === 'yes' || question1 === 'y') {
 
         confirm('Great! On to some questions!');
-
+        score++;
     }
     else {
 
@@ -23,7 +24,7 @@ function questionnaire() {
     if(question2 === 'yes' || question2 === 'y') {
 
         confirm('Correct! Next question!');
-
+        score++;
     }
     else {
 
@@ -35,7 +36,7 @@ function questionnaire() {
     if(question3 === 'yes' || question3 === 'y') {
 
         confirm('Correct! Next question!');
-
+        score++;
     }
     else {
 
@@ -47,7 +48,7 @@ function questionnaire() {
     if(question4 === 'no' || question4 === 'n') {
 
         confirm('Correct! Next question!');
-
+        score++;
     }
     else {
 
@@ -59,12 +60,16 @@ function questionnaire() {
     if(question5 === 'no' || question5 === 'n') {
 
         confirm('Correct! Well done!!');
-
+        score++;
     }
     else {
 
         confirm('Wrong! Are you new to reading?');
     }
+
+    var scoreTotal = document.getElementById('score');
+    scoreTotal.textContent = 'Congratulations! You got ' + score + ' out of 5 correct!';
+
 }
 
 function correctResult() {
@@ -77,7 +82,7 @@ function incorrectResult() {
     p.textContent = 'You\'ll get it next time!';
 }
 
-function game() {
+function game2() {
     
     var tries = 5;
     while(tries > 0) {
@@ -99,6 +104,27 @@ function game() {
 
 }
 
+function game3() {
+    
+    var tries = 3;
+    while(tries > 0) {
+        var guess2 = prompt('Guess the year I was born! You already know too much, so! You\'ll start with 3 tries!').trim().toLowerCase();
+        if(guess2 === '1987' || guess2 === 'nineteen eighty seven' || guess2 === '87') {
+    
+            confirm('You got it! Well done!!');
+            correctResult();
+            break;
+        }
+        else {
+            
+            tries--;
+            confirm('Guess again! You\'ve got '+ tries + ' tries left!');
+            incorrectResult();
+        }
+
+    }
+
+}
 
 
 
