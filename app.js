@@ -1,3 +1,5 @@
+/*exported likesBurritos likesBeer speaksFrench cruiseShip likesVG age reverseWord*/
+
 'use strict';
 
 //to count correct answers
@@ -9,10 +11,6 @@ function likesBurritos() {
     console.log('User answered', answer);
 
     var response = document.getElementById('response');
-
-    /*if(answer.trim().toLowerCase() !== 'yes' || answer.trim().toLowerCase() !== 'y' || answer.trim().toLowerCase() !== 'no' || answer.trim().toLowerCase() !== 'n') {
-        alert('Please answer yes or no.');
-    }*/
 
     if(answer.trim().toLowerCase() === 'yes' || answer.trim().toLowerCase() === 'y') {
         alert('Correct!');
@@ -124,5 +122,23 @@ function age() {
     console.log('Correct answers', correct);
 }
 
+//Asks user for word and prints reversed word and character count, alerts user if word is a palindrome
+function reverseWord() {
+    var wordInput = document.getElementById('word');
+    var reversedWord = document.getElementById('reversed-word');
+    var newReversedWord = '';
+    var word = wordInput.value;
+    var count = 0;
+
+    for(var idx = word.length - 1; idx >= 0 ; idx--) {
+        newReversedWord += word[idx];
+        count++;
+    }
+    reversedWord.textContent = 'Reversed ' + count + ' lettered word: ' + newReversedWord.toLowerCase();
+    if(word.trim().toLowerCase() === newReversedWord.trim().toLowerCase()) {
+        alert('Whoa, you wrote a palindrome? You get all the points!!');
+        console.log(newReversedWord);
+    }
+}
 
 
