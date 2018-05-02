@@ -50,8 +50,14 @@ function guessYesNo(){
     } else {
         alert('How do you think I made this?!');
     }
-    //This displayed the final score on the screen
-    p.textContent = 'You got ' + i + ' questions right! Good job!';
+    //This displays the final score on the screen
+    if(i > 1){
+        p.textContent = 'You got ' + i + ' questions right! Good job!';
+    } else if(i === 1){
+        p.textContent = 'You got ' + i + ' question right! Not... the best...';
+    } else if(i === 0){
+        p.textContent = 'You got ' + i + ' questions right. Difficult to believe really.';
+    }
 }
 //variable is later changed to display something different based upon answers
 var p = document.getElementById('yes-no-response');
@@ -73,6 +79,8 @@ function lastName(){
             alert('Sorry, you are out of chances!');
             p.textContent = 'Better luck next time!';
             break;
+        } else if(lastNameQ !== true){
+            alert('Come one! Just guess!');
         }
     }
 }
