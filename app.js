@@ -108,7 +108,6 @@ function favoriteAnimal(){
     }
 }
 
-
 function rockPaperScissors(entry){
     var choices = ['rock', 'paper', 'scissors'];
     var compSelection = function(){
@@ -118,34 +117,24 @@ function rockPaperScissors(entry){
     var choice = compSelection();
     console.log(choice);
     var response = document.getElementById('rps-display');
-    var compScore = 0;
-    var userScore = 0;
-    var q = document.getElementById('score-card');
-    q.textContent = 'You have ' + userScore + ' points and the computer has ' + compScore + ' points.';
     if(entry === 'rock' && choice === 'scissors'){
         response.textContent = 'Scissors! You won!';
-        userScore++;
     } else if(entry === 'rock' && choice === 'paper'){
         response.textContent = 'Paper! You lose!';
-        compScore++;
     } else if(entry === 'rock' && choice === 'rock'){
         response.textContent = 'Rock! Draw!';
     } else if(entry === 'paper' && choice === 'scissors'){
         response.textContent = 'Scissors! You lose!';
-        compScore++;
     } else if(entry === 'paper' && choice === 'paper'){
         response.textContent = 'Paper! Draw!';
     } else if(entry === 'paper' && choice === 'rock'){
         response.textContent = 'Rock! You win!';
-        userScore++;
     } else if(entry === 'scissors' && choice === 'scissors'){
         response.textContent = 'Scissors! Draw!';
     } else if(entry === 'scissors' && choice === 'paper'){
         response.textContent = 'Paper! You win!';
-        userScore++;
     } else if(entry === 'scissors' && choice === 'rock'){
         response.textContent = 'Rock! You lose!';
-        compScore++;
     }
 }
 
