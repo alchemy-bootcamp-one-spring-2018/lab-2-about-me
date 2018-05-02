@@ -59,7 +59,7 @@ function yesOrNo() {
 function guessNumber() {
     var number = Math.floor(Math.random() * 100);
     var guessCounter = 5;
-    var gameResult = 'Sorry, but you lost. Better luck next time!';
+    var gameResult = 'Sorry, but you lost. The number was ' + number + '. Better luck next time!';
 
     for(var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
