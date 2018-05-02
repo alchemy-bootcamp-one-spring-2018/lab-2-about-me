@@ -1,92 +1,83 @@
-/* exported reportReplicant, factionLocation, factionLocation2, factionLocation3, factionLocation4 */
+/* exported gameYesNo, gameLikes, guessFavoriteColor */
 'use strict';
 
-var quiz = [
-    'Are you a citizen?',
-    'Do you have loyalty to the human race?',
-    'You see a turtle lying on its back in the hot sun, do you flip it over?',
-    'There is an illegal replicant living next door to you, do you turn it in to the authorities?',
-    'Do you approve of the Tyrell Corp. leadership?'
-];
+var maxGuesses = 5;
 
-function connect() {
-    for(var i = 0; i < 5; i++) {
-        var test = confirm(quiz[i]);
-        if(test !== true){
-            alert('ANSWER NOT APPROVED');
-            i = 10;}
+function gameLikes() {
+    console.log('beginning of likes game');
+    var correctAnswer = ('San Francisco');
+    var answer;
+    var correct = false;
+    var p = document.getElementById('likes-response');
+    // loop for guesses
+    for(var i = 0; i < maxGuesses; i++) {
+        answer = prompt('Where was the subject "born"?');
+        console.log('Answer: ', answer, '.' + ' Guess attempts = ', i);
+        if(answer === correctAnswer) {
+            correct = true;
+            break;
+        }
+        if(answer === null){
+            break;
+        }
+    }
+
+    if(correct) {
+        alert('CONFIRMED - SUBJECT INITIALIZED IN SAN FRANCISCO');
+        console.log('answer attempts:', i++, 'out of 5');
+        p.textContent = ('INPUT ATTEMPTS: ', i++);
 
     }
+    else {
+        alert('INPUT ERROR - DATA INCORRECT - AUTHORITIES NOTIFIED');
+    }
 }
-connect();
-function reportReplicant() {
-    var answer = prompt('Knowledge of Replicant: Verification Required. What model is the subject?');
+
+var counter = 0;
+
+function gameYesNo() {
+    var answer = prompt('Knowledge of Replicant: Verification Required. Is the Model a Nexus 6?');
     console.log('user guessed', answer);
-    var p = document.getElementById('report-response');
+    var p = document.getElementById('y-n-response');
 
-    if(answer.trim().toLowerCase() === 'nexus 6') {
-        answer = 1;
-        var answer2 = prompt('Which planet colony was the subject assigned to?');
+    if(answer.trim().toLowerCase() === 'yes' || 'y') {
+        counter++;
+        var answer2 = prompt('Is the replicants current location: Portland Oregon?');
         console.log('user guessed', answer2);
-        var p = document.getElementById('report-response');
 
-        if(answer2.trim().toLowerCase() === 'titan') {
-            answer = 2;
-            var answer3 = prompt('What is the name of the replicant para-military faction?');
+        if(answer2.trim().toLowerCase() === 'yes' || 'y') {
+            counter++;
+            var answer3 = prompt('Has the replicant assimilated the Helicopter.flying module?');
             console.log('user guessed', answer3);
-            var p = document.getElementById('report-response');
 
-            if(answer3.trim().toLowerCase() === 'arm of titan') {
-                answer = 3;
-                var answer4 = prompt('What is the name of the replicant martyr honored by this faction');
+            if(answer3.trim().toLowerCase() === 'no' || 'n') {
+                counter++;
+                var answer4 = prompt('Has the replicant began the Alchemy data module?);
                 console.log('user guessed', answer4);
-                var p = document.getElementById('report-response');
 
-                if(answer4.trim().toLowerCase() === 'roy batty') {
-                    answer = 4;
-                    var answer5 = prompt('What sector was the replicant last seen near?');
+                if(answer4.trim().toLowerCase() === 'yes' || 'y') {
+                    counter++;
+                    var answer5 = prompt('If you discover the subject replicant in your sector, will you notify TYRELL CORP?');
                     console.log('user guessed', answer5);
-                    var p = document.getElementById('report-response');
-                    
-                    if(answer5.trim().toLowerCase() === 'ceres') {
-                        answer = 5;
-                        p.textContent = ('Total Evaluation: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');
+
+                    if(answer5.trim().toLowerCase() === 'yes' || 'y') {
+                        counter++;
+                        p.textContent = ('Total Evaluation: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
                     }
                 }
                 else {
-                    p.textContent = ('INCORRECT INPUT: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');
+                    p.textContent = ('INCORRECT INPUT: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
                 }
             }
             else {
-                p.textContent = ('INCORRECT INPUT: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');
+                p.textContent = ('INCORRECT INPUT: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
             }
         }
         else {
-            p.textContent = ('INCORRECT INPUT: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');
-        }        
+            p.textContent = ('INCORRECT INPUT: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
+        }
     }
     else {
-        p.textContent = ('INCORRECT INPUT: ' + answer + '/5' + ' (' + Math.floor((answer / 5) * 100) + '%)');   
+        p.textContent = ('INCORRECT INPUT: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
     }
-}
-
-function factionLocation() {
-    var p = document.getElementById('location-response');
-    p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Titan. User tagged for inspection.';
-}
-
-function factionLocation2() {
-    var p = document.getElementById('location-response');
-    p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Sirius. User tagged for inspection.';
-}
-
-function factionLocation3() {
-    var p = document.getElementById('location-response');
-    p.textContent = 'Current telemetry indicates Arm of Titan faction is not on Europa. User tagged for inspection.';
-}
-
-function factionLocation4() {
-    var p = document.getElementById('location-response');
-    p.textContent = 'POSSIBLE LOCATION RECORDED';
-    alert('THANK YOU CITIZEN');
 }
