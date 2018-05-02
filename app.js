@@ -19,7 +19,7 @@ function AboutCarmen() {
     var siblingAnswer = prompt('Do I have a brother?');
     console.log('user answer to Sibling question', siblingAnswer);
 
-    if(siblingAnswer.trim().toLowerCase() === 'yes' || siblingAnswer.trim().toLowerCase() === 'y'){
+    if (siblingAnswer.trim().toLowerCase() === 'yes' || siblingAnswer.trim().toLowerCase() === 'y'){
         alert ('Yes! I have a brother.');
         correctCounter ++;
     }
@@ -30,7 +30,7 @@ function AboutCarmen() {
     var musicAnswer = prompt('Do I know how to play the violin?');
     console.log('user answer to Music question', musicAnswer);
 
-    if(musicAnswer.trim().toLowerCase() === 'yes' || musicAnswer.trim().toLowerCase() === 'y'){
+    if (musicAnswer.trim().toLowerCase() === 'yes' || musicAnswer.trim().toLowerCase() === 'y'){
         alert ('That is correct! I know how to play the violin');
         correctCounter ++;
     }
@@ -41,7 +41,7 @@ function AboutCarmen() {
     var majorAnswer = prompt('Did I study Chemistry in college?');
     console.log('user answer to Major of study question', majorAnswer);
 
-    if(majorAnswer.trim().toLowerCase() === 'no' || majorAnswer.trim().toLowerCase() === 'n'){
+    if (majorAnswer.trim().toLowerCase() === 'no' || majorAnswer.trim().toLowerCase() === 'n'){
         alert ('That is correct! I studied Mathematics');
         correctCounter ++;
     }
@@ -52,7 +52,7 @@ function AboutCarmen() {
     var langAnswer = prompt('Is my first job a COBOL programmer?');
     console.log('user answer to Programming Language question', langAnswer);
 
-    if(langAnswer.trim().toLowerCase() === 'yes' || langAnswer.trim().toLowerCase() === 'y') {
+    if (langAnswer.trim().toLowerCase() === 'yes' || langAnswer.trim().toLowerCase() === 'y') {
 
         correctCounter ++;
         p.textContent = 'Your answer is correct! You scored  a total of ' +  correctCounter + ' correct answers';
@@ -62,36 +62,22 @@ function AboutCarmen() {
     }
 }
 
+
 function MoreAboutCarmen() {
-    var passionAnswer = prompt('Can you guess what I am passionate about?');
-    console.log('user answer to passion Question1', passionAnswer);
-
-    var p = document.getElementById('about-carmen-response');
-    var tries = 2;
-
-    if (passionAnswer.trim().toLowerCase() === 'real foods') {
-        tries == 0;
-        alert ('Congratulations! You got it right the first time! ')
-    }   
-    else {
-        for (var tries = 2; passionAnswer.trim().toLowerCase() != 'real foods'; tries-- ) {
     
-
-            if (tries === 2) {
-                passionAnswer = prompt('Sorry. Please try again');
-            }
-            else if (tries === 1) {
-                p.textContent = 'You have ' + tries + ' chance to guess but here is a hint: It is made of two words.  One of the words spell as Foods';       
-            }
-            else {
-                alert ('I am sorry you have exhausted all the tries')
-                break;
-            }        
-
+    var p = document.getElementById('about-carmen-response');
+    var attempt = 1;
+    
+    for (var tries = 2; tries > -1; tries-- ) {
+        var passionAnswer = prompt('Can you guess what I am passionate about?');
+        console.log('user answer to passion Question1', passionAnswer);
+        if (passionAnswer.trim().toLowerCase() === 'real foods') {
+            alert ('Congratulations! You got it right in ' + attempt + ' times');
+            break;
+        }
+        else {
+            alert (' You have ' + tries + ' more attempt!');
+            attempt++;
         }
     }
 }   
-            
-        
-    
-
