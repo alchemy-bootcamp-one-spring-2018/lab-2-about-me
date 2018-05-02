@@ -107,17 +107,28 @@ function favoriteAnimal(){
         document.getElementById('animal-btn').disabled = true;
     }
 }
+/* This was my extra curricular project for the day. I made a rock, paper, scissors game
+that you can play in the browser. I had to do a bit of googling for the math methods to
+make the random selection work, but once I figured out how it worked it really wasn't
+too difficult. The program chooses a random selection from the array and has a series of
+else if statements that give it win conditions. The program also has a scoreboard that updates
+on every play of the game. Pretty cool!*/
 var compScore = 0;
 var userScore = 0;
+//function with single entry parameter. in index.html you will find buttons
+// each with rock, paper, and scissors input parameters.
 function rockPaperScissors(entry){
     var choices = ['rock', 'paper', 'scissors'];
     var compSelection = function(){
+        //this math chooses a random number between 0 and .999, multiplies it by 3, floors
+        //it, and then chooses an item from the array based on that number.
         var compChoice = choices[Math.floor(Math.random() * 3)];
         return compChoice;
     };
     var choice = compSelection();
     console.log(choice);
     var response = document.getElementById('rps-display');
+    //else if statements featuring match conditions and score increases for victories
     if(entry === 'rock' && choice === 'scissors'){
         response.textContent = 'Scissors! You won!';
         userScore++;
@@ -143,6 +154,7 @@ function rockPaperScissors(entry){
         response.textContent = 'Rock! You lose!';
         compScore++;
     }
+    //this displays the score, up above the function is where the point values are stored
     var q = document.getElementById('score-card');
     q.textContent = 'You have ' + userScore + ' points and the computer has ' + compScore + ' points.';
 }
