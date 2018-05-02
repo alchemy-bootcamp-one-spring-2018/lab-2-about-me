@@ -103,7 +103,7 @@ function gameTwo(){
             remainingGuesses = totalGuesses - actualGuesses;
             userGuess = prompt('Sorry, that\'s not correct. Please Guess again. You have ' + remainingGuesses + ' left.');
         }
-
+        //insert message if number of guesses is exhausted. However, must check for value of answer so this doesn't show everytime.
     }
     //console log results from Game Two
     if(answer === true) {
