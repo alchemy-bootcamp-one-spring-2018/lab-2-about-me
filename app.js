@@ -236,3 +236,23 @@ var quizColor = function() {
 
     attempts++;
 }
+
+//  Check palindrome
+var palindromeCheck = function() {
+    var wordElement = document.getElementById('palindrome');
+    var regExp = /[^a-zA-Z]+/;
+    var word = wordElement.value;
+    var checkWord = word.trim().replace(regExp, '');
+    console.log(word);
+    if (word === '' || word.length !== checkWord.length) {
+        alert('Please enter a valid "word" to check.');
+        return;
+    }
+    var newWord = word.trim().toLocaleLowerCase();
+    console.log(word.split('').reverse().join(''));
+    if (newWord === newWord.split('').reverse().join('')) {
+        alert('Congratulations ' + name + '! It looks like "' + word + '" is a palindrome! Also, it contains ' + word.split('').length + ' characters.');
+    } else {
+        alert('Hey ' + name + '! It looks like "' + word + '" is not a palindrome. It\'s reverse is "' + word.split('').reverse().join('') + '" and it contains ' + word.split('').length + ' characters.');
+    }
+}
