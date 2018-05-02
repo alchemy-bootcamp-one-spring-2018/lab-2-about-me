@@ -2,5 +2,9 @@ body {
     text-align: center;
     color:darkgrey;
     background-color: steelblue;
-    
+}
+
+#score{
+    font-size:50;
+    color: red;
 }

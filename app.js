@@ -70,8 +70,10 @@ function hobbyPrompt(){
     var hobbyP = document.getElementById('hobby-response');
     
     if(hobbyGuess === hobbyAnswer || hobbyGuess === 'y'){
-        scoreCount++;
         hobbyP.textContent = 'THAT\'S RIGHT!! Although it terrifies me, I love it!';
+        scoreCount++;
+        document.getElementById('score').innerHTML = scoreCount + '/5';
+
     }
     else {
         hobbyP.textContent = 'Sorry, try again.....';
@@ -90,6 +92,8 @@ function progPrompt(){
     if(progGuess === progAnswer || progGuess === 'y'){
         progP.textContent = 'That\'s right, I LIED!!! MWUAHAHAH. Good job catching me.';
         scoreCount++;
+        document.getElementById('score').innerHTML = scoreCount + '/5';
+
     }
     else {
         progP.textContent = 'Sorry, try again.....';
@@ -108,6 +112,8 @@ function gamePrompt(){
     if(gameGuess === gameAnswer || gameGuess === 'n'){
         gameP.textContent = 'Yes, it\'s true! I would play cribbage ANY time!';
         scoreCount++;
+        document.getElementById('score').innerHTML = scoreCount + '/5';
+
     }
     else {
         gameP.textContent = 'Sorry, try again.....';
@@ -125,7 +131,9 @@ function broPrompt(){
 
     if(broGuess === broAnswer || broGuess === 'n'){
         broP.textContent = 'It\'s true! I have a twin brother who is two minutes younger than me!';
-        scoreCount ++;
+        scoreCount++;
+        document.getElementById('score').innerHTML = scoreCount + '/5';
+
     }
     else {
         broP.textContent = 'Sorry, try again....';
@@ -143,14 +151,10 @@ function opalPrompt(){
 
     if(opalGuess === opalAnswer || opalGuess === 'n'){
         opalP.textContent = 'I\'m not lying! I lived in Opal Creek Ancient Forest, cooking for visitors for two years!';
-        scoreCount + 1;
+        scoreCount ++;
+        document.getElementById('score').innerHTML = scoreCount + '/5';
     }
     else {
         opalP.textContent = 'Sorry, try again....';
     }
 }
-
-
-var scoreP = document.getElementById('score');
-scoreP.textContent = scoreCount;
-console.log(scoreCount);
