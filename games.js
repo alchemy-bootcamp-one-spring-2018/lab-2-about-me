@@ -8,11 +8,6 @@ var animalGuessCount = 0;
 var animalSuccess = false;
 function guessMyAnimal() {
 
-    // if user has already used up all their guesses, just ignore.
-    if(animalGuessCount === MAX_GUESSES) {
-        return;
-    }
-
     // get user's input
     var guess = document.getElementById('animal-guess').value;
     console.log ('user\'s guess:', guess);
@@ -31,13 +26,16 @@ function guessMyAnimal() {
 
     // respond to user
     var p = document.getElementById('animal-answer');
+    var btn = document.getElementById('animal-button');
     if(animalSuccess) {
         p.textContent = message;
+        btn.disabled = true;
     } else {
         // switch based on remaining guesses
         switch(MAX_GUESSES - animalGuessCount) {
             case 0:
                 p.textContent = 'No luck.  My favorite animal is a llama.';
+                btn.disabled = true;
                 break;
             case 1:
                 p.textContent = message + ' You have one more guess!  Hint: think llarge and llovely!';
@@ -116,15 +114,10 @@ var numberGuessCount = 0;
 var numberSuccess = false;
 function guessMyNumber() {
 
-    // if user has already used up all their guesses, just ignore.
-    if(numberGuessCount === MAX_GUESSES) {
-        return;
-    }
-
     // get user's input
     var guess = document.getElementById('number-guess').value;
     console.log ('user\'s guess:', guess);
-    guess = guess.trim();
+    guess = parseInt(guess.trim()); // if can't be parsed, returns NaN
     numberGuessCount ++;
 
     // check the user's answer and compose a message
@@ -144,13 +137,16 @@ function guessMyNumber() {
 
     // respond to user
     var p = document.getElementById('number-answer');
+    var btn = document.getElementById('number-button');
     if(numberSuccess) {
         p.textContent = message;
+        btn.disabled = true;
     } else {
         // switch based on remaining guesses
         switch(MAX_GUESSES - numberGuessCount) {
             case 0:
                 p.textContent = 'No luck.  I was thinking of number ' + numberTarget + '.  Refresh to try again.';
+                btn.disabled = true;
                 break;
             case 1:
                 p.textContent = message + ' You have one more guess!  Choose wisely!';
