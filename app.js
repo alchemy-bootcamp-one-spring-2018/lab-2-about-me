@@ -60,36 +60,38 @@ function AboutCarmen() {
     else {
         p.textContent = 'Last question is not correct! You scored ' +  correctCounter + ' correct answers';
     }
-    }
+}
 
-    function MoreAboutCarmen() {
-        var passionAnswer = prompt('Can you guess what I am passionate about?');
-        console.log('user answer to passion Question1', passionAnswer);
+function MoreAboutCarmen() {
+    var passionAnswer = prompt('Can you guess what I am passionate about?');
+    console.log('user answer to passion Question1', passionAnswer);
+
+    var p = document.getElementById('about-carmen-response');
+    var tries = 2;
+
+    if (passionAnswer.trim().toLowerCase() === 'real foods') {
+        tries == 0;
+        alert ('Congratulations! You got it right the first time! ')
+    }   
+    else {
+        for (var tries = 2; passionAnswer.trim().toLowerCase() != 'real foods'; tries-- ) {
     
-        var p = document.getElementById('about-carmen-response');
-        var tries = 2;
 
-        if (passionAnswer.trim().toLowerCase() === 'real foods') {
-            tries == 0;
-            alert ('Congratulations! You got it right the first time! ')
-        }   
-        else {
-            for (var tries = 2; passionAnswer.trim().toLowerCase() != 'real foods'; tries-- )
-        
+            if (tries === 2) {
+                passionAnswer = prompt('Sorry. Please try again');
+            }
+            else if (tries === 1) {
+                p.textContent = 'You have ' + tries + ' chance to guess but here is a hint: It is made of two words.  One of the words spell as Foods';       
+            }
+            else {
+                alert ('I am sorry you have exhausted all the tries')
+                break;
+            }        
 
-        if (tries == 2) {
-             var passionAnswer = prompt('Sorry. Please try again');
-             tries --;
-               }
-               else if (tries == 1) {
-                    p.textContent = 'You have ' + tries + ' chance to guess but here is a hint: It is made of two words.  One of the words spell as Foods';       
-                   }
-                   else {
-                       alert ('I am sorry you have exhausted all the tries')
-                    }        
-
-           }
-
+        }
+    }
+}   
+            
         
     
 
