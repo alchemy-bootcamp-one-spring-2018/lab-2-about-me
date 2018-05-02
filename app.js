@@ -45,7 +45,7 @@ function speaksFrench() {
         response2.textContent = 'No, je ne parle pas français';
     }
     if(answer2.trim().toLowerCase() === 'no' || answer2.trim().toLowerCase() === 'n') {
-        response2.textContent = 'That\'s right, maybe after I learn JavaScript';
+        response2.textContent = 'That\'s right, maybe after I learn JavaScript.';
     }
 }
 
@@ -78,3 +78,42 @@ function likesVG() {
         response4.textContent = 'That\'s right. I don\'t like \'em. No, I love them!';
     }
 }
+
+//Asks user to guess my age
+function age() {
+    var guess = prompt('Guess my age');
+    console.log('User guessed', guess);
+    var reply = document.getElementById('reply');
+    for(var i = 2; i > 0; i--) {
+        console.log(guess);
+        if(guess == 30){
+            reply.textContent = 'You got it!';
+            break;
+        }
+        else if(guess > 30) {
+            guess = prompt('Try again, you have ' + i + ' guesses left.');
+            reply.textContent = 'I look that old, huh? I gotta up my beauty regimen.';
+        }
+        else if(guess < 30) {
+            guess = prompt('Try again, you have ' + i + ' guesses left.');
+            reply.textContent = 'You\'re just trying to score points with your answer. Well, it\'s working!';
+        }
+    }
+    
+
+   /* if(parseInt(guess, 10) === 30) {
+        reply.textContent = 'You got it!';
+    }
+    if(guess > 30) {
+        reply.textContent = 'I look that old, huh? I gotta up my beauty regimen.';
+        alert('Try again, you have guesses left.');
+    }
+    if(parseInt(guess, 10) < 30) {
+        reply.textContent = 'You\'re just trying to score points with your answer. Well, it\'s working!';
+        alert('Try again, you have guesses left.');
+    }
+    else {
+        reply.textContent = 'That\'s not even a number!';
+    }*/
+}
+
