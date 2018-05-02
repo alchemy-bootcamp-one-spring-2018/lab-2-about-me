@@ -82,7 +82,7 @@ function gameOne(){
     console.log(userName + ' got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%');
 
     //creates message to display on HTML page
-    message1 = userName + 'got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%';
+    message1 = userName + ' got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%';
 
     //sends composed final message and score to the HTML page
     var p = document.getElementById('game-one-result');
@@ -118,21 +118,20 @@ function gameTwo(){
             remainingGuesses = totalGuesses - actualGuesses;
             userGuess = prompt('Sorry, ' + userName + ' that\'s not correct. Please guess again. You have ' + remainingGuesses + ' left.');
         }
-        //insert message if number of guesses is exhausted. However, must check for value of answer so this doesn't show everytime.
+        //message if number of guesses is exhausted. 
+        if(remainingGuesses < 1){
+            alert('Sorry ' + userName + ', but you have run out of guesses. Nice try!');
+        }
     }
     //console log results from Game Two
     if(answer === true) {
         console.log('Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries!'); 
+        message2 = 'Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries.';
     } else {
         console.log('Mark was born in New Jersey. ' + userName + ' took 5 guesses, but did not guess this correctly.');
-    }
-
-    //HTML message from Game Two
-    if(answer === true) {
-        message2 = 'Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries.'; 
-    } else {
         message2 = 'Mark was born in New Jersey. ' + userName + ' took 5 guesses, but did not guess this correctly.';
     }
+
     var p = document.getElementById('game-two-result');
     p.textContent = message2;
 }
