@@ -141,7 +141,6 @@ function gameTwo(){
 
     //displays alert message if number of guesses is exhausted.
     if(actualGuesses >= 5){
-        console.log('this is alert');
         alert('Sorry ' + userName + ', but you have run out of guesses. Nice try!');
     }
 

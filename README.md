@@ -10,3 +10,4 @@ The webpage captures user information through the process of playing the games, 
 1. Displaying number of remaining guesses and results of games in alerts
 1. Logging questions, answers and game results to the console
 1. Displaying a message within each game <div> that contains the results of the game, and score if applicable.
+1. Uses the dynamic variable of userName in the greeting displayed on the HTML page as well as the messages displayed after games are played, prompts, alerts and console.log messages.
