@@ -137,11 +137,15 @@ function gameTwo(){
             remainingGuesses = totalGuesses - actualGuesses;
             userGuess = prompt('Sorry, ' + userName + ' that\'s not correct. Please guess again. You have ' + remainingGuesses + ' left.');
         }
-        //message if number of guesses is exhausted. 
-        if(remainingGuesses < 1){
-            alert('Sorry ' + userName + ', but you have run out of guesses. Nice try!');
-        }
+
+        
     }
+    //message if number of guesses is exhausted. 
+    if(actualGuesses >= 5){
+        console.log('this is alert');
+        alert('Sorry ' + userName + ', but you have run out of guesses. Nice try!');
+    }
+
     //console log results from Game Two
     if(answer === true) {
         console.log('Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries!'); 
