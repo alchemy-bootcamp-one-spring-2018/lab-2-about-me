@@ -60,7 +60,9 @@ function guessMyName(){
 
 }
 
-    function glitterLover (){
+    function glitterLover ();
+        var p = document.getElementById ('glitter-lover-response');
+        p.textContent = 'Of course everyone loves glitter!';
 
+    }
 
-    
