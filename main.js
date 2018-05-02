@@ -53,8 +53,12 @@ function guessMyName(){
     else {
         p.textContent = 'Sorry,not my name.Try again';
         guessesLeft--
+
+        
     }
-    }
+
+
+}
 
 
     
