@@ -14,7 +14,7 @@ function yesNoGame() {
     var p = document.getElementById('disneyland-response');
 
     if (!answer) {
-        alert('Field blank, please type a response');
+        alert('Field blank, please type a response.');
     }
     else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
@@ -32,7 +32,7 @@ function yesNoGame() {
     var p = document.getElementById('french-toast-response');
 
     if (!answer) {
-        alert('Field blank, please type a response');
+        alert('Field blank, please type a response.');
     }
     else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
@@ -50,7 +50,7 @@ function yesNoGame() {
     var p = document.getElementById('germany-response');
 
     if (!answer) {
-        alert('Field blank, please type a response');
+        alert('Field blank, please type a response.');
     }
     else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
@@ -68,7 +68,7 @@ function yesNoGame() {
     var p = document.getElementById('swimmer-response');
 
     if (!answer) {
-        alert('Field blank, please type a response');
+        alert('Field blank, please type a response.');
     }
     else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
@@ -86,7 +86,7 @@ function yesNoGame() {
     var p = document.getElementById('my-vegetables-response');
 
     if (!answer) {
-        alert('Field blank, please type a response');
+        alert('Field blank, please type a response.');
     }
     else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
@@ -99,7 +99,7 @@ function yesNoGame() {
 
     //SCORE KEEPER
     var finalScore = document.getElementById('final-score');
-    finalScore.textContent = 'Your final score was ' + score + '/5.';
+    finalScore.textContent = 'Your final score is ' + score + '/5.';
    
 }
 
@@ -118,7 +118,7 @@ function guessMyHomeState() {
         console.log('user guessed', answer);
 
         if (!answer) {
-            alert('Field blank, please type a response');
+            alert('Field blank, please type a response.');
         }
         else if(answer.trim().toLowerCase() === 'michigan'){
             alert('You got it! GO BLUE!!');
@@ -131,7 +131,7 @@ function guessMyHomeState() {
                 var guess = ' guess';
             }
             else {
-                guess = ' guesses'
+                guess = ' guesses';
             }
             alert('I\'m sorry that is not correct. You have ' + remainingGuesses + guess + ' remaining.');
             p.textContent = 'You did not complete the game. Try again (Hint: What do you wear on your hands to stay warm in winter?';
