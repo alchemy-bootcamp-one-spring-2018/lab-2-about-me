@@ -33,7 +33,7 @@ function guessMyAnimal() {
             }
         }
 
-        console.log ('guesses remaining:', MAX_GUESSES - guessCount)
+        console.log ('guesses remaining:', MAX_GUESSES - guessCount);
 
     }
 
