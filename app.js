@@ -109,9 +109,6 @@ function numberOfLetters() {
     //eslint-disable-next-line
     var p = document.getElementById('number-of-letters');
     var word = document.getElementById('word').value;
-    console.log(word);
 
-    //setup
-    //User inputs a string in a text box (letters only?)
-    //Function evaluates number of letters in string
+    alert(word + ' has ' + word.length + ' letters!');
 }
