@@ -1,4 +1,4 @@
-/* exported yesNoGame, guessMyHomeState */
+/* exported yesNoGame, guessMyHomeState, guessMyFavoriteColor */
 
 'use strict';
 
@@ -142,5 +142,38 @@ function guessMyHomeState() {
 }
 
 
-/*Game 3: Input*/
+/*Game 3: Guess my Favorite Color*/
+var remainingGuesses = 3;
+
+//function accepts input from user to guess favorite color, 3 tries allowed before button is disabled
+function guessMyFavoriteColor() {
+
+        var userInput = document.getElementById('color-input');
+        var response = document.getElementById('response-to-user');
+        var color = userInput.value;
+
+        remainingGuesses--;
+
+        if(!color) {
+            response.textContent = 'Field blank, please type a response.';
+        }
+        else if(color.trim().toLowerCase() === 'blue') {
+            alert('You are getting warmer! What kind of blue?');
+        }
+        else if (color.trim().toLowerCase() === 'aquamarine') {
+            alert('You know me so well!');
+        }
+        else if (remainingGuesses === 1) {
+            alert('Hint: Think the third month of the year');
+        }
+        else if (remainingGuesses === 0) {
+            alert('You are out of guesses. Please refresh page to play again.');
+            document.getElementById("guessButton").disabled = true;
+        }
+        else {
+            alert('Nope. Try again.');
+        }
+    
+        
+}
 
