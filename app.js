@@ -143,7 +143,6 @@ function rockPaperScissors(entry){
         response.textContent = 'Rock! You lose!';
         compScore++;
     }
-    
     var q = document.getElementById('score-card');
     q.textContent = 'You have ' + userScore + ' points and the computer has ' + compScore + ' points.';
 }
