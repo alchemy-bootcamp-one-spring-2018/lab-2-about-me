@@ -87,26 +87,31 @@ function yesNoGame() {
 
 //game 2: Guess an Answer 
 //function control flow then call function????
-var totalGuesses = 0;
-var actualGuess = 0;
-var remainingGuesses = 0;
+var totalGuesses = 3;
 
 function guessMyHomeState() {
-    var answer = prompt('Where am I from?');
-    console.log('user guessed', answer);
+    var remainingGuesses = 3;
 
     var p = document.getElementById('my-home-state-response');
 
-    for() {
-        if(answer.trim().toLowerCase() === michigan || answer.trim().toUpperCase() === Michigan){
-        alert('');
+    for(var i = 1; i < 4; i++) {
+        console.log('for loop started');
+
+        var answer = prompt('Where am I from?');
+        console.log('user guessed', answer);
+
+        if(answer.trim().toLowerCase() === 'michigan'){
+            alert('You got it! GO BLUE!!');
+        break;
         }
         else {
-        alert('');
+            remainingGuesses--;
+            alert('I\'m sorry that is not correct. You have ' + remainingGuesses + ' guesses remaining.');
         }
     }
 
-//gather info from the user via prompt
+    /*
+        //gather info from the user via prompt
         var username = prompt(‘what is your name?’);
         //log out for us the dev to check
 	    console.log(‘user\’s name is ’, username);
@@ -114,6 +119,7 @@ function guessMyHomeState() {
 
 	    //parot back to user what they said:
         alert(‘Hi’ +  username + ‘welcome to my webpage’);
+    */    
     
 }
 
