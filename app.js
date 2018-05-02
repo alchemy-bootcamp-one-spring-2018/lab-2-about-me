@@ -23,7 +23,7 @@ var myQuestions = [
     {
         question: "Would I rather ",
         answers: { 
-            a: 'Eat spaghetti in the bathtup',
+            a: 'Eat spaghetti in the bathtub==',
             b: 'OR eat hone baked ham on the Hoover Dam'
         },
         correctAnswer: 'a'
@@ -42,7 +42,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
         var output = [];
         var answers;
 
-        for(var i=0; i<questions.length; i++) {
+        for(var i = 0; i < questions.length; i++) {
         
             answers = [];
 
@@ -50,7 +50,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
 
                 answers.push(
                     '<label>'
-                        + '<input type="radio" name="question' + i+'" value="'+letter+'">'
+                        + '<input type="radio" name="question' + i + '" value="' + letter + '">'
                 + letter + ': '
                 + questions[i].answers[letter]
                 + '</label>'
