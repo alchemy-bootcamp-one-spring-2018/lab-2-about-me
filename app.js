@@ -1,5 +1,5 @@
 'use strict';
-/* exported game1, game2, game3 */
+/* exported game1, game2, game3, x */
 
 var userName = prompt('Hi there and welcome! What\'s your name?');
 console.log('user\'s name is', userName);
@@ -130,6 +130,8 @@ function game3() {
     }
 
 }
+
+
 
 
 
