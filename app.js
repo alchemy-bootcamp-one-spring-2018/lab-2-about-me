@@ -11,6 +11,8 @@ var message1 = '';
 
 function getUserName(){
     userName = prompt('Before we start playing, please tell me your name!');
+    var showName = document.getElementById('update-user');
+    showName.innerText = userName;
 }
 
 // eslint-disable-next-line
