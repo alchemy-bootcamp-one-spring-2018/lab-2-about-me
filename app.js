@@ -114,5 +114,4 @@ function guessMyHomeState() {
     
 }
 
-//game 3: Stretch 1
 
