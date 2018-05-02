@@ -1,7 +1,7 @@
 /* exported gameYesNo, gameLikes, guessFavoriteColor */
 'use strict';
 
-var maxGuesses = 5;
+var maxGuesses = 6;
 
 function gameLikes() {
     console.log('beginning of likes game');
@@ -9,23 +9,24 @@ function gameLikes() {
     var answer;
     var correct = false;
     var p = document.getElementById('likes-response');
-    // loop for guesses
-    for(var i = 0; i < maxGuesses; i++) {
-        answer = prompt('Where was the subject "born"?');
+
+    for(var i = 1; i < maxGuesses; i++) {
+        answer = prompt('Where was the subject "born"?  ATTEMPTS:' + (i - 1));
         console.log('Answer: ', answer, '.' + ' Guess attempts = ', i);
         if(answer === correctAnswer) {
             correct = true;
             break;
         }
         if(answer === null){
+            p.textContent = ('INPUT ATTEMPTS: ' + (i - 1));
             break;
         }
     }
 
     if(correct) {
         alert('CONFIRMED - SUBJECT INITIALIZED IN SAN FRANCISCO');
-        console.log('answer attempts:', i++, 'out of 5');
-        p.textContent = ('INPUT ATTEMPTS: ', i++);
+        console.log('answer attempts:', i, 'out of 5');
+        p.textContent = ('INPUT ATTEMPTS: ' + i);
 
     }
     else {
@@ -36,7 +37,8 @@ function gameLikes() {
 var counter = 0;
 
 function gameYesNo() {
-    var answer = prompt('Knowledge of Replicant: Verification Required. Is the Model a Nexus 6?');
+    console.log('beginning of yes no game');
+    var answer = prompt('INITIATE REPLICANT EVALUATION:  Is the Model a Nexus 6?');
     console.log('user guessed', answer);
     var p = document.getElementById('y-n-response');
 
@@ -52,7 +54,7 @@ function gameYesNo() {
 
             if(answer3.trim().toLowerCase() === 'no' || 'n') {
                 counter++;
-                var answer4 = prompt('Has the replicant began the Alchemy data module?);
+                var answer4 = prompt('Has the replicant began the Alchemy data module?');
                 console.log('user guessed', answer4);
 
                 if(answer4.trim().toLowerCase() === 'yes' || 'y') {
@@ -62,7 +64,10 @@ function gameYesNo() {
 
                     if(answer5.trim().toLowerCase() === 'yes' || 'y') {
                         counter++;
-                        p.textContent = ('Total Evaluation: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
+                        p.textContent = ('TOTAL EVALUATION: ' + Math.floor((counter / 5) * 100) + '% CORRECT');
+                    }
+                    else {
+                        p.textContent = ('INCORRECT INPUT: ' + Math.floor((counter / 5) * 100) + '%) CORRECT');
                     }
                 }
                 else {
