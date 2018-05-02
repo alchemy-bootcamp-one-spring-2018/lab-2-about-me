@@ -67,26 +67,29 @@ function AboutCarmen() {
         console.log('user answer to passion Question1', passionAnswer);
     
         var p = document.getElementById('about-carmen-response');
-        
+        var tries = 2;
 
         if (passionAnswer.trim().toLowerCase() === 'real foods') {
+            tries == 0;
             alert ('Congratulations! You got it right the first time! ')
-        }
+        }   
         else {
-           for (var tries = 2; tries < 1; tries--) {
-               if (tries == 2) {
-                alert ('Sorry.  Please try again');
+            for (var tries = 2; passionAnswer.trim().toLowerCase() != 'real foods'; tries-- )
+        
+
+        if (tries == 2) {
+             var passionAnswer = prompt('Sorry. Please try again');
+             tries --;
                }
                else if (tries == 1) {
                     p.textContent = 'You have ' + tries + ' chance to guess but here is a hint: It is made of two words.  One of the words spell as Foods';       
                    }
                    else {
                        alert ('I am sorry you have exhausted all the tries')
-                    }
-               
-               
+                    }        
 
            }
-        }
-    }
+
+        
+    
 
