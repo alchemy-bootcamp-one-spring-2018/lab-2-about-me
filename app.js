@@ -1,3 +1,4 @@
+/* exported yesOrNo, guessNumber */
 'use strict';
 
 function yesOrNo() {
