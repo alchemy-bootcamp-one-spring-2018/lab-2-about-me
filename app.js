@@ -31,7 +31,7 @@ function guessMyState() {
 
     var p = document.getElementById('my-state-response');
 
-    if(answerState.toLowerCase().trim() === 'Florida') {
+    if(answerState.toLowerCase().trim() === 'florida') {
         p.textContent = 'You\'re right! I\'m from Florida';
     }
     else {
