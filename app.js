@@ -5,8 +5,18 @@ const answersTwo = [['fargo', 'fargo, nd'], 'system of a down', 'tom waits', 'di
 const questionsTwo = ['What is my birth city?', 'What is my favorite band?', 'Who is my fvorite artist?', 'What is my favorite word?', 'What is my favorite smell?'];
 const questionsOne = ['My name ends with a "k".', 'I was born in North Dakota.', 'My obsession is music.', 'I have 2 middle names.', 'I\'m running Linux on my laptop.'];
 var name = "";
+var results = 0;
 var userAnswersOne = [];
 var userAnswersTwo = [];
+
+// document.onkeydown = function(evt) {
+//     evt = evt || window.event;
+//     if (evt.keyCode == 27) {
+//         console.log(results);
+//         tallyResults(results);        
+//     }
+// };
+
 
 //  Goes to top of page
 var toTop = function() {
@@ -48,7 +58,7 @@ var quizOne = function() {
         }
 
         //  Check the results
-        var results = 0;
+        results = 0;
         for (var i = 0; i < 5; i++) {
             if (checkResultsOne(i)) {
                 results++;
@@ -83,7 +93,7 @@ var quizTwo = function() {
         }
 
         //  Check results
-        var results = 0;
+        results = 0;
         for (var i = 0; i < 5; i++) {
             console.log(checkResultsTwo(i));
             if (checkResultsTwo(i)) {
@@ -99,6 +109,11 @@ var quizTwo = function() {
 //  Ask questions for quiz 1
 var askQuestionsOne = function(index) {
     userAnswersOne[index] = prompt(questionsOne[index]);
+    if (userAnswersOne[index] === null || userAnswersOne[index] === undefined) {
+        userAnswersOne[index] = '';
+        console.log('it is null : ', results);
+        return;
+    }
     userAnswersOne[index] = userAnswersOne[index].trim().toLocaleLowerCase();
 }
 
@@ -115,6 +130,11 @@ var checkResultsOne = function(index) {
 var askQuestionsTwo = function(index) {
     for (var j = 0; j < 3; j++) {
         userAnswersTwo[index] = prompt(questionsTwo[index]);
+        if (userAnswersTwo[index] === null || userAnswersTwo[index] === undefined) {
+            userAnswersTwo[index] = '';
+            console.log('it is null : ', results);
+            return;
+        }
         userAnswersTwo[index] = userAnswersTwo[index].trim().toLocaleLowerCase();
         
         //  Check if answer is correct, if it is, break out of this for loop
