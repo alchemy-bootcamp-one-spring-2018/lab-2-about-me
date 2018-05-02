@@ -1,4 +1,5 @@
 'use strict';
+/* exported game1, game2, game3 */
 
 var userName = prompt('Hi there and welcome! What\'s your name?');
 console.log('user\'s name is', userName);
@@ -68,7 +69,7 @@ function game1() {
         confirm('Wrong! Are you new to reading?');
     }
 
-//Score total message
+    //Score total message
     var scoreTotal = document.getElementById('score');
     scoreTotal.textContent = 'Congratulations! You got ' + score + ' out of 5 correct!';
 
@@ -99,7 +100,7 @@ function game2() {
         else {
             
             tries--;
-            confirm('Guess again! You\'ve got '+ tries + ' tries left!');
+            confirm('Guess again! You\'ve got ' + tries + ' tries left!');
             incorrectResult();
         }
 
@@ -122,7 +123,7 @@ function game3() {
         else {
 
             tries--;
-            confirm('Guess again! You\'ve got '+ tries + ' tries left!');
+            confirm('Guess again! You\'ve got ' + tries + ' tries left!');
             incorrectResult();
         }
 
