@@ -1,10 +1,10 @@
 'use strict';
 
-//game 1: Yes/No
+/*Game 1: Yes/No*/
 var score = 0;
 
 function yesNoGame() {
-    /*Question 1*/
+    //Question 1
     var answer = prompt('Do I like to go to Disneyland?');
     console.log('user guessed', answer);
 
@@ -19,7 +19,7 @@ function yesNoGame() {
         score += 0;
     }
 
-    /*Question 2*/
+    //Question 2
     var answer = prompt('Do I like French Toast?');
     console.log('user guessed', answer);
 
@@ -34,7 +34,7 @@ function yesNoGame() {
         score += 0;
     }
 
-    /*Question 3*/
+    //Question 3
     var answer = prompt('Did I live in Germany?');
     console.log('user guessed', answer);
 
@@ -49,7 +49,7 @@ function yesNoGame() {
         score += 0;
     }
 
-    /*Question 4*/
+    //Question 4
     var answer = prompt('Am I a good swimmer?');
     console.log('user guessed', answer);
 
@@ -64,7 +64,7 @@ function yesNoGame() {
         score += 0;
     }
 
-    /*Question 5*/
+    //Question 5
     var answer = prompt('Do I eat my vegetables?');
     console.log('user guessed', answer);
 
@@ -85,8 +85,7 @@ function yesNoGame() {
    
 }
 
-//game 2: Guess an Answer 
-//function control flow then call function????
+/*Game 2: Guess an Answer*/ 
 var totalGuesses = 3;
 
 function guessMyHomeState() {
@@ -102,24 +101,16 @@ function guessMyHomeState() {
 
         if(answer.trim().toLowerCase() === 'michigan'){
             alert('You got it! GO BLUE!!');
+            p.textContent = 'You got it right. I am from Michigan.';
         break;
         }
         else {
             remainingGuesses--;
             alert('I\'m sorry that is not correct. You have ' + remainingGuesses + ' guesses remaining.');
+            p.textContent = 'You did not complete the game. Try again (Hint: What do you wear on your hands to stay warm in winter?';
         }
     }
-
-    /*
-        //gather info from the user via prompt
-        var username = prompt(‘what is your name?’);
-        //log out for us the dev to check
-	    console.log(‘user\’s name is ’, username);
-        //notice console.log take multiple arguments
-
-	    //parot back to user what they said:
-        alert(‘Hi’ +  username + ‘welcome to my webpage’);
-    */    
+  
     
 }
 
