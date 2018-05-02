@@ -4,7 +4,7 @@
 // Game One - Yes or No answers
 // eslint-disable-next-line
 var score = 0;
-var totalScore = (5 / score) * 100;
+var totalScore = '';
 var message1 = '';
 
 // eslint-disable-next-line
@@ -66,6 +66,8 @@ function gameOne(){
         a5 = 'wrong';
     }
     console.log('Mark prefers his fish cooked. You got this one ' + a5 + '.');
+
+    totalScore = (score / 5) * 100;
 
     //logs score to the console
     console.log('You got ' + score + ' out of 5 answers correct for a score of ' + totalScore + '%');
