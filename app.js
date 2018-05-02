@@ -13,7 +13,10 @@ function yesNoGame() {
 
     var p = document.getElementById('disneyland-response');
 
-    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
+    if (!answer) {
+        alert('Field blank, please type a response');
+    }
+    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
         score ++;
     }
@@ -28,7 +31,10 @@ function yesNoGame() {
 
     var p = document.getElementById('french-toast-response');
 
-    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
+    if (!answer) {
+        alert('Field blank, please type a response');
+    }
+    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
         score ++;
     }
@@ -43,7 +49,10 @@ function yesNoGame() {
 
     var p = document.getElementById('germany-response');
 
-    if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
+    if (!answer) {
+        alert('Field blank, please type a response');
+    }
+    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
         p.textContent = 'You got it!';
         score ++;
     }
@@ -58,7 +67,10 @@ function yesNoGame() {
 
     var p = document.getElementById('swimmer-response');
 
-    if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
+    if (!answer) {
+        alert('Field blank, please type a response');
+    }
+    else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
         score ++;
     }
@@ -73,7 +85,10 @@ function yesNoGame() {
 
     var p = document.getElementById('my-vegetables-response');
 
-    if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
+    if (!answer) {
+        alert('Field blank, please type a response');
+    }
+    else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
         p.textContent = 'You got it!';
         score ++;
     }
@@ -102,7 +117,10 @@ function guessMyHomeState() {
         var answer = prompt('Where am I from?');
         console.log('user guessed', answer);
 
-        if(answer.trim().toLowerCase() === 'michigan'){
+        if (!answer) {
+            alert('Field blank, please type a response');
+        }
+        else if(answer.trim().toLowerCase() === 'michigan'){
             alert('You got it! GO BLUE!!');
             p.textContent = 'You got it right. I am from Michigan.';
         break;
