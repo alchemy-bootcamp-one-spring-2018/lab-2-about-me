@@ -1,8 +1,11 @@
+/* exported yesNoGame, guessMyHomeState */
+
 'use strict';
 
 /*Game 1: Yes/No*/
 var score = 0;
 
+//function asks 5 questions looking for the correct yes/no response. Total correct guesses given at the end.
 function yesNoGame() {
     //Question 1
     var answer = prompt('Do I like to go to Disneyland?');
@@ -85,16 +88,17 @@ function yesNoGame() {
    
 }
 
-/*Game 2: Guess an Answer*/ 
-var totalGuesses = 3;
+/*Game 2: Guess the Answer*/ 
+//var totalGuesses = 3;
 
+//function asks user a question and allows 3 guesses to get it correct
 function guessMyHomeState() {
     var remainingGuesses = 3;
 
     var p = document.getElementById('my-home-state-response');
 
     for(var i = 1; i < 4; i++) {
-        console.log('for loop started');
+        //console.log('for loop started');  --> bug test
 
         var answer = prompt('Where am I from?');
         console.log('user guessed', answer);
