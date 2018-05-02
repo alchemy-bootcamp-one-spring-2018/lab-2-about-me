@@ -19,6 +19,16 @@
         color: white;
     }
 }
+
+@keyframes title-glow {
+    from {
+        color: #000;
+    } to {
+        color: #09F;
+    }
+}
+
+
 body {
     background: linear-gradient(black 69%, steelblue);
     background-repeat: no-repeat;
@@ -28,13 +38,12 @@ body {
 
 h1 {
     font-size: 4rem;
-    color: steelblue;
+    animation: title-glow 5s ease-out alternate infinite;
 }
 
 .container-main {
     max-width: 400px;
     margin: auto;
-    padding-top: 33px;
 }
 
 .container-button {
