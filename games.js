@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line
 function guessMyAnimal() {
 
     // this is where we will write a response to the user; reset it to blank
@@ -33,6 +34,7 @@ function guessMyAnimal() {
 
 }
 
+// eslint-disable-next-line
 function quiz() {
     
     var questions = [
@@ -78,10 +80,10 @@ function quiz() {
             p.textContent = ('Question ' + (i + 1) + ': ' + questions[i] + ' - ' + 'Your answer (' + guess + ') is incorrect.');
         }
 
-        // write the user's score
-        var p = document.getElementById('quiz-score');
-        p.textContent = ('You got ' + qtyCorrect + ' out of 5!');
-
     }
+
+    // write the user's score
+    p = document.getElementById('quiz-score');
+    p.textContent = ('You got ' + qtyCorrect + ' out of 5!');
 
 }
