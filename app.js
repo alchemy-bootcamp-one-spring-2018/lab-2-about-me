@@ -90,7 +90,7 @@ function gameTwo(){
             
             alert('Great job! You guessed Right! And it only took ' + actualGuesses + ' tries!');
 
-            gameTwoResults = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
+            message = ('<p>You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
             
             answer = true;
             break;
@@ -98,6 +98,7 @@ function gameTwo(){
             remainingGuesses = totalGuesses - actualGuesses;
             userGuess = prompt('Sorry, that\'s not correct. Please Guess again. You have ' + remainingGuesses + ' left.');
         }
+
     }
     //console log results from Game Two
     if(answer === true) {
@@ -107,11 +108,8 @@ function gameTwo(){
     }
 }
 
-// //print function for Game Two Results - ***THIS CODE IS NOT WORKING****
-// function print() {
-//     var outputDiv = document.getElementById('game-two-results');
-//     outputDiv.innerHTML = gameTwoResults;
-// }
-
-// //call the function
-// print(gameTwoResults);
+//print function for Game Two Results - ***THIS CODE IS NOT WORKING****
+function gameTwoResults() {
+    var p = document.getElementById('game-two-result');
+    p.textContent = message1;
+}
