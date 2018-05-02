@@ -62,6 +62,8 @@ function gameOne(){
     }
     console.log('Mark\'s first job was at McDonald\'s. You got this one ' + a3 + '.');
 
+    answers1 += 'Mark\'s first job was at McDonald\'s. You got this one ' + a3 + '.<br />';
+
     //Does Mark drink a crapload of Coffee?
     var q4 = confirm('Does Mark drink a crapload of Coffee?');
     if(q4) {
@@ -73,6 +75,8 @@ function gameOne(){
     }
     console.log('Mark drinks coffee. Oh yes he does. You got this one ' + a4 + '.');
 
+    answers1 += 'Mark drinks coffee. Oh yes he does. You got this one ' + a4 + '.<br />';
+
     //Would Mark like Sushi for lunch?
     var q5 = confirm('Would Mark like Sushi for lunch?');
     if(!q5) {
@@ -83,6 +87,8 @@ function gameOne(){
         a5 = 'wrong';
     }
     console.log('Mark prefers his fish cooked. You got this one ' + a5 + '.');
+
+    answers1 += 'Mark prefers his fish cooked. You got this one ' + a5 + '.<br />';
 
     totalScore = (score / 5) * 100;
 
