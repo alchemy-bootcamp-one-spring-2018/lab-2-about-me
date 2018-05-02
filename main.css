@@ -26,6 +26,14 @@
     }
 }
 
+@keyframes correct {
+    from {
+        text-shadow: 0 0 0 #000;
+    } to {
+        text-shadow: 0 0 33px forestgreen;
+    }
+}
+
 body {
     padding: 0 0 33px 0;
     margin: 0;
@@ -36,6 +44,7 @@ body {
 }
 
 h1 {
+    color: white;
     font-size: 4rem;
 }
 
@@ -53,14 +62,30 @@ h1 {
 }
 
 .container-button {
+    border: 1px solid white;
+    border-radius: 13px;
+    padding: 33px;
     text-align: center;
 }
 
-#message h1 {
-    text-align: center;
-    color: white;
+.container-button button {
+    margin: 0 33px 0 33px;
 }
+
+#message {
+    text-align: center;
+}
+
 .shine {
     font-size: 5rem;
     animation: shine 100ms alternate infinite;
+}
+
+.correct {
+    color: green !important;
+    animation: correct 1s alternate infinite;
+}
+
+.color-answer {
+    color: forestgreen !important;
 }

@@ -8,6 +8,13 @@ var name = "";
 var userAnswersOne = [];
 var userAnswersTwo = [];
 
+//  Goes to top of page
+var toTop = function() {
+//    window.location.href = '#top';
+    scroll(0, 0);
+    console.log('it works!');
+}
+
 //  Ask user for their name
 if (name === "") {
     while (name === "" || name === null) {
@@ -157,9 +164,11 @@ var tallyResults = function(res) {
     //  Show the results
     if (res === 5) {
         message.innerHTML = '<h1>Congratulations <span class="title">' + name + '</span>!<br>You scored <span class="shine">100%!!!</span></h1>'        
+        toTop();
     } else {
         alert('You scored ' + res + ' out of 5. I think you can do better than that ' + name + '...');
         message.innerHTML = '<h1 class="fail">FAILURE!!!</h1>';
+        toTop();
     }
 
     // Show the bio again
@@ -169,28 +178,41 @@ var tallyResults = function(res) {
 
 //  Guess my favorite color
 var attempts = 0;
-var quizColor = function() {
-    //  Grab an element
-    var output = document.getElementById('output');
-
-    //  Check if they can take this quiz
-    if (attempts === (-1)) {
-        output.innerHTML = '<p class="fail">YOU ALREADY GOT IT CORRECT!!! MOVE ON!</p> ';
-    }
-
-    //  Grab some mmore elements
+var quizColor = function() {    
+    //  Grab some elements
+    var output = document.getElementById('message');
     var colorBox = document.getElementById('color-box');
     var color = colorBox.value.trim().toLocaleLowerCase();
 
-    //  Check their guess
+    console.log(attempts);
     console.log(color);
-    if (color === 'green') {
-        output.innerHTML = '<h2>Green yes, but which kind?</h2>';
-    } else if (color === 'forestgreen') {
-        output.innerHTML = '<h1 id="color-answer">CORRECT!!!</h1>';
-        attempts = -1;
-    } else {
 
+     //  Check if they can take this quiz
+     if (attempts === 99) {
+        output.innerHTML = '<h1 class="fail">YOU ALREADY GOT IT CORRECT!!!<br>MOVE ON!</h1> ';
+        toTop();
+        return;
+    } else if (attempts > 4) {
+        output.innerHTML = '<h1 class="fail">You guessed too many times.<br>Refresh page to try again.</h1>';
+        toTop();
+        return;
     }
+
+    //  Check their guess
+    if (color === 'green') {
+        alert('Incorrect. You have ' + (5 - (attempts + 1)) + ' remaining.');
+        output.innerHTML = '<h1 class="color-answer">Green yes, but which kind?</h1>';
+        toTop();
+    } else if (color === 'forestgreen') {
+        output.innerHTML = '<h1 class="correct">CORRECT!!!</h1>';
+        attempts = 99;
+        toTop();
+        return;
+    } else {
+        alert('Incorrect. You have ' + (5 - (attempts + 1)) + ' remaining.');
+        output.innerHTML = '<h1 class="fail">Not even close...</h1>';
+        toTop();
+    }
+
     attempts++;
 }
