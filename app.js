@@ -1,155 +1,105 @@
+/* exported guessMyName, guessYesNo*/
+
 'use strict';
-//A function to play a guessing game where the user gets 3 chances to guess someone's name
-//eslint-disable-next-line
+// A function to play "Guess My Name!" in 3 guesses or less
+// eslint-disable-next-line
 function guessMyName() {
-    //counter value started at 1
-    var i = 1;
-    //while loop giving user 3 "guesses" (counter less than 4)
-    while(i < 4) {
-        //prompts the user to input a "guess" when the function is called
-        var answer = prompt('Guess my name?');
-        //logs console with user's guess and returns current counter value
+    var i;
+    var answer;
+    // eslint-disable-next-line
+    var p = document.getElementById('my-name-response');
+    for(i = 1; i < 4; i++) {
+        answer = prompt('Guess my name!');
         console.log('User guessed:', answer);
         console.log('Counter at:', i);
-
-        var p = document.getElementById('my-name-response');
-        //after trimming white space and converting to lower case, validates user guess against correct answer
-        if(answer.trim().toLowerCase() === 'kevin') {
-            //if correct, displays winning message; breaks
-            p.textContent = 'You\'re right! My name is Kevin!';
+        if(!answer) {
+            alert('Come back to play later!');
             break;
         }
-        //else returns message/hint #1; increments counter value
-        else {
-            if(i === 1){
-                alert('Sorry, not my name. Try again. Starts with a "K"! 2 guesses left!');
-                i++;
-            }
-            //else returns message/hint #2; increments counter value
-            else {
-                if(i === 2) {
-                    alert('Not quite! Starts with a "K", ends with an "N", and my name is 5 letters long...1 guess left!');
-                    i++;
-                }
-                //maximum attempts (3) reached; displays losing message; breaks
-                else {
-                    p.textContent = 'You died! (you ran out of guesses)';
-                    break;
-                }
-            }
+        if(answer.trim().toLowerCase() === 'kevin') {
+            p.textContent = 'You\'re right! My name is Kevin';
+            break;
+        } else if(i === 1) {
+            alert('Sorry, try again. My name starts with a "K"! Only ' + (3 - i) + ' guesses left!');
+        } else if(i === 2) {
+            alert('Not quite! My name starts with a "K", ends with an "N", and it is 5 letters long. Only ' + (3 - i) + ' guess left!');
+        } else if(i === 3) {
+            p.textContent = 'You died! (you ran out of guesses)';
+            break;
         }
     }
 }
-//A function to play a five-question Yes or No game
-//eslint-disable-next-line
-function guessYesNo() {
-    //counter value started at 0
-    var i = 0;
 
-    //Question #1
-    //Correct answer is NO and increments the counter by 1
-    var question1 = prompt('Am I 33 years old?').trim().toLowerCase();
-    console.log('User guessed:', question1);
-    //eslint-disable-next-line
+/*  A function to play "Yes or No" game. The user is prompted to submit an answer.
+    A correct response increments correctAnswers while an incorrect response does not.
+    Answers are expected in the form of y/yes/n/no. */
+// eslint-disable-next-line
+function guessYesNo() {
+    var i = 0;
+    var correctAnswers = 0;
+    var answers = [];
+    // eslint-disable-next-line
     var p = document.getElementById('yes-no-response');
-    if(question1 === 'y' || question1 === 'yes') {
-        alert('No! I\'m not 33 years old.');
-        console.log('Correct answers:', i, 'out of 5');
+
+    // Question #1: Am I 33 years old? | Answer: NO
+    answers.push(prompt('Am I 33 years old?').trim().toLowerCase());
+    if(answers[i] === 'y' || answers[i] === 'yes') {
+        alert('Incorrect!');
+    } else if(answers[i] === 'n' || answers[i] === 'no') {
+        alert('Correct!');
+        correctAnswers++;
     }
-    else {
-        if(question1 === 'n' || question1 === 'no') {
-            alert('Correct!');
-            i++;
-            console.log('Correct answers:', i, 'out of 5');
-        }
-        else {
-            alert('Wrong! You didn\'t choose "Yes" or "No"!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
+    i++;
+    console.log('User\'s answers: ', answers);
+    console.log('Correct answers:', correctAnswers, 'out of 5');
+
+    // Question #2: Is one of my favorite cities Tokyo? | Answer: YES
+    answers.push(prompt('Is Tokyo one of my favorite cities?').trim().toLowerCase());
+    if(answers[i] === 'y' || answers[i] === 'yes') {
+        alert('Correct!');
+        correctAnswers++;
+    } else if(answers[i] === 'n' || answers[i] === 'no') {
+        alert('Incorrect!');
     }
-    //Question #2
-    //Correct answer is YES and increments the counter by 1
-    var question2 = prompt('Is one of my favorite cities Tokyo?').trim().toLowerCase();
-    console.log('User guessed:', question2);
-    //eslint-disable-next-line
-    var p = document.getElementById('yes-no-response');
-    if(question2 === 'y' || question2 === 'yes') {
-        alert('Correct! Tokyo is a favorite for sure!');
-        i++;
-        console.log('Correct answers:', i, 'out of 5');
+    i++;
+    console.log('User\'s answers: ', answers);
+    console.log('Correct answers:', correctAnswers, 'out of 5');
+
+    // Question #3: Do I like motorcycles? | Answer: YES
+    answers.push(prompt('Do I like motorcycles?').trim().toLowerCase());
+    if(answers[i] === 'y' || answers[i] === 'yes') {
+        alert('Correct!');
+        correctAnswers++;
+    } else if(answers[i] === 'n' || answers[i] === 'no') {
+        alert('Incorrect!');
     }
-    else {
-        if(question2 === 'n' || question2 === 'no') {
-            alert('Incorrect! Tokyo is awesome!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
-        else {
-            alert('Wrong! You didn\'t choose "Yes" or "No"!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
+    i++;
+    console.log('User\'s answers: ', answers);
+    console.log('Correct answers:', correctAnswers, 'out of 5');
+
+    // Question #4: Have I ever worked in tech before? | Answer: NO
+    answers.push(prompt('Have I ever worked in tech before?').trim().toLowerCase());
+    if(answers[i] === 'y' || answers[i] === 'yes') {
+        alert('Incorrect!');
+    } else if(answers[i] === 'n' || answers[i] === 'no') {
+        alert('Correct!');
+        correctAnswers++;
     }
-    //Question #3
-    //Correct answer is YES and increments the counter by 1
-    var question3 = prompt('Do you think I like motorcycles?').trim().toLowerCase();
-    console.log('User guessed:', question3);
-    //eslint-disable-next-line
-    var p = document.getElementById('yes-no-response');
-    if(question3 === 'y' || question3 === 'yes') {
-        alert('Right on! I do love motorcycles!');
-        i++;
-        console.log('Correct answers:', i, 'out of 5');
+    i++;
+    console.log('User\'s answers: ', answers);
+    console.log('Correct answers:', correctAnswers, 'out of 5');
+
+    // Question #5: Am I from Portland? | Answer: NO
+    answers.push(prompt('Am I from Portland?').trim().toLowerCase());
+    if(answers[i] === 'y' || answers[i] === 'yes') {
+        alert('Incorrect!');
+    } else if(answers[i] === 'n' || answers[i] === 'no') {
+        alert('Correct!');
+        correctAnswers++;
     }
-    else {
-        if(question3 === 'n' || question3 === 'no') {
-            alert('That\'s incorrect!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
-        else {
-            alert('Wrong! You didn\'t choose "Yes" or "No"!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
-    }
-    //Question #4
-    //Correct answer is NO and increments the counter by 1
-    var question4 = prompt('Have I ever worked in tech before?').trim().toLowerCase();
-    console.log('User guessed:', question4);
-    //eslint-disable-next-line
-    var p = document.getElementById('yes-no-response');
-    if(question4 === 'y' || question4 === 'yes') {
-        alert('Incorrect. I have not worked in tech.');
-        console.log('Correct answers:', i, 'out of 5');
-    }
-    else {
-        if(question4 === 'n' || question4 === 'no') {
-            alert('That\'s correct!');
-            i++;
-            console.log('Correct answers:', i, 'out of 5');
-        }
-        else {
-            alert('Wrong! You didn\'t choose "Yes" or "No"!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
-    }
-    //Question #5
-    //Correct answer is NO and increments the counter by 1
-    var question5 = prompt('Am I from Portland?').trim().toLowerCase();
-    console.log('User guessed:', question5);
-    //eslint-disable-next-line
-    var p = document.getElementById('yes-no-response');
-    if(question5 === 'y' || question5 === 'yes') {
-        alert('Incorrect. I am not a Portland native.');
-        console.log('Correct answers:', i, 'out of 5');
-    }
-    else {
-        if(question5 === 'n' || question5 === 'no') {
-            alert('That\'s correct! I\'m primarily from Southern California.');
-            i++;
-            console.log('Correct answers:', i, 'out of 5');
-        }
-        else {
-            alert('Wrong! You didn\'t choose "Yes" or "No"!');
-            console.log('Correct answers:', i, 'out of 5');
-        }
-    }
-    p.textContent = ('Overall, you scored: ' + i + '/5' + ' (' + Math.floor((i / 5) * 100) + '%)');
+    i++;
+    console.log('User\'s answers: ', answers);
+    console.log('Correct answers:', correctAnswers, 'out of 5');
+
+    p.textContent = ('Overall, you scored: ' + correctAnswers + '/5' + ' (' + Math.floor((correctAnswers / 5) * 100) + '%)');
 }
