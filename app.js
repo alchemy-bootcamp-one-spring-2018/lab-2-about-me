@@ -91,24 +91,29 @@ function guessNumber() {
     result.textContent = gameResult;
 }
 
-var colorGuesses = 3;
+var colorGuesses = 2;
 function guessColor() {
     var userInput = document.getElementById('user-color');
     var userColor = userInput.value;
     var response = document.getElementById('color-response');
-    colorGuesses--;
+    var retry = document.getElementById('refresh');
 
-    if(userColor === 'lightgreen' && colorGuesses !== 0) {
+    if(userColor === 'lightgreen') {
         response.textContent = 'That\'s correct! My favorite color is light green. (Guesses left: ' + colorGuesses + ')';
+        document.getElementById('guess-btn').disabled = true;
+        retry.textContent = 'Refresh to try again!';
     }
     else if(userColor === 'green' && colorGuesses !== 0) {
         response.textContent = 'Almost! What shade of green? (Guesses left: ' + colorGuesses + ')';
+        colorGuesses--;
     }
     else if(colorGuesses === 0) {
-        response.textContent = 'Sorry, but you ran out of guesses! Refresh to try again.';
+        response.textContent = 'Sorry, but ' + userColor + 'isn\'t right. You ran out of guesses!';
+        retry.textContent = 'Refresh to try again!';
         document.getElementById('guess-btn').disabled = true;
     }
     else {
         response.textContent = 'Sorry, but ' + userColor + ' isn\'t right. (Guesses left: ' + colorGuesses + ')';
+        colorGuesses--;
     }
 }
