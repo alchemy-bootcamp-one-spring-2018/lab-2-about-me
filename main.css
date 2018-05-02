@@ -1,0 +1,22 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-right: 1500px;
+    margin-left: 150px;
+    padding: 20px;        
+    font-family: Helvetica, Arial, sans-serif;
+}
