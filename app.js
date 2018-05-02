@@ -5,7 +5,7 @@ function yesOrNo() {
     var firstAnswer = prompt('Q1: Was I born in the US?');
     console.log('user guessed', firstAnswer);
     if(firstAnswer.toLowerCase() === 'no' || firstAnswer.toLowerCase() === 'n') {
-        alert('Correct! I was NOT born in the US.')
+        alert('Correct! I was NOT born in the US.');
         score++;
     }
     else {
@@ -60,7 +60,7 @@ function guessNumber() {
     var guessCounter = 5;
     var gameResult = 'Sorry, but you lost. Better luck next time!';
 
-    for (var i = 0; i < 5; i++) {
+    for(var i = 0; i < 5; i++) {
         var userGuess = prompt('Guess a number between 1 and 100:');
         console.log('user guessed', userGuess);
 
@@ -83,7 +83,7 @@ function guessNumber() {
             alert('That\'s right! Way to go! Guesses left: ' + guessCounter);
             console.log('that was just right');
             i = 5;
-            gameResult = 'You win!'
+            gameResult = 'You win!';
         }
     }
     var result = document.getElementById('final-result');
