@@ -1,0 +1,18 @@
+body {
+    background: whitesmoke;
+}
+
+h1 {
+    background: steelblue;
+    padding: 10px;
+    text-align: center;
+}
+
+h2 {
+    background: lightgrey;
+    padding: 10px;
+}
+#hobbies {
+    background-color: lightgreen;
+    padding: 5px;
+}
