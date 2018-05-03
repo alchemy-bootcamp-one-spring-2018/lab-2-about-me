@@ -24,7 +24,7 @@ function guessMyName(){
     }
 }
 
-function aboutliz() {
+function aboutMe() {
     var score = 0;
     var question1 = prompt ('do I have blue hair').trim().toLowerCase();
     console.log ('user guessed', question1);
@@ -69,7 +69,20 @@ function aboutliz() {
     }
     console.log(score);
 
-}
+    var question4 = prompt ('do i like pepsi').trim().toLowerCase();
+    console.log ('user guessed', question4);
+
+    if(question4 === 'yes') {
+        score++;
+        alert('my fav!');
+
+    }
+    else {
+        score--;
+        alert('pepsi 4 life!');
+    }
+    console.log(score);
+}   
 
 
 
