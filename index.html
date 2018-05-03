@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Lab 2</title>
+</head>
+<body>
+    <h1>Alchemy - Lab 2</h1>
+    <h2>Objective: Use HTML &amp; CSS to teach everyone a few things about you, create a "Guess the answer" game and a "Yes/No" game.</h2>
+    
+    <span class="about">
+        <h3>About Me</h3>
+        <p>While not necessarily <em>new</em> to HTML, I haven't practiced in many years (since high school). Immediately after high school I attended San Diego State University. Since then I've:</p>
+        <ul>
+            <li>Spent four months in Southeast Asia</li>
+            <li>Worked in the real estate industry for nearly a decade</li>
+            <li>Lived in four U.S. states</li>
+        </ul>
+    </span>
+
+    <section class="games">
+        <h3>Guess my name in three guesses or less!</h3>
+        <button onclick="guessMyName()">Play</button>
+        <p id="my-name-response"></p>
+    </section>
+
+    <section class="games">
+            <h3>"Yes" or "No"</h3>
+            <button onclick="guessYesNo()">Play</button>
+            <p id="yes-no-response"></p>
+    </section>
+
+    <section class="games">
+        <h3>Number of Letters: Check how many letters in a word!</h3>
+        <input id="word" type="text">
+        <button onclick="numberOfLetters()">Check</button>
+        <p id="number-of-letters"></p>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
