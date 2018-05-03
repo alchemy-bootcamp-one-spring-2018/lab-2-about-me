@@ -1,6 +1,7 @@
 /* exported guessMyName, guessYesNo, numberOfLetters */
 
 'use strict';
+
 // A function to play "Guess My Name!" in 3 guesses or less
 // eslint-disable-next-line
 function guessMyName() {
