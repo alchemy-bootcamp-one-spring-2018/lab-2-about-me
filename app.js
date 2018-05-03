@@ -23,7 +23,7 @@ function gameOne(){
 
     var answers1 = ''; //Empty string to hold the on-screen HTML message
 
-    //Does Mark like Dogs better than Cats.  
+    //Does Mark like Dogs better than Cats.
     var q1 = confirm('Does Mark like Dogs better than Cats?');
     if(q1) {
         var a1 = 'correct';
@@ -34,7 +34,7 @@ function gameOne(){
     }
 
     console.log('Mark likes Cats Better than Dogs. You got this one ' + a1 + '.');
-    
+
     answers1 += '<h3>Mark likes Cats Better than Dogs. You got this one ' + a1 + '.<br />';
 
     //Does Mark like Star Wars?
@@ -108,7 +108,7 @@ function gameOne(){
     a.innerHTML = answers1;
 }
 
-// **** BEGIN Game Two - Five Guesses ****
+// **** BEGIN Game Two - Five Guesses ***
 var totalGuesses = 5;
 var actualGuesses = 0;
 var remainingGuesses = totalGuesses - actualGuesses;
@@ -123,14 +123,14 @@ function gameTwo(){
     getUserName();
 
     userGuess = prompt('In which East Coast state was Mark born?');
-    
+
     for(actualGuesses = 1; actualGuesses < 5; actualGuesses ++){
         if(userGuess.toLowerCase() === 'new jersey' || userGuess.toLowerCase() === 'nj'){
-            
+
             alert('Great job ' + userName + '! You guessed Right! And it only took ' + actualGuesses + ' tries!');
 
             message2 = ('<p>Great job ' + userName + '! You guessed right! Mark was born in New Jersey! You guessed in only ' + actualGuesses + ' tries!</p>');
-            
+
             answer = true;
             break;
         } else {
@@ -146,7 +146,7 @@ function gameTwo(){
 
     //console log results from Game Two
     if(answer === true) {
-        console.log('Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries!'); 
+        console.log('Mark was born in New Jersey. ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries!');
         message2 = 'Mark was born in New Jersey.<br /> ' + userName + ' correctly guessed this in ' + actualGuesses + ' tries.';
     } else {
         console.log('Mark was born in New Jersey. ' + userName + ' took 5 guesses, but did not guess this correctly.');
