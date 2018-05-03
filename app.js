@@ -4,6 +4,7 @@
 const answersTwo = [['fargo', 'fargo, nd'], 'system of a down', 'tom waits', 'diphthong', ['the ocean', 'ocean']];
 const questionsTwo = ['What is my birth city?', 'What is my favorite band?', 'Who is my fvorite artist?', 'What is my favorite word?', 'What is my favorite smell?'];
 const questionsOne = ['My name ends with a "k".', 'I was born in North Dakota.', 'My obsession is music.', 'I have 2 middle names.', 'I\'m running Linux on my laptop.'];
+/* eslint-disable-next-line */
 var name = '';
 var results = 0;
 var userAnswersOne = [];
@@ -28,6 +29,7 @@ var toTop = function() {
 //  Ask user for their name
 if(name === '') {
     while(name === '' || name === null) {
+        /* eslint-disable-next-line */
         name = prompt('Hello friend. What is your name?');
     }
 }
