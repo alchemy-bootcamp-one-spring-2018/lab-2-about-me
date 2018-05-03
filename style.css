@@ -17,7 +17,8 @@ body {
 }
 
 #hobbies {
-    background-color: papayawhip;
+    background-color: rgb(197, 158, 241);
+    color: darkmagenta;
     display: block;
     width: 25%;
     line-height: 1.5;
@@ -28,6 +29,7 @@ body {
 
 #goals {
     line-height: 1.5;
+    text-align: center;
 }
 
 h2 {
@@ -35,8 +37,14 @@ h2 {
 }
 
 #games {
-    width: 60%;
-    margin-left: auto;
+    width: 50%;
+    border-radius: 25px;
+    background-color: lightcoral;
+    color: whitesmoke;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
 }
 
 .y-or-n-buttons {
