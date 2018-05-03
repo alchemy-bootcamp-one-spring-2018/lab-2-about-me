@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href ="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Guess what you can about me!</h1>
+    
+<!--button for being ready-->
+    <button onclick="startMe()">Are you ready?</button>
+    <h2 id = "testResultOne"></h2>
+    <hr />
+
+<!--heading for a pop quiz-->
+    <h1>Okay.. now time for the POP QUIZ!!!!</h1>
+    <p> I'm going to ask you a series of questions about me...<br>
+         Let's see if you can tell if I'm telling the truth or not..</p>
+    <p>(this will be graded....)</p>
+
+<!--PQ Question1-->
+    <h2> Guess about my hobbies</h2>
+
+    <!--button-->
+    <button onclick="hobbyPrompt()">My favorite hobby</button>
+
+    <!--Response-->
+    <p id = "hobby-response" class = "response"></p>
+
+    <hr>
+
+<!--PQ Question2-->
+    <h2>My experience Programming</h2>
+
+    <!--button-->
+    <button onclick="progPrompt()">Programming experience</button>
+
+    <!--Response-->
+    <p id = "prog-response" class = "response"></p>
+    
+    <hr>
+
+<!--PQ Question3-->
+    <h2>My favorite board game.</h2>
+
+    <!--button-->
+    <button onclick="gamePrompt()">Favorite board game</button>
+
+    <!--Response-->
+    <p id = "game-response" class = "response"></p>
+
+    <hr>
+
+<!--PQ Question4-->
+    <h2>My sibling.</h2>
+
+    <!--button-->
+    <button onclick="broPrompt()">About Brother</button>
+
+    <!--Response-->
+    <p id = "bro-response" class = "response"></p>
+
+    <hr>
+
+<!--PQ Question5-->
+    <h2>I lived in the woods</h2>
+
+    <!--Button-->
+    <button onclick="opalPrompt()">Forest life</button>
+
+    <!--Response-->
+    <p id = "opal-response" class = "response"></p>
+
+    <hr>
+<!--Score display-->
+    <h1>Your Score!:</h1>
+    
+    <!--Score response-->
+    <h1 id = "score"></h1>
+
+
+<!--pulling from js-->
+    <script src="app.js"></script>
+</body>
+</html>
