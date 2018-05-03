@@ -8,59 +8,45 @@
     <title>test html for quiz</title>
 </head>
 <body>
-
+    <div id="main">
     <h1>My Quiz</h1>
     <form id="form1">
     <fieldset>
     <h2>Would I rather </h2>
     <label for="var_q1A">
-        <input type="radio">
+        <input type="radio" name="q1" value="1" />
         a: Pet one dirty, stray cat </label>
 
         <label for="var_q1B">
-        <input type="radio">
+        <input type="radio" name="q1" value="0" />
         b: OR cuddle 10 freshly washed puppies</label>
 
     <h2>Would I rather </h2>
         <label for="var_q2A">
-        <input type="radio">
-        a: Wear a Tump MAGA hat</label>
+        <input type="radio" name="q2" value="0">
+        a: Wear a Trump MAGA hat</label>
         
         <label for="var_q2B">
-        <input type="radio">
+        <input type="radio" name="q2" value="1" />
         b: OR eat my hat</label>
 
     <h2>Would I rather </h2>
         <label for="var_q3A">
-        <input type="radio">
+        <input type="radio" name="q3" value="1" />
         a: Eat spaghetti in the bathtub<label>
-        
+        <p>OR</p>
         <label for="var_q3B">
-        <input type="radio">
+        <input type="radio" name="q3" value="0" />
         b: OR eat honey baked ham on the Hoover Dam</label>
 
         <button type="submit" value="submit">Submit!</button>
 
-    </label>
     </fieldset>
-</form>
+    </form> 
 
+    <p>Your score:<span id="score"> __</span></p>
+    <p id="score2"></p>
 
-    
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-    
+    </div>
 </body>
 </html>
