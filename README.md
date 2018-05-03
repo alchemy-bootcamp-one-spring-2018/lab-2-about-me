@@ -14,4 +14,5 @@ Two about Chris games!....And now some new ones!
 ##Third Game
     * input box that will ask for their name
     * when button is pressed, it will say "hey NAME, did you know you had X letters in      your name?
-    
+##Fourth Game
+    * using the same input box as the third game, have a button that runs a function to reverse the letters in the input.
