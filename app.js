@@ -74,13 +74,13 @@ function lastName(){
         } else if(i > 1){
             alert('Nope! Keep trying! You have ' + i + ' chances left! HINT: First letter T.');
         } else if(i === 1){
-            alert('Nope! Keep trying! You have ' + i + ' chance left! HINT: Thomp..');
+            alert('Nope! Keep trying! You have ' + i + ' chance left! HINT: Thomp...');
         } else if(i === 0){
             alert('Sorry, you are out of chances!');
             p.textContent = 'Better luck next time!';
             break;
         } else if(lastNameQ !== true){
-            alert('Come one! Just guess!');
+            alert('Come on! Just guess!');
         }
     }
 }
