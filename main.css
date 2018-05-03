@@ -2,17 +2,40 @@ body {
     background: whitesmoke;
 }
 
-h1 {
+#title {
     background: steelblue;
     padding: 10px;
     text-align: center;
 }
 
-h2 {
-    background: lightgrey;
+#tagLine {
+    text-align: center;
+}
+
+#main {
+    overflow: auto;
+}
+
+.interests {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-style: solid;
+    background-color: lightblue;
+}
+
+.games {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gameBorder {
+    border-style: dashed;
     padding: 10px;
 }
-#hobbies {
-    background-color: lightgreen;
-    padding: 5px;
+
+footer {
+    display: flex;
+    justify-content: center;
 }

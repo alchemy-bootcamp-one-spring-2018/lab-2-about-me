@@ -114,13 +114,12 @@ function fiveQuestions() {
 
 // function asking the user a question and allowing them 5 guesses to get it correct 
 function guessingGame() {
-    alert('Welcome to the Guessing Game! You have a total of 5 guesses. Good luck!')
+    alert('Welcome to the Guessing Game! Good luck!')
+    var guess;
 
-    var guess = prompt('What island have I lived on?');
-    console.log(guess);
-
-    for(i = 1; i < 5; i++) {
+    for(var i = 0; i < 5; i++) {
         var guessVar = ' guesses'
+        var guess = prompt('What Island have I lived on? You have ' + (5 - i) + guessVar + ' left!');
 
         if(guess.toLowerCase() === 'oahu') {
             console.log(guess);
@@ -129,20 +128,23 @@ function guessingGame() {
         }
 
         else if(guess.toLowerCase() === 'hawaii') {
-            alert('Which island in Hawaii?');
-                if(i === 4) {
-                    guessVar = ' guess'
-                }
-            guess = prompt('You have ' + (5 - i) + guessVar + ' left!');
-            console.log(guess);
+            if(i === 4) {
+                break;
+            }
+
+            else if(i === 3) {
+                guessVar = ' guess'
+            }
+            
+            alert('Which island in Hawaii?');   
         } 
 
         else {
-            if(i === 4) {
+            console.log(guess);
+            alert('Incorrect!')
+            if(i === 3) {
                 guessVar = ' guess'
             }
-            guess = prompt('Nope, try again! You have ' + (5 - i) + guessVar + ' left!');
-            console.log(guess);
         }
     }
 
