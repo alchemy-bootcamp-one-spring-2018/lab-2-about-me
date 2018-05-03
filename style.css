@@ -1,4 +1,10 @@
 
+body {
+    margin-left: 20px;
+    background-color: lightcyan;
+    font-family: sans-serif;
+}
+
 #intro {
     width: 75%;
     background-color: teal;
@@ -10,20 +16,39 @@
     padding: 10px 20px 10px 20px;
 }
 
+#hobbies {
+    background-color: papayawhip;
+    display: block;
+    width: 25%;
+    line-height: 1.5;
+    border: solid purple;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+#goals {
+    line-height: 1.5;
+}
+
+h2 {
+    text-align: center;
+}
+
+#games {
+    width: 60%;
+    margin-left: auto;
+}
+
 .y-or-n-buttons {
     color: rgb(149, 0, 255);
     display: inline;
- }
+}
 
 .guess-buttons {
     color: rgb(16, 147, 46);
     display: inline;
 }
 
-body {
-    margin-left: 20px;
-    background-color: lightcyan;
-}
 
 .response {
     display: inline;

@@ -26,40 +26,42 @@
         <h3>Goals</h3>
         <p>I want to start a career in web development and work with a company where I can grow as a developer. Eventually, I would like to work remotely.</p>
     </div>
+    <h2>Let's play: Can you guess some stuff about me?</h2>
+    <div id="games">
+        <section>     
+            <h4>Answer "yes" or "no".</h4>
 
-    <section>
-        <h2>Let's play: Can you guess some stuff about me?</h2>
-        <h4>Answer "yes" or "no".</h4>
+            <button class="y-or-n-buttons" onclick="likesBurritos()">Play</button>
+            <p id="response" class="response"></p>
 
-        <button class="y-or-n-buttons" onclick="likesBurritos()">Play</button>
-        <p id="response" class="response"></p>
+            <button class="y-or-n-buttons" onclick="likesBeer()">Play</button>
+            <p id="response-1" class="response"></p>
 
-        <button class="y-or-n-buttons" onclick="likesBeer()">Play</button>
-        <p id="response-1" class="response"></p>
+            <button class="y-or-n-buttons" onclick="speaksFrench()">Play</button>
+            <p id="response-2" class="response"></p>
 
-        <button class="y-or-n-buttons" onclick="speaksFrench()">Play</button>
-        <p id="response-2" class="response"></p>
+            <button class="y-or-n-buttons" onclick="cruiseShip()">Play</button>
+            <p id="response-3" class="response"></p>
 
-        <button class="y-or-n-buttons" onclick="cruiseShip()">Play</button>
-        <p id="response-3" class="response"></p>
+            <button class="y-or-n-buttons" onclick="likesVG()">Play</button>
+            <p id="response-4" class="response"></p>
+        </section>
+        
+        <section>
+            <h4>Type your answer.</h4>
 
-        <button class="y-or-n-buttons" onclick="likesVG()">Play</button>
-        <p id="response-4" class="response"></p>
-    </section>
-    
-    <section>
-        <h4>Type your answer.</h4>
+            <button class="guess-buttons" onclick="age()">Play</button>
+            <p id="reply" class="response"></p>
+        </section>
 
-        <button class="guess-buttons" onclick="age()">Play</button>
-        <p id="reply" class="response"></p>
-    </section>
+        <section>
+            <h4>Type a word to reverse it. (Bonus points if palindrome).</h4>
+            <input id="word">
+            <button onclick="reverseWord()">Reverse</button>
+            <p id="reversed-word"></p>
+        </section>
+    </div>
 
-    <section>
-        <h4>Type a word to reverse it. (Bonus points if palindrome)</h4>
-        <input id="word">
-        <button onclick="reverseWord()">Reverse</button>
-        <p id="reversed-word"></p>
-    </section>
     <script src="app.js"></script>
 </body>
 </html>
