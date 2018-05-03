@@ -1,5 +1,5 @@
 'use strict';
-/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt nameSubmit nameReverse*/
+/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt nameSubmit nameReverse palSubmit*/
 
 //name letter counter
 function nameSubmit(){
@@ -24,6 +24,27 @@ function nameReverse(){
     var joinLetters = reverseLetters.join('');
 
     nResponse.textContent = 'Reversed Name is: ' + joinLetters;
+}
+//palindrome button
+function palSubmit(){
+    var palInput = document.getElementById('pal-input').value;
+    var pResponse = document.getElementById('pal-response');
+    console.log('input is :', palInput);
+
+    var splitLetters = palInput.split('');
+    console.log(splitLetters);
+
+    var reverseLetters = splitLetters.reverse();
+    console.log(reverseLetters);
+
+    var joinLetters = reverseLetters.join('');
+
+    if(joinLetters === palInput){
+        pResponse.textContent = 'Yes! ' + joinLetters + ' IS a palindrome!';
+    }
+    else {
+        pResponse.textContent = 'Sorry.... ' + palInput + ' is not a palindrome.';
+    }
 }
 //start button
 function startMe(){
