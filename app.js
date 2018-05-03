@@ -24,7 +24,7 @@ function guessMyName(){
     }
 }
 
-function allaboutliz() {
+function aboutliz() {
     var score = 0;
     var question1 = prompt ('do I have blue hair').trim().toLowerCase();
     console.log ('user guessed', question1);
@@ -43,7 +43,7 @@ function allaboutliz() {
 
     var question2 = prompt ('am I married').trim().toLowerCase();
     console.log ('user guessed', question2);
-    
+
     if(question2 === 'yes') {
         score++;
         alert('to my bestfriend!');
@@ -56,7 +56,23 @@ function allaboutliz() {
     console.log(score);
 
     var question3 = prompt ('Am I allergic to peanuts').trim().toLowerCase();
+    console.log ('user guessed', question3);
+
+    if(question3 === 'yes') {
+        score++;
+        alert('My epi pen is in my bag!');
+
+    }
+    else {
+        score--;
+        alert('deathly allergic!');
+    }
+    console.log(score);
+
 }
+
+
+
 
 
 
