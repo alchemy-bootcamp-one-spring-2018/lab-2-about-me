@@ -1,0 +1,52 @@
+body {
+    background: black;
+}
+
+h1 {
+    color: limegreen;
+    font-size: 5em;
+}
+
+h2 {
+    color: orange;
+}
+
+.game {
+    background: rgba(128, 0, 128, 0.418);
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+input {
+    color: white;
+}
+
+#rubick-image {
+    position: absolute;
+    z-index: 1;
+}
+
+#title {
+    z-index: 2;
+    position: absolute;
+}
+
+div {
+    position: relative;
+    top: 900px;
+    z-index: 3;
+}
+
+#invoker-game-emojis {
+    font-size: 2em;
+}
+
+input {
+    color: black;
+}
