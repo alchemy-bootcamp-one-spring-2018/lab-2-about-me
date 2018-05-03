@@ -1,8 +1,5 @@
 /* exported gameYesNo, gameLikes */
 'use strict';
-
-
-
 function gameLikes() {
     var maxGuesses = 6;
     console.log('beginning of likes game');
@@ -14,12 +11,12 @@ function gameLikes() {
     for(var i = 1; i < maxGuesses; i++) {
         answer = prompt('Where was the subject "born"?  ATTEMPTS:' + (i - 1)).trim().toLowerCase();
         console.log('Answer: ', answer, '.' + ' Guess attempts = ', i);
-        if(answer === correctAnswer) {
-            correct = true;
-            break;
-        }
         if(answer === null){
             p.textContent = ('INPUT ATTEMPTS: ' + (i - 1));
+            break;
+        }
+        if(answer === correctAnswer) {
+            correct = true;
             break;
         }
     }
