@@ -1,4 +1,4 @@
-/* exported yesOrNo, guessNumber */
+/* exported yesOrNo, guessNumber, guessColor, checkPalindrome */
 'use strict';
 
 function yesOrNo() {
@@ -56,37 +56,78 @@ function yesOrNo() {
     final.textContent = 'Final score: ' + score + '/5';
 }
 
+var numberGuesses = 5;
+var number = Math.floor(Math.random() * 100);
 function guessNumber() {
-    var number = Math.floor(Math.random() * 100);
-    var guessCounter = 5;
-    var gameResult = 'Sorry, but you lost. Better luck next time!';
+    var userInput = document.getElementById('user-number');
+    var userGuess = parseInt(userInput.value);
+    var message = document.getElementById('number-hint');
+    var secondMessage = document.getElementById('extra-message');
 
-    for(var i = 0; i < 5; i++) {
-        var userGuess = prompt('Guess a number between 1 and 100:');
-        console.log('user guessed', userGuess);
-
-        if(isNaN(userGuess)) {
-            alert('Please enter a number. Guesses left: ' + guessCounter);
-            i--;
-        }
-        else if(userGuess < number) {
-            guessCounter--;
-            alert('Try guessing higher! Guesses left: ' + guessCounter);
-            console.log('that was too low');
-        }
-        else if(userGuess > number) {
-            guessCounter--;
-            alert('Try guessing lower! Guesses left: ' + guessCounter);
-            console.log('that was too high');
-        }
-        else {
-            guessCounter--;
-            alert('That\'s right! Way to go! Guesses left: ' + guessCounter);
-            console.log('that was just right');
-            i = 5;
-            gameResult = 'You win!';
-        }
+    if(isNaN(userGuess)) {
+        message.textContent = 'Please enter a number. Invalid entries don\'t count against you. Guesses left: ' + numberGuesses;
     }
-    var result = document.getElementById('final-result');
-    result.textContent = gameResult;
+    else if(userGuess < number && numberGuesses > 1) {
+        numberGuesses--;
+        message.textContent = 'Try guessing higher! Guesses left: ' + numberGuesses;
+    }
+    else if(userGuess > number && numberGuesses > 1) {
+        numberGuesses--;
+        message.textContent = 'Try guessing lower! Guesses left: ' + numberGuesses;
+    }
+    else if(userGuess !== number && numberGuesses >= 0) {
+        message.textContent = 'Sorry, but you lost. The number was ' + number + '.';
+        secondMessage.textContent = 'Refresh to try again! (The number will change.)';
+        document.getElementById('number-btn').disabled = true;
+    }
+    else {
+        numberGuesses--;
+        message.textContent = 'That\'s right! The number was ' + number + '. Guesses left: ' + numberGuesses + '.';
+        secondMessage.textContent = 'Refresh to play again! (The number will change.)';
+        document.getElementById('number-btn').disabled = true;
+    }
+}
+
+var colorGuesses = 2;
+function guessColor() {
+    var userInput = document.getElementById('user-color');
+    var userColor = userInput.value;
+    var response = document.getElementById('color-response');
+    var retry = document.getElementById('refresh');
+
+    if(userColor === 'lightgreen') {
+        response.textContent = 'That\'s correct! My favorite color is light green. (Guesses left: ' + colorGuesses + ')';
+        document.getElementById('guess-btn').disabled = true;
+        retry.textContent = 'Refresh to try again!';
+    }
+    else if(userColor === 'green' && colorGuesses !== 0) {
+        response.textContent = 'Almost! What shade of green? (Guesses left: ' + colorGuesses + ')';
+        colorGuesses--;
+    }
+    else if(colorGuesses === 0) {
+        response.textContent = 'Sorry, but ' + userColor + 'isn\'t right. You ran out of guesses!';
+        retry.textContent = 'Refresh to try again!';
+        document.getElementById('guess-btn').disabled = true;
+    }
+    else {
+        response.textContent = 'Sorry, but ' + userColor + ' isn\'t right. (Guesses left: ' + colorGuesses + ')';
+        colorGuesses--;
+    }
+}
+
+function checkPalindrome() {
+    var userInput = document.getElementById('user-word');
+    var userString = userInput.value;
+    var response = document.getElementById('palindrome-response');
+
+    var userArray = userString.split('');
+    var reverseArray = userArray.reverse();
+    var reverseString = reverseArray.join('');
+
+    if(reverseString === userString) {
+        response.textContent = 'Hey, looks like that word is a palindrome!';
+    }
+    else {
+        response.textContent = 'Sorry, but it doesn\'t look like that word is a palindrome.';
+    }
 }
