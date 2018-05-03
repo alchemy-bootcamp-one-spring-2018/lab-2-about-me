@@ -1,0 +1,24 @@
+/* CSS for About Me Lab */ 
+
+body {
+    background-color: rgb(82, 89, 124);
+}
+
+#title {
+    text-align: center;
+    color: darkblue;
+}
+
+#welcome {
+    text-align: center;
+}
+
+.games {
+    text-align: center;
+    border: 2px solid yellow;
+    margin: 4px 200px;
+}
+
+ol li {
+    line-height: 10px;
+}

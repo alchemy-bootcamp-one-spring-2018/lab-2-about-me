@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">About Me</h1>
+    <!-- Intro -->
+    <section>
+        <h2 id="welcome">Welcome to my page!</h2>
+        <p>Hello! My name is Mariah. I am a graduate of San Diego State with a BS degree in Business Management. My work experience includes jobs in hospitality with the Walt Disney Company and Wyndham. Currently, I work for an amazing winery here in Oregon. Now, I am a new developer trying to learn all I can about HTML, CSS and JavaScript. </p>
+        <p>Below are a couple games I have designed so you can learn more about me. Enjoy!</p>
+    </section>
+
+    <!-- Game 1: Yes/No Game, 5q -->
+    <section class="games">
+        <h2>Yes/No game</h2>
+        <button onclick="yesNoGame()">Play</button>
+        <p id="disneyland-response"></p>
+        <p id="french-toast-response"></p>
+        <p id="germany-response"></p>
+        <p id="swimmer-response"></p>
+        <p id="my-vegetables-response"></p>
+        <p id="final-score"></p> <!-- log score id here form app.js -->
+    </section>
+
+    <!-- Game 2: Guess an Answer, 3q? -->
+    <section class="games">
+        <h2>Guess My Home State</h2>
+        <button onclick="guessMyHomeState()">Play</button>
+        <p id="my-home-state-response"></p>
+    </section>
+    
+
+    <!-- Game 3: User Input, Guess my favorite color -->
+    <section class="games">
+        <h2>What is my favorite color?</h2>
+        <input id="color-input"></input>
+        <button id="guessButton" onclick="guessMyFavoriteColor()">Guess</button>
+        <p id="response-to-user"></p>
+    </section>    
+
+    <!-- Game 4: Travel Bucket List -->
+    <section class="games">
+        <h2>Travel Bucket List</h2>
+        <ol>Top 3 destinations on my bucket list:</ol>
+            <li>Japan</li>
+            <li>Norway</li>
+            <li>New Zealand</li>
+        <p>What's on your list?</p>    
+        <input id="users-destination"></input>
+        <button onclick="travelBucketList()">Enter</button>
+        <p id="response-to-place"></p>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
