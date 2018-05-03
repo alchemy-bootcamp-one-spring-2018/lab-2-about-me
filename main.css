@@ -4,11 +4,18 @@ body {
 
 h1 {
     text-align: center;
+    text-shadow: 2px 2px ivory;
 }
 
 h2 {
     clear: both;
     padding-top:20px;
+}
+
+form {
+    background-color: ivory;
+    margin-left: 175px;
+    margin-right: 175px;
 }
 
 input {
@@ -19,18 +26,33 @@ input {
 label {
     display: block;
 }
+
 button {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(107, 207, 7);
     width: 100px;
-    margin-top: 20px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+#about-me {
+    background-color: ivory;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 150px;
+    margin-left: 150px;
+    padding: 20px;        
 }
 
 p {
-
+    font-size: 25px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 150px;
     margin-left: 150px;
     padding: 20px;        
-    font-family: Helvetica, Arial, sans-serif;
 }
