@@ -18,3 +18,7 @@ body {
     border: 2px solid yellow;
     margin: 4px 200px;
 }
+
+ol li {
+    line-height: 10px;
+}

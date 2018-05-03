@@ -148,32 +148,56 @@ var remainingGuesses = 3;
 //function accepts input from user to guess favorite color, 3 tries allowed before button is disabled
 function guessMyFavoriteColor() {
 
-        var userInput = document.getElementById('color-input');
-        var response = document.getElementById('response-to-user');
-        var color = userInput.value;
+    var userInput = document.getElementById('color-input');
+    var response = document.getElementById('response-to-user');
+    var color = userInput.value;
 
-        remainingGuesses--;
+    remainingGuesses--;
 
-        if(!color) {
-            response.textContent = 'Field blank, please type a response.';
-        }
-        else if(color.trim().toLowerCase() === 'blue') {
-            alert('You are getting warmer! What kind of blue?');
-        }
-        else if (color.trim().toLowerCase() === 'aquamarine') {
-            alert('You know me so well!');
-        }
-        else if (remainingGuesses === 1) {
-            alert('Hint: Think the third month of the year');
-        }
-        else if (remainingGuesses === 0) {
-            alert('You are out of guesses. Please refresh page to play again.');
-            document.getElementById("guessButton").disabled = true;
-        }
-        else {
-            alert('Nope. Try again.');
-        }
+    if(!color) {
+        response.textContent = 'Field blank, please type a response.';
+    }
+    else if(color.trim().toLowerCase() === 'blue') {
+        alert('You are getting warmer! What kind of blue?');
+    }
+    else if (color.trim().toLowerCase() === 'aquamarine') {
+        alert('You know me so well!');
+    }
+    else if (remainingGuesses === 1) {
+        alert('Hint: Think the third month of the year');
+    }
+    else if (remainingGuesses === 0) {
+        alert('You are out of guesses. Please refresh page to play again.');
+        document.getElementById("guessButton").disabled = true;
+    }
+    else {
+        alert('Nope. Try again.');
+    }
     
         
 }
 
+/* Game 4: Travel Bucket list */
+
+//purpose of this function is to ask the user where they would like to go then give them 1/3 responses based on the letter count of their input
+function travelBucketList() {
+
+    var userInput = document.getElementById('users-destination');
+    var response = document.getElementById('response-to-place');
+    var place = userInput.value.length;
+    //console.log('what is place', place);
+    
+    if (place < 1) {
+        response.textContent = 'Field blank, please type a response.';
+    }
+    else if (place > 1 && place <= 6) {
+        alert('You should go!');
+    }
+    else if (place > 6 && place <=14) {
+        alert('Pack your bags ;)');
+    }
+    else {
+        alert('Adventure is out there!');
+    }
+    
+}
