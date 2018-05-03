@@ -1,5 +1,5 @@
 'use strict';
-/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt nameSubmit*/
+/* exported startMe hobbyPrompt progPrompt gamePrompt broPrompt opalPrompt nameSubmit nameReverse*/
 
 //name letter counter
 function nameSubmit(){
@@ -8,6 +8,22 @@ function nameSubmit(){
     var nResponse = document.getElementById('name-response');
     nResponse.textContent = 'Hey ' + nameInput + ' did you know you name has ' + nameInput.length + ' letters in it?';
 
+}
+//name revers button
+function nameReverse(){
+    var nameInput = document.getElementById('name-input').value;
+    var nResponse = document.getElementById('name-response');
+    console.log('name is :', nameInput);
+
+    var splitLetters = nameInput.split('');
+    console.log(splitLetters);
+
+    var reverseLetters = splitLetters.reverse();
+    console.log(reverseLetters);
+
+    var joinLetters = reverseLetters.join('');
+
+    nResponse.textContent = 'Reversed Name is: ' + joinLetters;
 }
 //start button
 function startMe(){
