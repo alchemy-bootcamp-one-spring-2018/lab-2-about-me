@@ -1,43 +1,57 @@
 <!DOCTYPE html>
     <head>
-        <title>About Me</title>
         <link href="C:\Users\Admin\Desktop\alchemy\aboutme\lab-2-about-me\style.css" rel="stylesheet" type="text/css">
+
+        <title>About Me</title>
     </head>
-        <h1>About Me</h1>
-        <div style="background-color: rgb(243, 128, 128)">
-                <h2>Can you guess my name?</h2>
-                <button onclick="guessMyName()">Play</button>
-                <p id="my-name-response"></p>
+        <div class="wholeThing">
+            <h1>About Me</h1>
+            <div class="nameOne">
+                <section>
+                    <h2>Can you guess my name?</h2>
+                    <button onclick="guessMyName()">Play</button>
+                    <p id="my-name-response"></p>
+                </section>
+            </div>
+
+            <div class="animalOne">
+                <section>
+                    <h2>Animals I might like:</h2>
+                        <ul>
+                            <li>Hawk</li>
+                            <li>Snake</li>
+                            <li>Lizard</li>
+                            <li>Tiger</li>
+                            <li>Goat</li>
+                        </ul>
+                    <h3>Can you guess my favorite one?</h3>
+                    <button onclick="guessMyAnimal()">Play</button>
+                    <p id="my-animal-response"></p>
+                </section>
+            </div>
+            <div class="ageOne">
+                <section>
+                    <h2>What is my age?</h2>
+                    <button onclick="guessMyAge()">Play</button>
+                    <p id="my-age-response"></p>
+                </section>
+            </div>
+            <div class="cityOne">
+                <section>
+                    <h2>What city was I born in?</h2>
+                    <button onclick="guessMyCity()">Play</button>
+                    <p id="my-city-response"></p>
+                </section>
+            </div>
+            <div class="showOne">
+                <section>
+                    <h2>What is my favorite tv show?</h2>
+                    <button onclick="guessMyShow()">Play</button>
+                    <p id="my-show-response"></p>
+                    <p>lorem ipsum</p>
+                </section>
+            </div>
         </div>
-        <section style="background-color: rgb(126, 92, 29)">
-        <h2>Animals I might like:</h2>
-            <ul>
-                <li>Hawk</li>
-                <li>Snake</li>
-                <li>Lizard</li>
-                <li>Tiger</li>
-                <li>Goat</li>
-            </ul>
-                <h3>Can you guess my favorite one?</h3>
-                <button onclick="guessMyAnimal()">Play</button>
-                <p id="my-animal-response"></p>
-        </section>
-        <section style="background-color: grey">
-            <h2>What is my age?</h2>
-            <button onclick="guessMyAge()">Play</button>
-            <p id="my-age-response"></p>
-        </section>
-        <section style="background-color: rgb(114, 173, 173)">
-            <h2>What city was I born in?</h2>
-            <button onclick="guessMyCity()">Play</button>
-            <p id="my-city-response"></p>
-        </section>
-        <section>
-            <h2>What is my favorite tv show?</h2>
-            <button onclick="guessMyShow()">Play</button>
-            <p id="my-show-response"></p>
-            <p>lorem ipsum</p>
-        </section>
     <body>
     <script src="app.js"></script>
     </body>
