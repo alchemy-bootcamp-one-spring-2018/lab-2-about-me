@@ -7,7 +7,7 @@ function guessWithWhile() {
 
     var correctAnswer = 'while';
     var correct = false;
-    var i = maxGuesses;
+       
 
     while(i > 0) {
         var answer = prompt('what is my favorite loop?');
@@ -59,12 +59,49 @@ function guessWithFor() {
     }
 }
 
-var colorGuesses = 3;
 
-function guessFavoriteColor() {
-    var colorInput = document.getElementById('color');
-    var response = document.getElementById('color-response');
-    var color = colorInput.value;
+*/  <section>
+<h2>Guess my favorite color</h2>
+<input id="color">
+<button id="color-btn" onclick="guessFavoriteColor()">Guess</button>
+<p id="color-response"></p>
+</section> */
+
+            <section>
+                <h2>Guess what state I'm from</h2>
+                <input id="state">
+                <button id="state-btn" onclick="guessState()">Guess</button>
+                <p id="state-response"></p>
+            </section>
+
+            function guessState() {
+                    var stateInput = document.getElementById('state');
+                    var response = document.getElementById('state-response');
+                    var state = stateInput.value;
+            }
+var colorGuesses = 3;
+            var stateGuesses = 2;
+            stateGuesses--;
+
+            if(state === 'Michigan') {
+                response.textContent = 'Yup yup!'
+            }
+            else if(state === 'Oregon') {
+                response.textContent = 'No, but I love it here!';
+            }
+            else if(stateGuesses === 0) {
+                response.textContent = 'Sorry, you\'ve run out of guesses. Refresh page to try again.'
+                documentGetElementById('state-btn').disabled = true;
+            }
+
+            else {
+                response.textContent = 'Nope!';
+            }
+        }
+                                function guessFavoriteColor() {
+                                    var colorInput = document.getElementById('color');
+                                    var response = document.getElementById('color-response');
+                                    var color = colorInput.value;
 
     colorGuesses--;
 
