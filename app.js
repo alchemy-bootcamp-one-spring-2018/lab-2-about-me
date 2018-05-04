@@ -11,8 +11,6 @@ document.getElementById('form1').onsubmit = function getScore(cat, hat, tub) {
     console.log(result);
     return false;
 };
-
-var maxStateGuesses = 2;
   
 function guessState() {
     
@@ -29,7 +27,7 @@ function guessState() {
         response.textContent = 'No, but I love it here!';
     }
 
-    else if(maxStateGuesses === 0) {
+    else if
         response.textContent = 'Sorry, you\'ve run out of guesses. Refresh page to try again.';
         document.getElementById('state-btn').disabled = true;
     }
