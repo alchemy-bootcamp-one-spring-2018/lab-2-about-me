@@ -20,19 +20,16 @@ function guessState() {
     
     console.log(state);
 
-    if(state === 'Michigan') {
+    if(state === 'michigan') {
         response.textContent = 'Yup yup!';
     }
-    else if(state === 'Oregon' || 'oregon') {
+    else if(state === 'oregon') {
         response.textContent = 'No, but I love it here!';
-    }
-
-    else if(state) {
-        response.textContent = 'Sorry, you\'ve run out of guesses. Refresh page to try again.';
-        document.getElementById('state-btn').disabled = true;
     }
 
     else {
         response.textContent = 'Nope!';
     }
+
+    
 }

@@ -1,5 +1,5 @@
 body {
-    background-color: lightgoldenrodyellow;
+    background-color: lightsteelblue;
 }
 
 h1 {
@@ -9,7 +9,7 @@ h1 {
 
 h2 {
     clear: both;
-    padding-top:20px;
+    padding-top: 25px;
 }
 
 form {
@@ -18,10 +18,21 @@ form {
     margin-right: 175px;
 }
 
+#game2 {
+    text-align: center;
+    background-color: ivory;
+    width: 70%;
+    margin-left: 175px;
+    margin-right: 175px;
+    }
+
 input {
-    width:30px;
-    margin-left:20px
+    width: 120px;
+    padding: 6px;
+    font-size: 18px;
 }
+
+
 
 label {
     display: block;
@@ -30,7 +41,7 @@ label {
 button {
     font-weight: bold;
     font-size: 20px;
-    color: rgb(107, 207, 7);
+    color: lightsalmon;
     width: 100px;
     height: 50px;
     margin-top: 30px;
@@ -56,3 +67,5 @@ p {
     margin-left: 150px;
     padding: 20px;        
 }
+
+
