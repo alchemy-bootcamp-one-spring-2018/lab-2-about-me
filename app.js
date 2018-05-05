@@ -7,7 +7,7 @@ document.getElementById('form1').onsubmit = function getScore(cat, hat, tub) {
 
     var result = cat + hat + tub;
 
-    document.getElementById('score').innerHTML = result;
+    document.getElementById('score').innerHTML = result + " out of 3!";
     console.log(result);
     return false;
 };
@@ -27,7 +27,7 @@ function guessState() {
         response.textContent = 'No, but I love it here!';
     }
 
-    else if
+    else if(state) {
         response.textContent = 'Sorry, you\'ve run out of guesses. Refresh page to try again.';
         document.getElementById('state-btn').disabled = true;
     }
