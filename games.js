@@ -1,6 +1,6 @@
 'use strict';
+/* exported guessMyAnimal, quiz */
 
-// eslint-disable-next-line
 function guessMyAnimal() {
 
     // this is where we will write a response to the user; reset it to blank
@@ -39,7 +39,6 @@ function guessMyAnimal() {
 
 }
 
-// eslint-disable-next-line
 function quiz() {
 
     var questions = [
