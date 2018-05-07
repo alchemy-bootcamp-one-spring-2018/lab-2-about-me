@@ -5,6 +5,13 @@ body {
     font-family: sans-serif;
 }
 
+#melee-logo {
+    position: fixed;
+    left: 25%;
+    z-index: -1;
+    width: 50%;
+}
+
 #intro {
     width: 75%;
     background-color: teal;

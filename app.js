@@ -97,12 +97,12 @@ function likesVG() {
 
 //Asks user to guess my age
 function age() {
-    var guess = prompt('Guess my age');
+    var guess = parseInt(prompt('Guess my age'));
     console.log('User guessed', guess);
     var reply = document.getElementById('reply');
     for(var i = 2; i > 0; i--) {
         console.log('User guessed', guess);
-        if(guess == 30){
+        if(guess === 30){
             alert('Correct!');
             reply.textContent = 'You got it!';
             correct++;
