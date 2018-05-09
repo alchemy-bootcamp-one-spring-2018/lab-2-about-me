@@ -1,34 +1,53 @@
 'use strict';
-//eslint-disable-next-line
+/* exported guessMyName, guessMyState, yesOrNo */
+var guessesLeft = 5;
+var guessAmtElem = document.getElementById('guesses-left');
+guessAmtElem.textContent = 'You have ' + guessesLeft + ' guesses left';
+
 function guessMyName() {
     var answer = prompt('guess my name');
     console.log('user guessed', answer);
 
     var p = document.getElementById('my-name-response');
-
+    
     if(answer.toLowerCase().trim() === 'antreo') {
         p.textContent = 'You\'re right! My name is Antreo';
     }
     else {
         p.textContent = 'Nope. Try again';
+        guessesLeft--;
+        guessAmtElem.textContent = 'You have ' + guessesLeft + ' guesses left';
+        console.log(guessesLeft);
+
+        if(guessesLeft === 0) {
+            guessAmtElem.textContent = 'Sorry! You have ' + guessesLeft + ' guesses left. You don\'t know me very well!';
+        }
     }
 }
-//eslint-disable-next-line
+
 function guessMyState() {
     var answerState = prompt('guess my state');
     console.log('user guessed', answerState);
 
     var p = document.getElementById('my-state-response');
 
-    if(answerState.toLowerCase().trim() === 'Florida') {
+    if(answerState.toLowerCase().trim() === 'florida') {
         p.textContent = 'You\'re right! I\'m from Florida';
     }
     else {
         p.textContent = 'Nope. Try again';
+        guessesLeft--;
+        guessAmtElem.textContent = 'You have ' + guessesLeft + ' guesses left';
+        console.log(guessesLeft);
+
+        if(guessesLeft === 0) {
+            guessAmtElem.textContent = 'Sorry! You have ' + guessesLeft + ' guesses left. You don\'t know me very well!';
+        }
+        
     }
 }
 
-//eslint-disable-next-line
+
 function yesOrNo() {
     var score = 0;
     //Did I learn to swim before walk?
