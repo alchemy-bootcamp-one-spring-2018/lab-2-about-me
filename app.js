@@ -55,41 +55,29 @@ function AboutCarmen() {
     if(langAnswer.trim().toLowerCase() === 'yes' || langAnswer.trim().toLowerCase() === 'y') {
 
         correctCounter ++;
-        p.textContent = 'Your answer is correct! You scored  a total of ' +  correctCounter + ' correct answers';
+        p.textContent = 'Your answer is correct! You scored  a total of ' + correctCounter + ' correct answers';
     }
     else {
-        p.textContent = 'Last question is not correct! You scored ' +  correctCounter + ' correct answers';
+        p.textContent = 'Last question is not correct! You scored ' + correctCounter + ' correct answers';
     }
-    }
+}
 
-    function MoreAboutCarmen() {
+
+function MoreAboutCarmen() {
+
+    var p = document.getElementById('about-carmen-response');
+    var attempt = 1;
+
+    for(var tries = 2; tries > -1; tries--) {
         var passionAnswer = prompt('Can you guess what I am passionate about?');
         console.log('user answer to passion Question1', passionAnswer);
-    
-        var p = document.getElementById('about-carmen-response');
-        var tries = 2;
-
-        if (passionAnswer.trim().toLowerCase() === 'real foods') {
-            tries == 0;
-            alert ('Congratulations! You got it right the first time! ')
-        }   
+        if(passionAnswer.trim().toLowerCase() === 'real foods') {
+            alert ('Congratulations! You got it right in ' + attempt + ' times');
+            break;
+        }
         else {
-            for (var tries = 2; passionAnswer.trim().toLowerCase() != 'real foods'; tries-- )
-        
-
-        if (tries == 2) {
-             var passionAnswer = prompt('Sorry. Please try again');
-             tries --;
-               }
-               else if (tries == 1) {
-                    p.textContent = 'You have ' + tries + ' chance to guess but here is a hint: It is made of two words.  One of the words spell as Foods';       
-                   }
-                   else {
-                       alert ('I am sorry you have exhausted all the tries')
-                    }        
-
-           }
-
-        
-    
-
+            alert ('You have ' + tries + ' more attempt!');
+            attempt++;
+        }
+    }
+}
