@@ -1,6 +1,6 @@
 'use strict';
+/* exported guessMyAnimal, quiz */
 
-// eslint-disable-next-line
 function guessMyAnimal() {
 
     // this is where we will write a response to the user; reset it to blank
@@ -13,7 +13,7 @@ function guessMyAnimal() {
 
         // get the user's guess
         var guess = prompt ('What is my favorite kind of animal?\nHint: They are llarge and llovely.', 'hedgehog');
-        console.log ('User\'s guess:', guess);
+        console.log ('guessMyAnimal: User\'s guess:', guess);
 
         // let the user know if they are correct
         if(guess === null || guess.trim() === '')
@@ -33,13 +33,12 @@ function guessMyAnimal() {
             }
         }
 
-        console.log ('guesses remaining:', MAX_GUESSES - guessCount);
+        console.log ('guessMyAnimal: guesses remaining:', MAX_GUESSES - guessCount);
 
     }
 
 }
 
-// eslint-disable-next-line
 function quiz() {
 
     var questions = [
@@ -66,7 +65,7 @@ function quiz() {
 
         // get the user's guess
         var guess = prompt (questions[i]);
-        console.log ('User\'s guess:', guess);
+        console.log ('quiz: User\'s guess:', guess);
 
         // standardize the user's entry to either Y or N or 'unable to interpret'
         guess = guess.trim();
@@ -77,7 +76,7 @@ function quiz() {
         } else {
             guess = 'unable to interpret';
         }
-        console.log ('Standardized guess:', guess);
+        console.log ('quiz: Standardized guess:', guess);
 
         // see if the user was correct
         if(guess === answers[i]) {
