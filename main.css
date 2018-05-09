@@ -20,6 +20,14 @@ h1  {
     color: rgb(219, 22, 22);
     }
 
+h3 {
+    font-size: 18px;
+    padding-left: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    }
+
 hr  {
     clear: both;
     display: block;
@@ -62,7 +70,9 @@ p span {
 #game-one {
     float: left;
     width: 50%;
-    background-color: blue;
+    background-color: steelblue;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    min-height: 165px;
     margin-bottom: 12px;
     padding-top: 12px;
 }
@@ -70,7 +80,9 @@ p span {
 #game-two {
     float: right;
     width: 50%;
-    background-color: green;
+    background-color: #2d902d;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    min-height: 165px;
     margin-bottom: 12px;
     padding-top: 12px;
 
