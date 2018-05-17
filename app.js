@@ -1,4 +1,4 @@
-/* exported yesNoGame, guessMyHomeState, guessMyFavoriteColor */
+/* exported yesNoGame, guessMyHomeState, guessMyFavoriteColor, travelBucketList */
 
 'use strict';
 
@@ -8,92 +8,92 @@ var score = 0;
 //function asks 5 questions looking for the correct yes/no response. Total correct guesses given at the end.
 function yesNoGame() {
     //Question 1
-    var answer = prompt('Do I like to go to Disneyland?');
-    console.log('user guessed', answer);
+    var answerDisneyland = prompt('Do I like to go to Disneyland?');
+    console.log('user guessed', answerDisneyland);
 
-    var p = document.getElementById('disneyland-response');
+    var pDisneyland = document.getElementById('disneyland-response');
 
-    if (!answer) {
+    if(!answerDisneyland) {
         alert('Field blank, please type a response.');
     }
-    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
-        p.textContent = 'You got it!';
+    else if(answerDisneyland.trim().toLowerCase() === 'y' || answerDisneyland.trim().toLowerCase() === 'yes' || answerDisneyland.trim().toUpperCase() === 'Y' || answerDisneyland.trim().toUpperCase() === 'YES'){
+        pDisneyland.textContent = 'You got it!';
         score ++;
     }
     else {
-        p.textContent = 'Sorry, that is incorrect.';
+        pDisneyland.textContent = 'Sorry, that is incorrect.';
         score += 0;
     }
 
     //Question 2
-    var answer = prompt('Do I like French Toast?');
-    console.log('user guessed', answer);
+    var answerToast = prompt('Do I like French Toast?');
+    console.log('user guessed', answerToast);
 
-    var p = document.getElementById('french-toast-response');
+    var pToast = document.getElementById('french-toast-response');
 
-    if (!answer) {
+    if(!answerToast) {
         alert('Field blank, please type a response.');
     }
-    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
-        p.textContent = 'You got it!';
+    else if(answerToast.trim().toLowerCase() === 'y' || answerToast.trim().toLowerCase() === 'yes' || answerToast.trim().toUpperCase() === 'Y' || answerToast.trim().toUpperCase() === 'YES'){
+        pToast.textContent = 'You got it!';
         score ++;
     }
     else {
-        p.textContent = 'Sorry, that is incorrect.';
+        pToast.textContent = 'Sorry, that is incorrect.';
         score += 0;
     }
 
     //Question 3
-    var answer = prompt('Did I live in Germany?');
-    console.log('user guessed', answer);
+    var answerGermany = prompt('Did I live in Germany?');
+    console.log('user guessed', answerGermany);
 
-    var p = document.getElementById('germany-response');
+    var pGermany = document.getElementById('germany-response');
 
-    if (!answer) {
+    if(!answerGermany) {
         alert('Field blank, please type a response.');
     }
-    else if(answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes' || answer.trim().toUpperCase() === 'Y' || answer.trim().toUpperCase() === 'YES'){
-        p.textContent = 'You got it!';
+    else if(answerGermany.trim().toLowerCase() === 'y' || answerGermany.trim().toLowerCase() === 'yes' || answerGermany.trim().toUpperCase() === 'Y' || answerGermany.trim().toUpperCase() === 'YES'){
+        pGermany.textContent = 'You got it!';
         score ++;
     }
     else {
-        p.textContent = 'Sorry, that is incorrect.';
+        pGermany.textContent = 'Sorry, that is incorrect.';
         score += 0;
     }
 
     //Question 4
-    var answer = prompt('Am I a good swimmer?');
-    console.log('user guessed', answer);
+    var answerSwimmer = prompt('Am I a good swimmer?');
+    console.log('user guessed', answerSwimmer);
 
-    var p = document.getElementById('swimmer-response');
+    var pSwimmer = document.getElementById('swimmer-response');
 
-    if (!answer) {
+    if(!answerSwimmer) {
         alert('Field blank, please type a response.');
     }
-    else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
-        p.textContent = 'You got it!';
+    else if(answerSwimmer.trim().toLowerCase() === 'n' || answerSwimmer.trim().toLowerCase() === 'no' || answerSwimmer.trim().toUpperCase() === 'N' || answerSwimmer.trim().toUpperCase() === 'NO'){
+        pSwimmer.textContent = 'You got it!';
         score ++;
     }
     else {
-        p.textContent = 'Sorry, that is incorrect.';
+        pSwimmer.textContent = 'Sorry, that is incorrect.';
         score += 0;
     }
 
     //Question 5
-    var answer = prompt('Do I eat my vegetables?');
-    console.log('user guessed', answer);
+    var answerVeggies = prompt('Do I eat my vegetables?');
+    console.log('user guessed', answerVeggies);
 
-    var p = document.getElementById('my-vegetables-response');
+    var responseVeggies = document.getElementById('my-vegetables-response');
 
-    if (!answer) {
+    if(!answerVeggies) {
         alert('Field blank, please type a response.');
     }
-    else if(answer.trim().toLowerCase() === 'n' || answer.trim().toLowerCase() === 'no' || answer.trim().toUpperCase() === 'N' || answer.trim().toUpperCase() === 'NO'){
-        p.textContent = 'You got it!';
+    else if(answerVeggies.trim().toLowerCase() === 'n' || answerVeggies.trim().toLowerCase() === 'no' || answerVeggies.trim().toUpperCase() === 'N' || answerVeggies.trim().toUpperCase() === 'NO'){
+        responseVeggies.textContent = 'You got it!';
         score ++;
     }
     else {
-        p.textContent = 'Sorry, that is incorrect.';
+        responseVeggies.textContent = 'Sorry, that is incorrect.';
         score += 0;
     }
 
@@ -104,46 +104,44 @@ function yesNoGame() {
 }
 
 /*Game 2: Guess the Answer*/ 
-var remainingGuesses = 3;
+var g2remainingGuesses = 3;
 
 //function asks user a question and allows 3 guesses to get it correct
 function guessMyHomeState() {
-    
-    var p = document.getElementById('my-home-state-response');
+
+    var responseHomeState = document.getElementById('my-home-state-response');
 
     for(var i = 1; i < 4; i++) {
         //console.log('for loop started');  --> bug test
 
-        var answer = prompt('Where am I from?');
-        console.log('user guessed', answer);
+        var answerHomeState = prompt('Where am I from?');
+        console.log('user guessed', answerHomeState);
 
-        if (!answer) {
+        if(!answerHomeState) {
             alert('Field blank, please type a response.');
         }
-        else if(answer.trim().toLowerCase() === 'michigan'){
+        else if(answerHomeState.trim().toLowerCase() === 'michigan'){
             alert('You got it! GO BLUE!!');
-            p.textContent = 'You got it right. I am from Michigan.';
-        break;
+            responseHomeState.textContent = 'You got it right. I am from Michigan.';
+            break;
         }
         else {
-            remainingGuesses--;
-            if (remainingGuesses < 2) {
+            g2remainingGuesses--;
+            if(g2remainingGuesses < 2) {
                 var guess = ' guess';
             }
             else {
                 guess = ' guesses';
             }
-            alert('I\'m sorry that is not correct. You have ' + remainingGuesses + guess + ' remaining.');
-            p.textContent = 'You did not complete the game. Try again (Hint: What do you wear on your hands to stay warm in winter?';
+            alert('I\'m sorry that is not correct. You have ' + g2remainingGuesses + guess + ' remaining.');
+            responseHomeState.textContent = 'You did not complete the game. Try again (Hint: What do you wear on your hands to stay warm in winter?';
         }
     }
-  
-    
 }
 
 
 /*Game 3: Guess my Favorite Color*/
-var remainingGuesses = 3;
+var g3remainingGuesses = 3;
 
 //function accepts input from user to guess favorite color, 3 tries allowed before button is disabled
 function guessMyFavoriteColor() {
@@ -152,7 +150,7 @@ function guessMyFavoriteColor() {
     var response = document.getElementById('response-to-user');
     var color = userInput.value;
 
-    remainingGuesses--;
+    g3remainingGuesses--;
 
     if(!color) {
         response.textContent = 'Field blank, please type a response.';
@@ -160,15 +158,15 @@ function guessMyFavoriteColor() {
     else if(color.trim().toLowerCase() === 'blue') {
         alert('You are getting warmer! What kind of blue?');
     }
-    else if (color.trim().toLowerCase() === 'aquamarine') {
+    else if(color.trim().toLowerCase() === 'aquamarine') {
         alert('You know me so well!');
     }
-    else if (remainingGuesses === 1) {
+    else if(g3remainingGuesses === 1) {
         alert('Hint: Think the third month of the year');
     }
-    else if (remainingGuesses === 0) {
+    else if(g3remainingGuesses === 0) {
         alert('You are out of guesses. Please refresh page to play again.');
-        document.getElementById("guessButton").disabled = true;
+        document.getElementById('guessButton').disabled = true;
     }
     else {
         alert('Nope. Try again.');
@@ -187,13 +185,13 @@ function travelBucketList() {
     var place = userInput.value.length;
     //console.log('what is place', place);
     
-    if (place < 1) {
+    if(place < 1) {
         response.textContent = 'Field blank, please type a response.';
     }
-    else if (place > 1 && place <= 6) {
+    else if(place > 1 && place <= 6) {
         alert('You should go!');
     }
-    else if (place > 6 && place <=14) {
+    else if(place > 6 && place <= 14) {
         alert('Pack your bags ;)');
     }
     else {
